@@ -1,0 +1,27 @@
+{
+  "html-css-support.enabledLanguages": [
+    "html",
+    "vue",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "suggest.noselect": true,
+  "vetur.ignoreProjectWarning": true,
+  "coc.preferences.extensionUpdateCheck": "never",
+  "javascript.suggest.enabled": true,
+  "javascript.validate.enable": true,
+  "typescript.validate.enable": true,
+  "typescript.autoClosingTags": true,
+  "typescript.referencesCodeLens.showOnAllFunctions": true,
+  "javascript.referencesCodeLens.showOnAllFunctions": true,
+  "prettier.semi": true,
+  "prettier.singleQuote": true,
+  "yank.highlight.enable": false,
+  "yank.enableCompletion": false,
+  "tailwindCSS.emmetCompletions": true,
+  "tailwindCSS.includeLanguages": {
+    "liquid": "html"
+  },
+  "tailwindCSS.headwind.removeDuplicates": false
+}

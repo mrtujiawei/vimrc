@@ -1,0 +1,23 @@
+# 临时文件
+spell
+.backup/
+.swp/
+.undo/
+.view/
+.session/
+.fzf_history/
+
+# neovim 临时文件
+.neo-backup/
+.neo-swp/
+.neo-undo/
+.neo-view/
+
+# 历史文件，保存被修改的目录
+.netrwhist
+
+# 插件,要用的时候再装
+.bundle/
+
+# 直接从git下
+autoload/plug.vim
