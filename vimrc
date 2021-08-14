@@ -1,3 +1,37 @@
+"
+" 键映射
+"	:map		普通，可视模式及操作符等待模式
+"	:vmap		可视模式
+"	:nmap		普通模式
+"	:omap		操作符等待模式
+"	:map!		插入和命令行模式
+"	:imap		插入模式
+"	:cmap		命令行模式
+"
+" :noremap	普通，可视和操作符等待模式
+" :vnoremap	可视模式
+" :nnoremap	普通模式
+" :onoremap	操作符等待模式
+" :noremap!	插入和命令行模式
+" :inoremap	插入模式
+" :cnoremap	命令行模式
+"
+" usr_40
+" 定义命令行命令
+" :command
+"	-nargs=0	无参数
+"	-nargs=1	一个参数
+"	-nargs=*	任意数目的参数
+"	-nargs=?	没有或一个参数
+"	-nargs=+	一个或更多参数
+"
+" 自动命令
+" :autocmd [group] {events} {file_pattern} [nested] {command}
+"
+" 内置函数 usr_41
+" range 函数内部变量 a:firstline a:lastline 
+" 可变参数 ... a:1 a:2...
+"
 " $VIMRUNTIME 有一些自带的差价和配置，在这个目录下
 " vsp $VIMRUNTIME/ + tab 可以显示具体路径
 " ======= 兼容配置 =======
@@ -411,7 +445,7 @@ nmap <leader>f  <Plug>(coc-format-selected)
 augroup mygroup
   autocmd!
   " Setup formatexpr specified filetype(s).
-  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  autocmd FileType typescript,typescriptreact,json setl formatexpr=CocAction('formatSelected')
   " Update signature help on jump placeholder.
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
