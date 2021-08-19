@@ -16,6 +16,8 @@
 " :inoremap	插入模式
 " :cnoremap	命令行模式
 "
+" map 自动补全行为
+"
 " usr_40
 " 定义命令行命令
 " :command
@@ -28,12 +30,32 @@
 " 自动命令
 " :autocmd [group] {events} {file_pattern} [nested] {command}
 "
-" 内置函数 usr_41
+" 内置函数 usr_41, 这里包含了vimrc的大部分信息
 " range 函数内部变量 a:firstline a:lastline 
 " 可变参数 ... a:1 a:2...
 "
 " $VIMRUNTIME 有一些自带的差价和配置，在这个目录下
 " vsp $VIMRUNTIME/ + tab 可以显示具体路径
+"
+" install 安装 usr_90
+" 
+" buffer-variable    b:	  局部于当前缓冲区。
+" window-variable    w:	  局部于当前窗口。
+" tabpage-variable   t:	  局部于当前标签页。
+" global-variable    g:	  全局。
+" local-variable     l:	  局部于函数。
+" script-variable    s:	  局部于 |:source| 的 Vim 脚本。
+" function-argument  a:	  函数参数 (只限于函数内使用)。
+" vim-variable       v:	  Vim 预定义的全局变量。
+"
+"
+" eval 一些内部常量，函数
+" index 常用操作,类似目录
+" message 错误类型在这里找
+" options 所有配置项
+" quickref 快速索引，目录
+" popup 弹出层，深入一下很重要，但内容太多
+"
 " ======= 兼容配置 =======
 " :options 显示所有配置项
 " 按回车可以跳转
@@ -131,6 +153,18 @@ set magic
 nmap <C-K><C-B> :NERDTreeToggle<CR>
 map <C-l> :tabnext<CR>
 map <C-h> :tabprevious<CR>
+
+" ======= 快捷键配置 =======
+" func Eatchar(pat)
+"    let c = nr2char(getchar(0))
+"    return (c =~ a:pat) ? '' : c
+" endfunc
+" iabbr <silent> if if ()<Left><C-R>=Eatchar('\s')<CR>
+iabbr rcc import { memo,} from 'react';<CR><CR>
+      \const Comp = () => {
+      \<CR>return (<CR>null);
+      \};<CR><CR>
+      \export default memo(Comp);<Esc>/Comp<C-R>
 
 " ======= 脚本配置 =======
 filetype indent on              " 文件类型检查
@@ -310,7 +344,21 @@ call vundle#begin()           " 插件列表开始
   Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } } " 搜索
   Plugin 'junegunn/fzf.vim'
   Plugin 'godlygeek/tabular'              " markdown 表格
+  " Plugin 'mg979/vim-visual-multi', {'branch': 'master'} " 多光标选中及编辑
 call vundle#end()             " 插件列表结束
+
+" vim-multiple-cursors 配置
+" let g:multi_cursor_use_default_mapping=0
+" 
+" " Default mapping
+" let g:multi_cursor_start_word_key      = '<C-d>'
+" " let g:multi_cursor_select_all_word_key = '<A-n>'
+" " let g:multi_cursor_start_key           = 'g<C-n>'
+" " let g:multi_cursor_select_all_key      = 'g<A-n>'
+" " let g:multi_cursor_next_key            = '<C-n>'
+" " let g:multi_cursor_prev_key            = '<C-p>'
+" " let g:multi_cursor_skip_key            = '<C-x>'
+" " let g:multi_cursor_quit_key            = '<Esc>'
 
 " gutentags 配置
 " 搜索工程目录的标志，碰到这些文件/目录名就停止向上一级目录递归
