@@ -374,7 +374,13 @@ if !isdirectory(s:vim_tags)
 endif
 
 " 配置 ctags 的参数 "
-let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q', '--javascript-kinds=+fcmpvgc']
+let g:gutentags_ctags_extra_args = [
+      \ '--fields=+niazS', '--extra=+q', 
+      \ '--javascript-kinds=+fcmpvgc', 
+      \ '--typescript-kinds=+fcmpvgc', 
+      \ '--typescriptreact-kinds=+fcmpvgc',
+      \ '--vue-kinds=+fcmpvgc',
+      \ ]
 
 " 过滤文件及文件夹
 " node_modules 太大了，还是手动跳进去吧
