@@ -122,9 +122,12 @@ set suffixesadd=.js,.vue,.jsx,.css,.json
 set history=1000                " 保存操作历史
 set undofile                    " 设置undo的文件，关闭后重新打开还能够撤销
 
-set backupdir=s:vimConfigPath."/.vim/.backup//"  " 统一放置备份文件 // 表示文件带有绝对路径，用%替换/
-set directory=s:vimConfigPath."/.vim/.swp//"    " 统一放置交换文件
-set undodir=s:vimConfigPath."/.vim/.undo//"      " 统一放置undo文件
+" 统一放置备份文件 // 表示文件带有绝对路径，用%替换/
+exec "set backupdir=".s:vimConfigPath."/.vim/.backup//"  
+" 统一放置交换文件
+exec "set directory=".s:vimConfigPath."/.vim/.swp//"    
+" 统一放置undo文件
+exec "set undodir=".s:vimConfigPath."/.vim/.undo//"      
 
 " ======= 编辑配置 =======
 set autoindent                  " 自动缩进
