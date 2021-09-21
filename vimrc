@@ -335,7 +335,7 @@ command! -n=0 -complete=dir -bar FY :call FanYi()
 " 设置vundle 运行环境和路径
 exec "set rtp+=".s:vimConfigPath.'/.vim/bundle/Vundle.vim'
 
-call vundle#begin()           " 插件列表开始
+call vundle#begin(s:vimConfigPath.'/.vim/bundle')           " 插件列表开始
   Plugin 'VundleVim/Vundle.vim' " 必须
   Plugin 'preservim/nerdtree', { 'on': 'NERDTreeToggle' } " 文件树
   Plugin 'Xuyuanp/nerdtree-git-plugin' " git状态显示
