@@ -56,6 +56,10 @@
 " quickref 快速索引，目录
 " popup 弹出层，深入一下很重要，但内容太多
 "
+" ======= 全局配置 =======
+" 插件，临时文件路径
+let s:vimConfigPath = "/opt"
+
 " ======= 兼容配置 =======
 " :options 显示所有配置项
 " 按回车可以跳转
@@ -118,9 +122,9 @@ set suffixesadd=.js,.vue,.jsx,.css,.json
 set history=1000                " 保存操作历史
 set undofile                    " 设置undo的文件，关闭后重新打开还能够撤销
 
-set backupdir=~/.vim/.backup//  " 统一放置备份文件 // 表示文件带有绝对路径，用%替换/
-set directory=~/.vim/.swp//     " 统一放置交换文件
-set undodir=~/.vim/.undo//      " 统一放置undo文件
+set backupdir=s:vimConfigPath."/.vim/.backup//"  " 统一放置备份文件 // 表示文件带有绝对路径，用%替换/
+set directory=s:vimConfigPath."/.vim/.swp//"    " 统一放置交换文件
+set undodir=s:vimConfigPath."/.vim/.undo//"      " 统一放置undo文件
 
 " ======= 编辑配置 =======
 set autoindent                  " 自动缩进
@@ -171,6 +175,10 @@ filetype indent on              " 文件类型检查
 
 if filereadable("/etc/vim/vimrc.local")
   source /etc/vim/vimrc.local " 如果文件存在,加载全局配置文件
+endif
+
+if filereadable(s:vimConfigPath.'/.vim/.vimrc')
+  source s:vimConfigPath."/.vim/.vimrc"
 endif
 
 if filereadable('~/.vim/.vimrc')
@@ -323,7 +331,7 @@ command! -n=0 -complete=dir -bar SetTemplate :call SetTemplate()
 command! -n=0 -complete=dir -bar FY :call FanYi()
 
 " ======= 插件配置 =======
-set rtp+=~/.vim/bundle/Vundle.vim   " 设置vundle 运行环境和路径
+set rtp+=s:vimConfigPath.'/.vim/bundle/Vundle.vim'   " 设置vundle 运行环境和路径
 call vundle#begin()           " 插件列表开始
   Plugin 'VundleVim/Vundle.vim' " 必须
   Plugin 'preservim/nerdtree', { 'on': 'NERDTreeToggle' } " 文件树
@@ -365,10 +373,10 @@ call vundle#end()             " 插件列表结束
 let g:gutentags_project_root = ['.svn', '.git']
 " 所生成的数据文件的名称
 let g:gutentags_ctags_tagfile = '.tags'
-" 将自动生成的 tags 文件全部放入 ~/.cache/tags 目录中，避免污染工程目录
-let s:vim_tags = expand('~/.cache/tags')
+" 将自动生成的 tags 文件全部放入 /opt/.cache/tags 目录中，避免污染工程目录
+let s:vim_tags = expand(s:vimConfigPath.'/.cache/tags')
 let g:gutentags_cache_dir = s:vim_tags
-" 检测 ~/.cache/tags 不存在就新建 
+" 检测 /opt/.cache/tags 不存在就新建 
 if !isdirectory(s:vim_tags)
    silent! call mkdir(s:vim_tags, 'p')
 endif
