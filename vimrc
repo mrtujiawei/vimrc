@@ -332,7 +332,8 @@ command! -n=0 -complete=dir -bar FY :call FanYi()
 
 " ======= 插件配置 =======
 " set rtp+=s:vimConfigPath.'/.vim/bundle/Vundle.vim'   " 设置vundle 运行环境和路径
-exec "set rtp+=".s:vimConfigPath.'/.vim/bundle/Vundle.vim'   " 设置vundle 运行环境和路径
+" 设置vundle 运行环境和路径
+exec "set rtp+=".s:vimConfigPath.'/.vim/bundle/Vundle.vim'
 
 call vundle#begin()           " 插件列表开始
   Plugin 'VundleVim/Vundle.vim' " 必须
