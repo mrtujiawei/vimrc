@@ -331,7 +331,9 @@ command! -n=0 -complete=dir -bar SetTemplate :call SetTemplate()
 command! -n=0 -complete=dir -bar FY :call FanYi()
 
 " ======= 插件配置 =======
-set rtp+=s:vimConfigPath.'/.vim/bundle/Vundle.vim'   " 设置vundle 运行环境和路径
+" set rtp+=s:vimConfigPath.'/.vim/bundle/Vundle.vim'   " 设置vundle 运行环境和路径
+exec "set rtp+=".s:vimConfigPath.'/.vim/bundle/Vundle.vim'   " 设置vundle 运行环境和路径
+
 call vundle#begin()           " 插件列表开始
   Plugin 'VundleVim/Vundle.vim' " 必须
   Plugin 'preservim/nerdtree', { 'on': 'NERDTreeToggle' } " 文件树
