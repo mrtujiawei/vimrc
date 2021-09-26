@@ -1,0 +1,778 @@
+"
+" 通过gd（跳转到函数声明）, 
+" gy（跳转到类型声明）, 
+" gi（跳转到函数/类型实现）, 
+" gr（查找所有函数/类型的引用并跳转）, 
+" ctrl+o（返回之前位置）
+" 键映射
+"	:map		普通，可视模式及操作符等待模式
+"	:vmap		可视模式
+"	:nmap		普通模式
+"	:omap		操作符等待模式
+"	:map!		插入和命令行模式
+"	:imap		插入模式
+"	:cmap		命令行模式
+"
+" :noremap	普通，可视和操作符等待模式
+" :vnoremap	可视模式
+" :nnoremap	普通模式
+" :onoremap	操作符等待模式
+" :noremap!	插入和命令行模式
+" :inoremap	插入模式
+" :cnoremap	命令行模式
+"
+" map 自动补全行为
+"
+" usr_40
+" 定义命令行命令
+" :command
+"	-nargs=0	无参数
+"	-nargs=1	一个参数
+"	-nargs=*	任意数目的参数
+"	-nargs=?	没有或一个参数
+"	-nargs=+	一个或更多参数
+"
+" 自动命令
+" :autocmd [group] {events} {file_pattern} [nested] {command}
+"
+" 内置函数 usr_41, 这里包含了vimrc的大部分信息
+" range 函数内部变量 a:firstline a:lastline 
+" 可变参数 ... a:1 a:2...
+"
+" $VIMRUNTIME 有一些自带的差价和配置，在这个目录下
+" vsp $VIMRUNTIME/ + tab 可以显示具体路径
+"
+" install 安装 usr_90
+" 
+" buffer-variable    b:	  局部于当前缓冲区。
+" window-variable    w:	  局部于当前窗口。
+" tabpage-variable   t:	  局部于当前标签页。
+" global-variable    g:	  全局。
+" local-variable     l:	  局部于函数。
+" script-variable    s:	  局部于 |:source| 的 Vim 脚本。
+" function-argument  a:	  函数参数 (只限于函数内使用)。
+" vim-variable       v:	  Vim 预定义的全局变量。
+"
+"
+" eval 一些内部常量，函数
+" index 常用操作,类似目录
+" message 错误类型在这里找
+" options 所有配置项
+" quickref 快速索引，目录
+" popup 弹出层，深入一下很重要，但内容太多
+"
+" ======= 兼容配置 =======
+" :options 显示所有配置项
+" 按回车可以跳转
+" let g:skip_defaults_vim = 1 " 取消加载defaults.vim
+" set compatible 	      	    " 兼容vi 不推荐
+runtime! debian.vim           " 兼容性设置 尽量不要删除
+runtime! ftplugin/man.vim     " 方便使用man
+set nocompatible              " 不兼容vi
+" Vundle 好像不让开
+filetype on
+" 让Esc的生效更快捷
+set ttimeout
+set ttimeoutlen=100
+
+" ======= 页面配置 =======
+set number                    " 显示行号
+set relativenumber            " 显示相对行号
+
+set textwidth=1000000         " 超过后加换行符
+set wrap                      " 多行显示 不加换行符
+set scrolloff=5               " 上下间距
+set sidescrolloff=15          " 横向滚动时空出的行数
+set wrapmargin=2              " 折行处与窗口右边缘空出的字符
+
+" 终端彩色支持
+" setenv TERM xterm-color
+" TERM=xterm-color; export TERM
+"	term		黑白终端的属性
+"	cterm		彩色终端的属性
+"	ctermfg		彩色终端的前景色
+"	ctermbg		彩色终端的背景色
+"	gui		GUI 版本属性
+"	guifg		GUI 版本的前景色
+"	guibg		GUI 版本的背景色
+set t_Co=256                  " 256色
+set termguicolors             " 更好看一点,会导致代码提示非常的亮眼 --。 眼睛会瞎
+set background=dark           " 深色背景
+
+set laststatus=2              " 状态栏 0 -> 不显示 1 -> 多窗口显示 2 -> 显示
+set ruler                     " 显示光标当前位置
+set showcmd                   " 显示操作命令
+set showmode                  " 现实模式
+set splitbelow                " 上下分割时显示在下边
+set splitright                " 光标直接在右边
+
+" ======= 搜索配置 =======
+" set complete+=                " 补全配置
+set hlsearch                  " 高亮匹配
+set ignorecase	              " 搜索忽略大小写
+set incsearch		              " 搜索时自动滚动屏幕到匹配的行
+set showmatch		              " 显示匹配的字符
+set smartcase		              " 没有大小写区别时忽略大小写，否则不忽略
+
+" ======= 文件配置 =======
+set autochdir                   " 自动切换到当前文件夹下
+" set autowrite	  	            " 切换缓冲区时自动保存
+set encoding=utf-8              " 文件编码 utf-8
+set hidden		                  " 允许有未保存的修改时可以切换缓冲区
+set suffixesadd=.js,.vue,.jsx,.css,.json
+set history=1000                " 保存操作历史
+set undofile                    " 设置undo的文件，关闭后重新打开还能够撤销
+
+set backupdir=~/.vim/.backup//  " 统一放置备份文件 // 表示文件带有绝对路径，用%替换/
+set directory=~/.vim/.swp//     " 统一放置交换文件
+set undodir=~/.vim/.undo//      " 统一放置undo文件
+
+" ======= 编辑配置 =======
+set autoindent                  " 自动缩进
+set autoread                    " 文件监视，修改后提示
+
+" 主配置文件中有效，不加载默认配置
+" let skip_defaults_vim = 1 
+" 可以删除行首空白字符，换行符，插入模式开始处之前的字符
+" set backspace=indent,eol,start
+set backspace=2                 " backspace可以删除到上一行
+" set cursorline                  " 高亮当前行,下面有配置，插入模式不高亮
+" set cursorcolumn              " 高亮当前列,下面有配置，插入模式不高亮
+set clipboard=unnamedplus       " 直接使用系统剪切板 需要安装vim-gtk
+set expandtab                   " tab转space
+set foldenable                  " 允许折叠
+set foldmethod=indent           " 手动折叠
+set foldlevel=10                " 超过10层自动折叠
+set smartindent                 " 智能缩进
+set mouse=a		                  " 支持鼠标操作
+set shiftwidth=2                " tab宽度
+set softtabstop=2               " 连续的space当成tab来看，可以同时删
+set tabstop=2                   " \t的宽度
+set wildmenu                    " 命令模式下,tab补全
+set wildmode=longest:list,full  " 第一次显示列表，之后依次选下一个
+" set wildignore                  " 忽略文件
+" set showbreak=\ \ \ \ \ \ \ \ " 换行之前加8个空格
+
+" ======= 快捷键配置 =======
+set magic
+nmap <C-K><C-B> :NERDTreeToggle<CR>
+map <C-l> :tabnext<CR>
+map <C-h> :tabprevious<CR>
+
+" ======= 快捷键配置 =======
+" func Eatchar(pat)
+"    let c = nr2char(getchar(0))
+"    return (c =~ a:pat) ? '' : c
+" endfunc
+" iabbr <silent> if if ()<Left><C-R>=Eatchar('\s')<CR>
+iabbr rcc import { memo,} from 'react';<CR><CR>
+      \const Comp = () => {
+      \<CR>return (<CR>null);
+      \};<CR><CR>
+      \export default memo(Comp);<Esc>/Comp<C-R>
+
+" ======= 脚本配置 =======
+filetype indent on              " 文件类型检查
+
+if filereadable("/etc/vim/vimrc.local")
+  source /etc/vim/vimrc.local " 如果文件存在,加载全局配置文件
+endif
+
+if filereadable('~/.vim/.vimrc')
+  source ~/.vim/.vimrc
+endif
+
+if has("syntax")
+  syntax on " 开启语法高亮
+endif
+
+if has("autocmd")
+  filetype plugin indent on " 加载插件自动缩进规则
+  " 第二次打开回到上次编辑的位置
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif 
+  " 进入插入模式取消高亮
+  " au InsertEnter * se nocul " 用浅色高亮当前行
+  " au InsertLeave * se cul   " 用浅色高亮当前行
+  " au InsertEnter * se nocuc " 用浅色高亮当前列
+  " au InsertLeave * se cuc   " 用浅色高亮当前列
+  au BufNewFile * :call SetTemplate()
+  au FileType * :call SetRunCommand()
+endif
+
+" ======= 函数定义 =======
+
+" 页面模板
+func SetTemplate()
+  " 搞笑
+  " * 本人学识渊博、经验丰富，代码风骚、效率恐怖，
+  " * c/c++ c#、java、php 安卓 ios  python node.js  无不精通玩转，
+  " * 熟练掌握各种框架，并自写语言，创操作系统 写cpu处理器构架，做指令集成  。
+  " * 深山苦练20余年，一天只睡3小时，千里之外定位问题，瞬息之间修复上线。
+  " * 身体强壮、健步如飞，可连续工作100小时不休息，讨论技术方案9小时不喝水，
+  " * 上至研发cpu芯片、带项目、出方案  弄计划，下至盗账号、黑网站、
+  " * shell提权挂马、攻击同行、拍片摄影、泡妞把妹纸、开挖掘机 、威胁pm，啥都能干。
+  " * 泡面矿泉水已备好，学校不支持已辍学，家人不支持已断绝关系，老婆不支持已离婚，
+  " * 小孩不支持已送孤儿院，备用电源万兆光纤永不断电断网，门口已埋地雷无人打扰
+  if &filetype == 'sh'
+
+    " #!/bin/bash
+    " #Filename: index.sh
+    " #Author: Mr Prince
+    " #Date: 2020-09-02 14:04:37
+
+    call setline(1,"\#!/bin/bash") 
+    call append(line("."), "\#Filename: ".expand("%")) 
+    call append(line(".")+1, "\#Author: Mr Prince") 
+    call append(line(".")+2, "\#Date: ".strftime("%Y-%m-%d %T")) 
+    call append(line(".")+3, "")
+    normal G
+  elseif &filetype == 'javascript' || 'typescript' == &filetype || 'typescriptreact' == &filetype
+
+    " /**
+    "  * 
+    "  * @filename: index.js
+    "  * @author: Mr Prince
+    "  * @date: 2020-09-02 14:05:08
+    "  */
+
+    call setline(1, "\/**")
+    call append(line("."), "\ * ")
+    call append(line(".")+1, "\ * @filename: ".expand("%"))
+    call append(line(".")+2, "\ * @author: Mr Prince")
+    call append(line(".")+3, "\ * @date: ".strftime("%Y-%m-%d %T"))
+    call append(line(".")+4, "\ */")
+    call append(line(".")+5, "")
+    normal 2ggA
+  elseif &filetype == 'vue'
+
+    " <template>
+    " 
+    " </template>
+    " 
+    " <script>
+    " 
+    " </script>
+
+    call setline(1, "\<template>")
+    call append(line("."), "")
+    call append(line(".")+1, "</template>")
+    call append(line(".")+2, "")
+    call append(line(".")+3, "<script>")
+    call append(line(".")+4, "")
+    call append(line(".")+5, "</script>")
+    normal 2ggA
+  endif
+endfunc
+
+" 设置运行快捷键的命令
+func SetRunCommand()
+  if &filetype == 'sh'
+    nmap <C-B> :w<CR>:!sh % > /tmp/vim.run.log<CR>:vsp /tmp/vim.run.log<CR>
+  elseif 'javascript' == &filetype
+    nmap <C-B> :w<CR>:!node % <CR>
+  elseif 'html' == &filetype
+    nmap <C-B> :w<CR>:!google-chrome-stable %<CR>
+  elseif 'java' == &filetype
+    nmap <C-B> :w<CR>:!javac % && java %:r<CR>
+  elseif 'go' == &filetype
+    nmap <C-B> :w<CR>:!go run %<CR>
+  endif
+  imap <C-B> <ESC><C-B>
+endfunc
+
+" 文件自动保存到本地
+func Commit(operate, message)
+  :w
+  exec ":!git add ".expand('%')." && git commit -m  ".'"'.a:operate.'('.expand('%:p').'):'.a:message.'"'
+endfunc
+
+" 提交到远程分支
+func Push()
+  :!git push
+endfunc
+
+" 本地打包测试
+function BuildTest() 
+  :!yarn build:test 
+endfunc
+
+" 本地打包线上
+function Build()
+  :!yarn build 
+endfunc
+
+" 运行测试代码
+function Test()
+  :!yarn test
+endfunc
+
+" 在右侧打开终端
+function VerticalTerminal()
+  :vertical terminal
+endfunc
+
+" 翻译当前光标下的单词
+function FanYi()
+  execute '!fanyi '.expand('<cword>')
+endfunc
+
+" ======= 自定义命令 =======
+
+command! -n=+ -complete=dir -bar GitCommit :call Commit(<f-args>)
+command! -n=0 -complete=dir -bar GitPush :call Push()
+command! -n=0 -complete=dir -bar BuildTest :call BuildTest()
+command! -n=0 -complete=dir -bar Build :call Build()
+command! -n=0 -complete=dir -bar Test :call Test()
+command! -n=0 -complete=dir -bar T :call VerticalTerminal()
+command! -n=0 -complete=dir -bar SetTemplate :call SetTemplate()
+command! -n=0 -complete=dir -bar FY :call FanYi()
+
+" ======= 插件配置 =======
+set rtp+=~/.vim/bundle/Vundle.vim   " 设置vundle 运行环境和路径
+call vundle#begin()           " 插件列表开始
+  Plugin 'VundleVim/Vundle.vim' " 必须
+  Plugin 'preservim/nerdtree', { 'on': 'NERDTreeToggle' } " 文件树
+  Plugin 'Xuyuanp/nerdtree-git-plugin' " git状态显示
+  Plugin 'mhinz/vim-signify' " 差异显示(文件)
+  Plugin 'rhysd/conflict-marker.vim' " git冲突解决
+  Plugin 'mattn/emmet-vim' " emmet插件
+  Plugin 'hail2u/vim-css3-syntax' " css3
+  Plugin 'jiangmiao/auto-pairs' " 括号匹配
+  Plugin 'neoclide/coc.nvim', {'branch': 'release'} " 代码补全
+  Plugin 'maxmellon/vim-jsx-pretty' " jsx语法高亮
+  Plugin 'vimcn/vimcdoc', {'branch': 'release'}  " 中文文档
+  " Plugin 'vim-airline/vim-airline'        " 状态栏美化
+  " Plugin 'vim-airline/vim-airline-themes' " 状态栏美化
+  Plugin 'airblade/vim-gitgutter'         " 状态栏 git 信息
+  Plugin 'leafgarland/typescript-vim'     " typescript语法高亮
+  " Plugin 'ludovicchabant/vim-gutentags'   " tag管理,异步更新tag
+  Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } } " 搜索
+  Plugin 'junegunn/fzf.vim'
+  Plugin 'godlygeek/tabular'              " markdown 表格
+  " Plugin 'mg979/vim-visual-multi', {'branch': 'master'} " 多光标选中及编辑
+call vundle#end()             " 插件列表结束
+
+" vim-multiple-cursors 配置
+" let g:multi_cursor_use_default_mapping=0
+" 
+" " Default mapping
+" let g:multi_cursor_start_word_key      = '<C-d>'
+" " let g:multi_cursor_select_all_word_key = '<A-n>'
+" " let g:multi_cursor_start_key           = 'g<C-n>'
+" " let g:multi_cursor_select_all_key      = 'g<A-n>'
+" " let g:multi_cursor_next_key            = '<C-n>'
+" " let g:multi_cursor_prev_key            = '<C-p>'
+" " let g:multi_cursor_skip_key            = '<C-x>'
+" " let g:multi_cursor_quit_key            = '<Esc>'
+
+" gutentags 配置
+" 搜索工程目录的标志，碰到这些文件/目录名就停止向上一级目录递归
+" let g:gutentags_project_root = ['.svn', '.git', 'node_modules', 'package.json']
+" " 所生成的数据文件的名称
+" let g:gutentags_ctags_tagfile = '.tags'
+" " 将自动生成的 tags 文件全部放入 ~/.cache/tags 目录中，避免污染工程目录
+" let s:vim_tags = expand('~/.cache/tags')
+" let g:gutentags_cache_dir = s:vim_tags
+" " 检测 ~/.cache/tags 不存在就新建 
+" if !isdirectory(s:vim_tags)
+"    silent! call mkdir(s:vim_tags, 'p')
+" endif
+" 
+" " 配置 ctags 的参数 "
+" let g:gutentags_ctags_extra_args = [
+"       \ '--fields=+niazS', '--extra=+q', 
+"       \ '--javascript-kinds=+fcmpvgc', 
+"       \ '--typescript-kinds=+fcmpvgc', 
+"       \ '--typescriptreact-kinds=+fcmpvgc',
+"       \ '--vue-kinds=+fcmpvgc',
+"       \ ]
+
+" 过滤文件及文件夹
+" node_modules 太大了，还是手动跳进去吧
+" public,test,prod 是因为dll,大概率不会碰到
+" let g:gutentags_ctags_extra_args += ['--exclude=node_modules', '--exclude=public', '--exclude=prod', '--exclude=test']
+
+" ctags支持多个语言,如下c
+" let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
+
+" 显示窗口tab和buffer
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#alt_sep = 1
+let g:airline#extensions#tabline#left_sep = ''
+let g:airline#extensions#tabline#left_alt_sep = ''
+let g:airline#extensions#tabline#right_sep = ''
+let g:airline#extensions#tabline#right_alt_sep = ''
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+let g:airline#extensions#tabline#show_tab_nr = 1
+let g:airline#extensions#tabline#tab_nr_type = 2
+let g:airline#extensions#tabline#buffers_label = ''
+let g:airline#extensions#tabline#tabs_label = 'Tabs'
+let g:airline#extensions#tabline#overflow_marker = '…'
+let g:airline#extensions#tabline#formatter = 'default'
+
+" 自动检测插件是否安装
+let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-html', 'coc-css', 'coc-vetur']
+
+" nerdtree-git-plugin 配置
+" 如果只有一个NERDTree窗口，就直接关闭
+let g:NERDTreeShowLineNumbers=1
+let g:NERDTreeGitStatusUseNerdFonts = 1
+let g:NERDTreeGitStatusShowIgnored = 0
+let g:NERDTreeIgnore=['node_modules']
+
+let g:NERDTreeGitStatusIndicatorMapCustom = {
+   \ 'Modified'  :'✹',
+   \ 'Staged'    :'✚',
+   \ 'Untracked' :'✭',
+   \ 'Renamed'   :'➜',
+   \ 'Unmerged'  :'═',
+   \ 'Deleted'   :'✖',
+   \ 'Dirty'     :'✗',
+   \ 'Ignored'   :'☒',
+   \ 'Clean'     :'✔︎',
+   \ 'Unknown'   :'?',
+   \ }
+" 可以进vim 直接打开侧边栏，但不好用
+" 如果是由一个用户窗口就直接关闭vim
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" au vimenter * NERDTree " 进文件自动打开文件目录
+
+" coc 配置 
+set updatetime=300
+set shortmess+=c
+" 始终显示列
+if has("patch-8.1.1564")
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
+
+" 使用tab切换选项
+inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" 手动触发代码提示
+" 需要在插入模式下
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
+
+" 使用回车选中
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
+
+" 高亮关键字及其对应的声明和使用的地方
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
+
+" Formatting selected code.
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
+augroup mygroup
+  autocmd!
+  " Setup formatexpr specified filetype(s).
+  autocmd FileType typescript,typescriptreact,json setl formatexpr=CocAction('formatSelected')
+  " Update signature help on jump placeholder.
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup end
+
+" Applying codeAction to the selected region.
+" Example: `<leader>aap` for current paragraph
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+" Remap keys for applying codeAction to the current buffer.
+nmap <leader>ac  <Plug>(coc-codeaction)
+" Apply AutoFix to problem on the current line.
+nmap <leader>qf  <Plug>(coc-fix-current)
+
+" Map function and class text objects
+" NOTE: Requires 'textDocument.documentSymbol' support from the language server.
+xmap if <Plug>(coc-funcobj-i)
+omap if <Plug>(coc-funcobj-i)
+xmap af <Plug>(coc-funcobj-a)
+omap af <Plug>(coc-funcobj-a)
+xmap ic <Plug>(coc-classobj-i)
+omap ic <Plug>(coc-classobj-i)
+xmap ac <Plug>(coc-classobj-a)
+omap ac <Plug>(coc-classobj-a)
+
+" Remap <C-f> and <C-b> for scroll float windows/popups.
+if has('nvim-0.4.0') || has('patch-8.2.0750')
+  nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+  nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+  inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+  inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+  vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+  vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+endif
+
+" Use CTRL-S for selections ranges.
+" Requires 'textDocument/selectionRange' support of language server.
+nmap <silent> <C-s> <Plug>(coc-range-select)
+xmap <silent> <C-s> <Plug>(coc-range-select)
+
+" Add `:Format` command to format current buffer.
+command! -nargs=0 Format :call CocAction('format')
+
+" Add `:Fold` command to fold current buffer.
+command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+
+" Add `:OR` command for organize imports of the current buffer.
+command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+
+" Add (Neo)Vim's native statusline support.
+" NOTE: Please see `:h coc-status` for integrations with external plugins that
+" provide custom statusline: lightline.vim, vim-airline.
+
+" Mappings for CoCList
+" Show all diagnostics.
+nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
+" Manage extensions.
+nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
+" Show commands.
+nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
+" Find symbol of current document.
+nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
+" Search workspace symbols.
+nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
+" Do default action for next item.
+nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
+" Do default action for previous item.
+nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
+" Resume latest coc list.
+nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+" 改用插件了，暂时用不上
+" 其实这个挺好看的
+" set statusline=
+set statusline+=%1*\[%n]                                  "buffernr
+set statusline+=%2*\ %<%F\                                 "文件路径
+set statusline+=%3*\ %y\                                   "文件类型
+set statusline+=%4*\ %{''.(&fenc!=''?&fenc:&enc).''}       "编码1
+set statusline+=%{(&bomb?\",BOM\":\"\")}\                 "编码2
+set statusline+=%#TabLine#%{coc#status()}%{get(b:,'coc_current_function','')} " 代码提示服务
+set statusline+=%5*\ %=\ %6*\ row:%l/%L\ (%03p%%)\        "光标所在行号/总行数 (百分比)
+set statusline+=%7*\ col:%03c\                            "光标所在列
+" 设置git状态
+function! GitStatus()
+  let [a,m,r] = GitGutterGetHunkSummary()
+  return printf('+%d ~%d -%d ', a, m, r)
+endfunction
+set statusline+=%8*\ %{GitStatus()}
+set statusline+=%9*\ %m%r%w\                            "修改? 只读? 保存?
+
+" %{n}* 使用
+hi user1    cterm=none    ctermfg=black  ctermbg=cyan    gui=none guibg=#840c0c guifg=#ffffff
+hi user2    cterm=none    ctermfg=white  ctermbg=yellow  gui=none guibg=#ffff77 guifg=black
+hi user3    cterm=none    ctermfg=white  ctermbg=blue    gui=none guibg=#d59159 guifg=black
+hi user4    cterm=none    ctermfg=white  ctermbg=green   gui=none guibg=#8d6c47 guifg=black
+hi user5    cterm=none    ctermfg=black  ctermbg=cyan    gui=none guibg=#3a406e guifg=#000000
+hi user6    cterm=bold    ctermbg=white  ctermfg=black   gui=none guibg=#acff84 guifg=black
+hi user7    cterm=none    ctermbg=white  ctermfg=yellow  gui=none guibg=#77cf77 guifg=black
+hi user8    cterm=none    ctermbg=white  ctermfg=yellow  gui=none guibg=#66b06f guifg=black
+hi user9    cterm=none    ctermbg=white  ctermfg=yellow  gui=none guibg=#60af9f guifg=black
+
+" %#RightArror# 这样来使用
+" set statusline+=%#RightArror#▶
+hi RightArror   cterm=none    ctermfg=yellow  ctermbg=cyan    gui=none guibg=#ffff77 guifg=#840c0c gui=bold
+
+" 提示相关颜色
+hi Pmenu    ctermfg=black ctermbg=gray                            guibg=#333333
+hi PmenuSel ctermfg=7     ctermbg=4                      gui=none guibg=#444444 guifg=#ffffff
+
+hi TabLineSel   cterm=none    ctermfg=yellow  ctermbg=cyan    gui=none guibg=#ffff77 guifg=#840c0c gui=bold
+hi TabLine    cterm=none    ctermbg=white  ctermfg=yellow  gui=none guibg=#60af9f guifg=black
+hi TabLineFill    cterm=none    ctermbg=white  ctermfg=yellow  gui=none guibg=#77cf77 guifg=black
+
+set tabline=%!MyTabLine()
+function MyTabLine()
+    let s = ''
+    for i in range(tabpagenr('$'))
+        " select the highlighting
+        if i + 1 == tabpagenr()
+            let s .= '%#TabLineSel#'
+        else
+            let s .= '%#TabLine#'
+        endif
+
+        " set the tab page number (for mouse clicks)
+        let s .= '%' . (i + 1) . 'T'
+
+        " the label is made by MyTabLabel()
+        let s .= '%{MyTabLabel(' . (i + 1) . ')}'
+    endfor
+
+    " after the last tab fill with TabLineFill and reset tab page nr
+    let s .= '%#TabLineFill#%T'
+
+    " right-align the label to close the current tab page
+    if tabpagenr('$') > 1
+        let s .= '%=%#TabLine#%999XX'
+    endif
+
+    return s
+endfunction
+function MyTabLabel(n)
+    let buflist = tabpagebuflist(a:n)
+    let winnr = tabpagewinnr(a:n)
+
+    " Add '+' if one of the buffers in the tab page is modified
+    let label = ''
+    for bufnr in buflist
+        if getbufvar(bufnr, "&modified")
+            let label = '+'
+            break
+        endif
+    endfor 
+
+    "添加tabpage序号,方便ngt切换
+    let bg=['☰','☱','☲','☳','☴','☵','☶','☷'][(a:n-1)%8]
+    return '  🐶['.a:n.label.']'.pathshorten(bufname(buflist[winnr - 1])).' '
+endfunction
+
+" hi Normal       guifg=#e2e2e5 guibg=#202020 gui=none ctermfg=253 ctermbg=234
+" "hi Normal ctermbg=DarkGrey ctermfg=White guifg=White guibg=grey20
+" 
+" " Groups used in the 'highlight' and 'guicursor' options default value.
+" hi ErrorMsg term=standout ctermbg=DarkRed ctermfg=White guibg=Red guifg=White
+" hi IncSearch term=reverse cterm=reverse gui=reverse
+" hi ModeMsg term=bold cterm=bold gui=bold
+" hi StatusLine term=reverse,bold cterm=reverse,bold gui=reverse,bold
+" hi StatusLineNC term=reverse cterm=reverse gui=reverse
+" hi VertSplit term=reverse cterm=reverse gui=reverse
+" hi Visual term=reverse cterm=reverse ctermbg=black guibg=grey60
+" hi VisualNOS term=underline,bold cterm=underline,bold gui=underline,bold
+" hi DiffText term=reverse cterm=bold ctermbg=Red gui=bold guibg=Red
+" hi Cursor guibg=Green guifg=Black
+" hi lCursor guibg=Cyan guifg=Black
+" "hi Directory term=bold ctermfg=LightCyan guifg=Cyan
+" hi Directory term=bold ctermfg=lightblue guifg=Cyan
+" hi LineNr term=underline ctermfg=black ctermfg=darkgrey guifg=Yellow
+" hi MoreMsg term=bold ctermfg=LightGreen gui=bold guifg=SeaGreen
+" hi NonText term=bold ctermfg=LightBlue gui=bold guifg=LightBlue guibg=grey30
+" hi Question term=standout ctermfg=LightGreen gui=bold guifg=Green
+" hi Search term=reverse ctermbg=Yellow ctermfg=Black guibg=Yellow guifg=Black
+" hi SpecialKey term=bold ctermfg=LightBlue guifg=Cyan
+" hi Title term=bold ctermfg=LightMagenta gui=bold guifg=Magenta
+" hi WarningMsg term=standout ctermfg=LightRed guifg=Red
+" hi WildMenu term=standout ctermbg=Yellow ctermfg=Black guibg=Yellow guifg=Black
+" hi Folded term=standout ctermbg=LightGrey ctermfg=DarkBlue guibg=LightGrey guifg=DarkBlue
+" hi FoldColumn term=standout ctermbg=LightGrey ctermfg=DarkBlue guibg=Grey guifg=DarkBlue
+" hi DiffAdd term=bold ctermbg=DarkBlue guibg=DarkBlue
+" hi DiffChange term=bold ctermbg=DarkMagenta guibg=DarkMagenta
+" hi DiffDelete term=bold ctermfg=Blue ctermbg=DarkCyan gui=bold guifg=Blue guibg=DarkCyan
+" "hi CursorColumn term=reverse ctermbg=white guibg=grey40
+" hi CursorColumn ctermbg=238 guibg=grey40
+" hi CursorLine term=underline cterm=underline guibg=grey40
+" 
+" "类型颜色
+" hi Type     term=underline ctermfg=blue guifg=#ffa0a0 guibg=grey5
+" hi Statement term=underline ctermfg=darkgrey guifg=#ffa0a0 guibg=grey5
+" "预处理关键字颜色
+" hi PreProc    guifg=#faf4c6 gui=none ctermfg=blue
+" "数字颜色
+" hi Number     guifg=#ff9800 gui=none ctermfg=208
+" "注释颜色
+" hi Comment    guifg=#808080 gui=italic ctermfg=lightgreen
+" "匹配的内容的颜色
+" hi MatchParen guifg=#d0ffc0  guibg=#2f2f2f gui=bold ctermfg=157 ctermbg=237 cterm=reverse
+" " Groups for syntax highlighting
+" " 宏颜色
+" hi Constant term=underline ctermfg=130 guifg=#ffa0a0 guibg=grey5
+" " 字符串颜色
+" hi String    term=underline ctermfg=white guifg=#ffa0a0 guibg=grey5
+" hi Special term=bold ctermfg=LightRed guifg=Orange guibg=grey5
+" 
+" hi Define guifg=gold gui=bold ctermfg=yellow
+" 
+" " include 颜色
+" "hi Include guifg=red ctermfg=red
+" 
+" " 运算符颜色
+" "hi Operator guifg=gold gui=bold ctermfg=yellow
+" 
+" " 不知道这是配置什么颜色的
+" "hi Identifier guifg=#b1d631 gui=none ctermfg=red
+" "hi Keyword    guifg=#ff9800 gui=none ctermfg=red
+" 
+" if &t_Co > 8
+"   hi Statement term=bold ctermfg=darkblue guifg=#ffff60 gui=bold
+" endif
+" hi Ignore ctermfg=DarkGrey guifg=grey20
+
+
+
+
+
+" 文档里的代码
+" au! CursorHold *.[ch] nested call PreviewWord()
+" func PreviewWord()
+"   if &previewwindow			" don't do this in the preview window
+"     return
+"   endif
+"   let w = expand("<cword>")		" get the word under cursor
+"   if w =~ '\a'			" if the word contains a letter
+" 
+"     " Delete any existing highlight before showing another tag
+"     silent! wincmd P			" jump to preview window
+"     if &previewwindow			" if we really get there...
+"       match none			" delete existing highlight
+"       wincmd p			" back to old window
+"     endif
+" 
+"     " Try displaying a matching tag for the word under the cursor
+"     try
+"        exe "ptag " . w
+"     catch
+"       return
+"     endtry
+" 
+"     silent! wincmd P			" jump to preview window
+"     if &previewwindow		" if we really get there...
+" 	 if has("folding")
+" 	   silent! .foldopen		" don't want a closed fold
+" 	 endif
+" 	 call search("$", "b")		" to end of previous line
+" 	 let w = substitute(w, '\\', '\\\\', "")
+" 	 call search('\<\V' . w . '\>')	" position cursor on match
+" 	 " Add a match highlight to the word at this position
+"       hi previewWord term=bold ctermbg=green guibg=green
+" 	 exe 'match previewWord "\%' . line(".") . 'l\%' . col(".") . 'c\k*"'
+"       wincmd p			" back to old window
+"     endif
+"   endif
+" endfun
