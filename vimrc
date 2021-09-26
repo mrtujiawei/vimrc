@@ -359,7 +359,7 @@ call vundle#begin(s:vimConfigPath.'/.vim/bundle')           " 插件列表开始
   " Plugin 'vim-airline/vim-airline-themes' " 状态栏美化
   Plugin 'airblade/vim-gitgutter'         " 状态栏 git 信息
   Plugin 'leafgarland/typescript-vim'     " typescript语法高亮
-  Plugin 'ludovicchabant/vim-gutentags'   " tag管理,异步更新tag
+  " Plugin 'ludovicchabant/vim-gutentags'   " tag管理,异步更新tag
   Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } } " 搜索
   Plugin 'junegunn/fzf.vim'
   Plugin 'godlygeek/tabular'              " markdown 表格
@@ -381,30 +381,30 @@ call vundle#end()             " 插件列表结束
 
 " gutentags 配置
 " 搜索工程目录的标志，碰到这些文件/目录名就停止向上一级目录递归
-let g:gutentags_project_root = ['.svn', '.git', 'node_modules', 'package.json']
-" 所生成的数据文件的名称
-let g:gutentags_ctags_tagfile = '.tags'
-" 将自动生成的 tags 文件全部放入 /opt/.cache/tags 目录中，避免污染工程目录
-let s:vim_tags = expand(s:vimConfigPath.'/.cache/tags')
-let g:gutentags_cache_dir = s:vim_tags
-" 检测 /opt/.cache/tags 不存在就新建 
-if !isdirectory(s:vim_tags)
-   silent! call mkdir(s:vim_tags, 'p')
-endif
-
-" 配置 ctags 的参数 "
-let g:gutentags_ctags_extra_args = [
-      \ '--fields=+niazS', '--extra=+q', 
-      \ '--javascript-kinds=+fcmpvgc', 
-      \ '--typescript-kinds=+fcmpvgc', 
-      \ '--typescriptreact-kinds=+fcmpvgc',
-      \ '--vue-kinds=+fcmpvgc',
-      \ ]
-
-" 过滤文件及文件夹
-" node_modules 太大了，还是手动跳进去吧
-" public,test,prod 是因为dll,大概率不会碰到
-let g:gutentags_ctags_extra_args += ['--exclude=node_modules', '--exclude=public', '--exclude=prod', '--exclude=test']
+" let g:gutentags_project_root = ['.svn', '.git', 'node_modules', 'package.json']
+" " 所生成的数据文件的名称
+" let g:gutentags_ctags_tagfile = '.tags'
+" " 将自动生成的 tags 文件全部放入 /opt/.cache/tags 目录中，避免污染工程目录
+" let s:vim_tags = expand(s:vimConfigPath.'/.cache/tags')
+" let g:gutentags_cache_dir = s:vim_tags
+" " 检测 /opt/.cache/tags 不存在就新建 
+" if !isdirectory(s:vim_tags)
+"    silent! call mkdir(s:vim_tags, 'p')
+" endif
+" 
+" " 配置 ctags 的参数 "
+" let g:gutentags_ctags_extra_args = [
+"       \ '--fields=+niazS', '--extra=+q', 
+"       \ '--javascript-kinds=+fcmpvgc', 
+"       \ '--typescript-kinds=+fcmpvgc', 
+"       \ '--typescriptreact-kinds=+fcmpvgc',
+"       \ '--vue-kinds=+fcmpvgc',
+"       \ ]
+" 
+" " 过滤文件及文件夹
+" " node_modules 太大了，还是手动跳进去吧
+" " public,test,prod 是因为dll,大概率不会碰到
+" let g:gutentags_ctags_extra_args += ['--exclude=node_modules', '--exclude=public', '--exclude=prod', '--exclude=test']
 
 " ctags支持多个语言,如下c
 " let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
