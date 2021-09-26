@@ -63,7 +63,20 @@
 "
 " ======= 全局配置 =======
 " 插件，临时文件路径
-let s:vimConfigPath = "/opt"
+" let s:vimConfigPath = "/opt"
+
+let s:utils = {}
+
+function s:utils.checkDir(dir) dict
+  if !isdirectory(a:dir)
+    call mkdir(a:dir, 'p')
+  endif
+endfunction
+
+" 检查临时文件是否存在
+call s:utils.checkDir(expand('~/.vim/.backup'))
+call s:utils.checkDir(expand('~/.vim/.swp'))
+call s:utils.checkDir(expand('~/.vim/.undo'))
 
 " ======= 兼容配置 =======
 " :options 显示所有配置项
@@ -127,12 +140,15 @@ set suffixesadd=.js,.vue,.jsx,.css,.json
 set history=1000                " 保存操作历史
 set undofile                    " 设置undo的文件，关闭后重新打开还能够撤销
 
-" 统一放置备份文件 // 表示文件带有绝对路径，用%替换/
-exec "set backupdir=".s:vimConfigPath."/.vim/.backup//"  
-" 统一放置交换文件
-exec "set directory=".s:vimConfigPath."/.vim/.swp//"    
-" 统一放置undo文件
-exec "set undodir=".s:vimConfigPath."/.vim/.undo//"      
+set backupdir=~/.vim/.backup//  
+set directory=~/.vim/.swp//
+set undodir=~/.vim/.undo//
+
+" exec "set backupdir=".s:vimConfigPath."/.vim/.backup//"  
+" " 统一放置交换文件
+" exec "set directory=".s:vimConfigPath."/.vim/.swp//"    
+" " 统一放置undo文件
+" exec "set undodir=".s:vimConfigPath."/.vim/.undo//"      
 
 " ======= 编辑配置 =======
 set autoindent                  " 自动缩进
@@ -183,10 +199,6 @@ filetype indent on              " 文件类型检查
 
 if filereadable("/etc/vim/vimrc.local")
   source /etc/vim/vimrc.local " 如果文件存在,加载全局配置文件
-endif
-
-if filereadable(s:vimConfigPath.'/.vim/.vimrc')
-  source s:vimConfigPath."/.vim/.vimrc"
 endif
 
 if filereadable('~/.vim/.vimrc')
@@ -341,9 +353,10 @@ command! -n=0 -complete=dir -bar FY :call FanYi()
 " ======= 插件配置 =======
 " set rtp+=s:vimConfigPath.'/.vim/bundle/Vundle.vim'   " 设置vundle 运行环境和路径
 " 设置vundle 运行环境和路径
-exec "set rtp+=".s:vimConfigPath.'/.vim/bundle/Vundle.vim'
+" exec "set rtp+=".s:vimConfigPath.'/.vim/bundle/Vundle.vim'
 
-call vundle#begin(s:vimConfigPath.'/.vim/bundle')           " 插件列表开始
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin(expand('~/.vim/bundle'))           " 插件列表开始
   Plugin 'VundleVim/Vundle.vim' " 必须
   Plugin 'preservim/nerdtree', { 'on': 'NERDTreeToggle' } " 文件树
   Plugin 'Xuyuanp/nerdtree-git-plugin' " git状态显示
