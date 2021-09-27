@@ -39,7 +39,7 @@
 " range 函数内部变量 a:firstline a:lastline 
 " 可变参数 ... a:1 a:2...
 "
-" $VIMRUNTIME 有一些自带的差价和配置，在这个目录下
+" $VIMRUNTIME 有一些自带的插件和配置，在这个目录下
 " vsp $VIMRUNTIME/ + tab 可以显示具体路径
 "
 " install 安装 usr_90
@@ -368,16 +368,16 @@ call vundle#begin(expand('~/.vim/bundle'))           " 插件列表开始
   Plugin 'neoclide/coc.nvim', {'branch': 'release'} " 代码补全
   Plugin 'maxmellon/vim-jsx-pretty' " jsx语法高亮
   Plugin 'vimcn/vimcdoc', {'branch': 'release'}  " 中文文档
-  " Plugin 'vim-airline/vim-airline'        " 状态栏美化
-  " Plugin 'vim-airline/vim-airline-themes' " 状态栏美化
   Plugin 'airblade/vim-gitgutter'         " 状态栏 git 信息
   Plugin 'leafgarland/typescript-vim'     " typescript语法高亮
-  " Plugin 'ludovicchabant/vim-gutentags'   " tag管理,异步更新tag
   Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } } " 搜索
   Plugin 'junegunn/fzf.vim'
   Plugin 'godlygeek/tabular'              " markdown 表格
+  " Plugin 'ludovicchabant/vim-gutentags'   " tag管理,异步更新tag
+  " Plugin 'vim-airline/vim-airline'        " 状态栏美化
+  " Plugin 'vim-airline/vim-airline-themes' " 状态栏美化
   " Plugin 'mg979/vim-visual-multi', {'branch': 'master'} " 多光标选中及编辑
-call vundle#end()             " 插件列表结束
+call vundle#end()           
 
 " vim-multiple-cursors 配置
 " let g:multi_cursor_use_default_mapping=0
