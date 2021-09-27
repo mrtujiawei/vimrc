@@ -437,7 +437,7 @@ let g:airline#extensions#tabline#tabs_label = 'Tabs'
 let g:airline#extensions#tabline#overflow_marker = '…'
 let g:airline#extensions#tabline#formatter = 'default'
 
-" 自动检测插件是否安装
+" 全局插件，没有安装会自动安装
 let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-html', 'coc-css', 'coc-vetur']
 
 " nerdtree-git-plugin 配置
