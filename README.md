@@ -34,7 +34,7 @@ ctrl+o
 
 ## 键映射 ##
 
-所有map都可以[mode]{nore}map取消二次映射
+所有map都可以通过 `[mode]{nore}map` 取消二次映射
 
 ```vimrc
 
@@ -100,12 +100,13 @@ popup 弹出层，深入一下很重要，但内容太多
 
 ### 变量类型 ###
 
-| :---------------: | :---: | :-------------------: |
-| buffer-variable   | b:    | 局部于当前缓冲区      |
-| window-variable   | w:    | 局部于当前窗口        |
-| tabpage-variable  | t:    | 局部于当前标签页      |
-| global-variable   | g:    | 全局                  |
-| local-variable    | l:    | 局部于函数            |
-| script-variable   | s:    | 局部于脚本            |
-| function-argument | a:    | 函数参数,局部于函数内 |
-| vim-variable      | v:    | Vim 预定义的全局变量  |
+| 变量类型          | 变量修饰 | 变量范围              |
+| ----------------- | -------- | --------------------- |
+| buffer-variable   | b:       | 局部于当前缓冲区      |
+| window-variable   | w:       | 局部于当前窗口        |
+| tabpage-variable  | t:       | 局部于当前标签页      |
+| global-variable   | g:       | 全局                  |
+| local-variable    | l:       | 局部于函数            |
+| script-variable   | s:       | 局部于脚本            |
+| function-argument | a:       | 函数参数,局部于函数内 |
+| vim-variable      | v:       | Vim 预定义的全局变量  |
