@@ -373,7 +373,7 @@ call vundle#begin(expand('~/.vim/bundle'))           " 插件列表开始
   Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } } " 搜索
   Plugin 'junegunn/fzf.vim'
   Plugin 'godlygeek/tabular'              " markdown 表格
-  " Plugin 'ludovicchabant/vim-gutentags'   " tag管理,异步更新tag
+  Plugin 'ludovicchabant/vim-gutentags'   " tag管理,异步更新tag
   " Plugin 'vim-airline/vim-airline'        " 状态栏美化
   " Plugin 'vim-airline/vim-airline-themes' " 状态栏美化
   " Plugin 'mg979/vim-visual-multi', {'branch': 'master'} " 多光标选中及编辑
@@ -394,16 +394,17 @@ call vundle#end()
 
 " gutentags 配置
 " 搜索工程目录的标志，碰到这些文件/目录名就停止向上一级目录递归
-" let g:gutentags_project_root = ['.svn', '.git', 'node_modules', 'package.json']
-" " 所生成的数据文件的名称
-" let g:gutentags_ctags_tagfile = '.tags'
-" " 将自动生成的 tags 文件全部放入 /opt/.cache/tags 目录中，避免污染工程目录
-" let s:vim_tags = expand(s:vimConfigPath.'/.cache/tags')
-" let g:gutentags_cache_dir = s:vim_tags
-" " 检测 /opt/.cache/tags 不存在就新建 
-" if !isdirectory(s:vim_tags)
-"    silent! call mkdir(s:vim_tags, 'p')
-" endif
+let g:gutentags_project_root = ['.svn', '.git', 'node_modules', 'package.json']
+" 所生成的数据文件的名称
+let g:gutentags_ctags_tagfile = 'tags'
+" 将自动生成的 tags 文件全部放入 /opt/.cache/tags 目录中，避免污染工程目录
+let s:vim_tags = expand('~/.cache/tags')
+let g:gutentags_cache_dir = s:vim_tags
+" 检测 ~/.cache/tags 不存在就新建 
+if !isdirectory(s:vim_tags)
+   silent! call mkdir(s:vim_tags, 'p')
+endif
+
 " 
 " " 配置 ctags 的参数 "
 " let g:gutentags_ctags_extra_args = [
