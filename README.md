@@ -68,35 +68,33 @@ cmap
 
 ```vimrc
 :command
--nargs=0	无参数
--nargs=1	一个参数
--nargs=*	任意数目的参数
--nargs=?	没有或一个参数
--nargs=+	一个或更多参数
+-nargs=0	" 无参数
+-nargs=1	" 一个参数
+-nargs=*	" 任意数目的参数
+-nargs=?	" 没有或一个参数
+-nargs=+	" 一个或更多参数
 
 自动命令
 :autocmd [group] {events} {file_pattern} [nested] {command}
 
-内置函数 usr_41, 这里包含了vimrc的大部分信息
-range 函数内部变量 a:firstline a:lastline 
-可变参数 ... a:1 a:2...
-
-$VIMRUNTIME 有一些自带的插件和配置，在这个目录下
-vsp $VIMRUNTIME/ + tab 可以显示具体路径
-
-
-
-
-eval 一些内部常量，函数
-index 常用操作,类似目录
-message 错误类型在这里找
-options 所有配置项
-quickref 快速索引，目录
-popup 弹出层，深入一下很重要，但内容太多
-
 ```
 
 ## vimscript ##
+
+### 目录 ###
+
+`help usr_41` 内置函数 , 这里包含了vimrc的大部分信息
+
+`$VIMRUNTIME` 有一些自带的插件和配置，在这个目录下
+
+`vsp $VIMRUNTIME/` + tab 可以显示具体路径
+
+`eval` 一些内部常量，函数
+`index` 常用操作,类似目录
+`message` 错误类型在这里找
+`options` 所有配置项
+`quickref` 快速索引，目录
+`popup` 弹出层，深入一下很重要，但内容太多
 
 ### 变量类型 ###
 
@@ -110,3 +108,9 @@ popup 弹出层，深入一下很重要，但内容太多
 | script-variable   | s:       | 局部于脚本            |
 | function-argument | a:       | 函数参数,局部于函数内 |
 | vim-variable      | v:       | Vim 预定义的全局变量  |
+
+### 函数 ###
+
+`range` 函数内部变量 `a:firstline` `a:lastline`
+可变参数 ... `a:1` `a:2` ...
+
