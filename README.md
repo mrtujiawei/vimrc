@@ -4,13 +4,17 @@
 
 打算搞一个单独的配置文件和文档
 
-## vim 安装 
+## vim 安装 ##
 
 `help usr_90`
 
 ## 插件查找 ##
 
 [Vim Awesome](https://vimawesome.com/)
+
+## 配置项 ##
+
+查看所以配置项 `options`
 
 ## 代码跳转 ##
 
@@ -61,6 +65,14 @@ cmap
 
 ```
 
+if 自动加()
+```
+func Eatchar(pat)
+   let c = nr2char(getchar(0))
+   return (c =~ a:pat) ? '' : c
+endfunc
+iabbr <silent> if if ()<Left><C-R>=Eatchar('\s')<CR>
+```
 ## 自定义命令行命令 ##
 
 `usr_40`
@@ -114,3 +126,15 @@ cmap
 `range` 函数内部变量 `a:firstline` `a:lastline`
 可变参数 ... `a:1` `a:2` ...
 
+
+### 加载其他脚本 ###
+
+```vimrc
+" 如果文件存在,加载全局配置文件
+
+let path = '/etc/vim/vimrc.local'
+
+if filereadable(path)
+  source path
+endif
+```
