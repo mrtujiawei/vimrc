@@ -132,7 +132,9 @@ if has("autocmd")
   " 可以进vim 直接打开侧边栏
   " 如果是由一个用户窗口就直接关闭vim
   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-  autocmd vimenter * if (-1 != match(expand('%'), 'COMMIT_EDITMSG')) | NERDTree " 进文件自动打开文件目录
+  " 先在提交commit的信息的时候不显示tab,有点麻烦
+  " if (-1 != match(expand('%'), 'COMMIT_EDITMSG')) 
+  autocmd vimenter * NERDTree " 进文件自动打开文件目录
 endif
 
 " ======= 函数定义 =======
