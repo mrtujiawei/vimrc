@@ -68,7 +68,7 @@ cmap
 ```
 
 if 自动加()
-```
+```vim
 func Eatchar(pat)
    let c = nr2char(getchar(0))
    return (c =~ a:pat) ? '' : c
@@ -246,6 +246,7 @@ endif
 hi Ignore ctermfg=DarkGrey guifg=grey20
 
 ```
+
 ### 模板函数 ###
 
 ```vim
