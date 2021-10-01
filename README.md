@@ -42,7 +42,7 @@ ctrl+o
 
 所有map都可以通过 `[mode]{nore}map` 取消二次映射
 
-```vimrc
+```vim
 
 " 普通，可视模式及操作符等待模式
 map		
@@ -131,7 +131,7 @@ iabbr <silent> if if ()<Left><C-R>=Eatchar('\s')<CR>
 
 ### 加载其他脚本 ###
 
-```vimrc
+```vim
 " 如果文件存在,加载全局配置文件
 
 let path = '/etc/vim/vimrc.local'
@@ -146,7 +146,7 @@ endif
 
 设置终端选项
 
-```vimrc
+```vim
 " 终端彩色支持
 " setenv 不一定所有linux版本都支持
 " setenv TERM xterm-color
@@ -157,7 +157,7 @@ TERM=xterm-color
 export TERM
 ```
 
-```vimrc
+```vim
 "	term		黑白终端的属性
 "	cterm		彩色终端的属性
 "	ctermfg		彩色终端的前景色
@@ -169,7 +169,7 @@ export TERM
 
 一堆颜色配置
 
-```vimrc
+```vim
 hi Normal guifg=#e2e2e5 guibg=#202020 gui=none ctermfg=253 ctermbg=234
 hi Normal ctermbg=DarkGrey ctermfg=White guifg=White guibg=grey20
 
@@ -248,7 +248,7 @@ hi Ignore ctermfg=DarkGrey guifg=grey20
 ```
 ### 模板函数 ###
 
-```vimrc
+```vim
 " 文档里的代码,开启预览窗口
 au! CursorHold *.[ch] nested call PreviewWord()
 func PreviewWord()
