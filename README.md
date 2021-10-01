@@ -8,6 +8,8 @@
 
 `help usr_90`
 
+[vim 安装脚本](https://raw.githubusercontent.com/Mr-Promise/shell/main/src/install-vim.sh)
+
 ## 插件查找 ##
 
 [Vim Awesome](https://vimawesome.com/)
