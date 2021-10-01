@@ -129,10 +129,10 @@ if has("autocmd")
   au BufNewFile * :call SetTemplate()
   au FileType * :call SetRunCommand()
 
-  " 可以进vim 直接打开侧边栏，但不好用
+  " 可以进vim 直接打开侧边栏
   " 如果是由一个用户窗口就直接关闭vim
   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-  autocmd vimenter * NERDTree " 进文件自动打开文件目录
+  autocmd vimenter * if (-1 != match(expand('%'), 'COMMIT_EDITMSG')) | NERDTree " 进文件自动打开文件目录
 endif
 
 " ======= 函数定义 =======

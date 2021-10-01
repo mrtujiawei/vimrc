@@ -80,7 +80,7 @@ iabbr <silent> if if ()<Left><C-R>=Eatchar('\s')<CR>
 `usr_40`
 
 
-```vimrc
+```vim
 :command
 -nargs=0	" 无参数
 -nargs=1	" 一个参数
