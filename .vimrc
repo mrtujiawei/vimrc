@@ -13,55 +13,6 @@ function! s:utils.checkDir(dir) dict
   endif
 endfunction
 
-" 标签栏设置
-function! MyTabLine()
-  let s = ''
-  for i in range(tabpagenr('$'))
-    " select the highlighting
-    if i + 1 == tabpagenr()
-      let s .= '%#TabLineSel#'
-    else
-      let s .= '%#TabLine#'
-    endif
-
-    " set the tab page number (for mouse clicks)
-    let s .= '%' . (i + 1) . 'T'
-
-    " the label is made by MyTabLabel()
-    let s .= '%{MyTabLabel(' . (i + 1) . ')}'
-  endfor
-
-  " after the last tab fill with TabLineFill and reset tab page nr
-  let s .= '%#TabLineFill#%T'
-
-  " right-align the label to close the current tab page
-  if tabpagenr('$') > 1
-    let s .= '%=%#TabLine#%999XX'
-  endif
-
-  return s
-endfunction
-
-" 单个标签设置
-function! MyTabLabel(n)
-  let buflist = tabpagebuflist(a:n)
-  let winnr = tabpagewinnr(a:n)
-
-  " Add '+' if one of the buffers in the tab page is modified
-  let label = ''
-  for bufnr in buflist
-    if getbufvar(bufnr, "&modified")
-      let label = '+'
-      break
-    endif
-  endfor 
-
-  "添加tabpage序号,方便ngt切换
-  return '  ['.a:n.label.']'.pathshorten(bufname(buflist[winnr - 1])).' '
-endfunction
-
-set tabline=%!MyTabLine()
-
 " ======= 兼容配置 =======
 " let g:skip_defaults_vim = 1 " 取消加载defaults.vim
 runtime! debian.vim           " 兼容性设置 尽量不要删除
@@ -336,8 +287,8 @@ call vundle#begin(expand('~/.vim/bundle'))           " 插件列表开始
   Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } } " 搜索
   Plugin 'junegunn/fzf.vim'
   Plugin 'ludovicchabant/vim-gutentags'   " tag管理,异步更新tag
-  " Plugin 'vim-airline/vim-airline'        " 状态栏美化
-  " Plugin 'vim-airline/vim-airline-themes' " 状态栏美化
+  Plugin 'vim-airline/vim-airline'        " 状态栏美化
+  Plugin 'vim-airline/vim-airline-themes' " 状态栏美化
   " Plugin 'mg979/vim-visual-multi', {'branch': 'master'} " 多光标选中及编辑
   Plugin 'godlygeek/tabular'              " markdown 表格
   Plugin 'iamcco/markdown-preview.nvim'   " markdown 预览

@@ -289,3 +289,55 @@ func PreviewWord()
   endif
 endfun
 ```
+### 自定义标签栏 ###
+
+```vim
+" 标签栏设置
+function! MyTabLine()
+  let s = ''
+  for i in range(tabpagenr('$'))
+    " select the highlighting
+    if i + 1 == tabpagenr()
+      let s .= '%#TabLineSel#'
+    else
+      let s .= '%#TabLine#'
+    endif
+
+    " set the tab page number (for mouse clicks)
+    let s .= '%' . (i + 1) . 'T'
+
+    " the label is made by MyTabLabel()
+    let s .= '%{MyTabLabel(' . (i + 1) . ')}'
+  endfor
+
+  " after the last tab fill with TabLineFill and reset tab page nr
+  let s .= '%#TabLineFill#%T'
+
+  " right-align the label to close the current tab page
+  if tabpagenr('$') > 1
+    let s .= '%=%#TabLine#%999XX'
+  endif
+
+  return s
+endfunction
+
+" 单个标签设置
+function! MyTabLabel(n)
+  let buflist = tabpagebuflist(a:n)
+  let winnr = tabpagewinnr(a:n)
+
+  " Add '+' if one of the buffers in the tab page is modified
+  let label = ''
+  for bufnr in buflist
+    if getbufvar(bufnr, "&modified")
+      let label = '+'
+      break
+    endif
+  endfor 
+
+  "添加tabpage序号,方便ngt切换
+  return '  ['.a:n.label.']'.pathshorten(bufname(buflist[winnr - 1])).' '
+endfunction
+
+set tabline=%!MyTabLine()
+```
