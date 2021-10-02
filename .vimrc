@@ -1,5 +1,5 @@
 " 我的vim配置
-" Last Change:  2021 Oct 1
+" Last Change:  2021 Oct 2
 " Maintainer:   tujiawei <15988803646@163.com>
 " License:	    This file is placed in the public domain.
 
@@ -153,7 +153,7 @@ nmap <C-K><C-B> :NERDTreeToggle<CR>
 map tn :tabnext<CR>
 map tp :tabprevious<CR>
 
-" ======= 快捷键配置 =======
+" react 快速生成模板
 iabbr rcc import { memo,} from 'react';<CR><CR>
       \const Comp = () => {
       \<CR>return (<CR>null);
@@ -335,11 +335,11 @@ call vundle#begin(expand('~/.vim/bundle'))           " 插件列表开始
   Plugin 'leafgarland/typescript-vim'     " typescript语法高亮
   Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } } " 搜索
   Plugin 'junegunn/fzf.vim'
-  Plugin 'godlygeek/tabular'              " markdown 表格
   Plugin 'ludovicchabant/vim-gutentags'   " tag管理,异步更新tag
   " Plugin 'vim-airline/vim-airline'        " 状态栏美化
   " Plugin 'vim-airline/vim-airline-themes' " 状态栏美化
   " Plugin 'mg979/vim-visual-multi', {'branch': 'master'} " 多光标选中及编辑
+  Plugin 'godlygeek/tabular'              " markdown 表格
   Plugin 'iamcco/markdown-preview.nvim'   " markdown 预览
 call vundle#end()           
 
