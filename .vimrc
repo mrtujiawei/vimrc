@@ -405,28 +405,6 @@ let g:mkdp_filetypes = ['markdown']
 " " Stop the preview
 " :MarkdownPreviewStop
 
-
-" vim-multiple-cursors 配置
-let g:multi_cursor_use_default_mapping=0
-
-" Default mapping
-" let g:multi_cursor_start_word_key      = '<C-n>'
-" let g:multi_cursor_select_all_word_key = '<A-n>'
-" let g:multi_cursor_start_key           = 'g<C-n>'
-" let g:multi_cursor_select_all_key      = 'g<A-n>'
-" let g:multi_cursor_next_key            = '<C-n>'
-" let g:multi_cursor_prev_key            = '<C-p>'
-" let g:multi_cursor_skip_key            = '<C-x>'
-" let g:multi_cursor_quit_key            = '<Esc>'
-
-" custom mapping 貌似部分映射根本不生效
-let g:multi_cursor_select_all_word_key = '<C-a>'
-let g:multi_cursor_select_all_key      = 'g<C-n>'
-let g:multi_cursor_next_key            = '<C-n>'
-let g:multi_cursor_prev_key            = '<C-p>'
-let g:multi_cursor_skip_key            = '<C-x>'
-let g:multi_cursor_quit_key            = '<Esc>'
-
 " gutentags 配置
 " 搜索工程目录的标志，碰到这些文件/目录名就停止向上一级目录递归
 let g:gutentags_project_root = ['.svn', '.git', 'node_modules', 'package.json']
