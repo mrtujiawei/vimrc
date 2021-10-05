@@ -135,7 +135,10 @@ if has("autocmd")
   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
   " 进文件自动打开文件目录, 除了提交commit
-  autocmd vimenter * if (-1 == match(expand('%'), 'COMMIT_EDITMSG')) | NERDTree | endif
+  " autocmd vimenter * if (-1 == match(expand('%'), 'COMMIT_EDITMSG')) | NERDTree | endif
+  " 如果是空文件夹才打开
+  " autocmd vimenter * if (1 == empty(expand('%'))) | NERDTree | endif
+  " 目前我不想打开文件树
 endif
 
 " ======= 函数定义 =======
