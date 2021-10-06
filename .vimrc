@@ -278,6 +278,7 @@ call vundle#begin(expand('~/.vim/bundle'))
   Plugin 'rhysd/conflict-marker.vim'      " git冲突解决
   Plugin 'mattn/emmet-vim'                " emmet插件
   Plugin 'hail2u/vim-css3-syntax'         " css3
+  Plugin 'posva/vim-vue'                  " vue 代码高亮
   Plugin 'jiangmiao/auto-pairs'           " 括号匹配
   Plugin 'neoclide/coc.nvim'              " 代码补全
   Plugin 'maxmellon/vim-jsx-pretty'       " jsx语法高亮
@@ -293,6 +294,9 @@ call vundle#begin(expand('~/.vim/bundle'))
   Plugin 'junegunn/fzf'                   " 搜索
   Plugin 'junegunn/fzf.vim'
 call vundle#end()           
+
+" vim-vue 过滤无效的预处理器，加快速度
+let g:vue_pre_processors = ['less', 'sass', 'scss', 'typescript']
 
 " vim-visual-multi
 " 全选映射
