@@ -1,5 +1,5 @@
 " 我的vim配置
-" Last Change:  2021 Oct 2
+" Last Change:  2021 Oct 6
 " Maintainer:   tujiawei <15988803646@163.com>
 " License:	    This file is placed in the public domain.
 
@@ -18,8 +18,7 @@ endfunction
 runtime! debian.vim           " 兼容性设置 尽量不要删除
 runtime! ftplugin/man.vim     " 方便使用man
 set nocompatible              " 不兼容vi
-" Vundle 好像不让开
-filetype on
+
 " 让Esc的生效更快捷
 set ttimeout
 set ttimeoutlen=100
@@ -112,8 +111,6 @@ iabbr rcc import { memo,} from 'react';<CR><CR>
       \export default memo(Comp);<Esc>/Comp<C-R>
 
 " ======= 脚本配置 =======
-filetype indent on              " 文件类型检查
-
 if has("syntax")
   syntax on " 开启语法高亮
 endif
@@ -273,28 +270,28 @@ command! -n=0 -complete=dir -bar FY :call FanYi()
 
 " 设置vundle 运行环境和路径
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin(expand('~/.vim/bundle'))           " 插件列表开始
-  Plugin 'VundleVim/Vundle.vim' " 必须
-  Plugin 'preservim/nerdtree', { 'on': 'NERDTreeToggle' } " 文件树
-  Plugin 'Xuyuanp/nerdtree-git-plugin' " git状态显示
-  Plugin 'mhinz/vim-signify' " 差异显示(文件)
-  Plugin 'rhysd/conflict-marker.vim' " git冲突解决
-  Plugin 'mattn/emmet-vim' " emmet插件
-  Plugin 'hail2u/vim-css3-syntax' " css3
-  Plugin 'jiangmiao/auto-pairs' " 括号匹配
-  Plugin 'neoclide/coc.nvim', {'branch': 'release'} " 代码补全
-  Plugin 'maxmellon/vim-jsx-pretty' " jsx语法高亮
-  Plugin 'vimcn/vimcdoc', {'branch': 'release'}  " 中文文档
+call vundle#begin(expand('~/.vim/bundle'))
+  Plugin 'VundleVim/Vundle.vim'           " 必须
+  Plugin 'preservim/nerdtree'             " 文件树
+  Plugin 'Xuyuanp/nerdtree-git-plugin'    " git状态显示
+  Plugin 'mhinz/vim-signify'              " 差异显示(文件)
+  Plugin 'rhysd/conflict-marker.vim'      " git冲突解决
+  Plugin 'mattn/emmet-vim'                " emmet插件
+  Plugin 'hail2u/vim-css3-syntax'         " css3
+  Plugin 'jiangmiao/auto-pairs'           " 括号匹配
+  Plugin 'neoclide/coc.nvim'              " 代码补全
+  Plugin 'maxmellon/vim-jsx-pretty'       " jsx语法高亮
+  Plugin 'vimcn/vimcdoc'                  " 中文文档
   Plugin 'airblade/vim-gitgutter'         " 状态栏 git 信息
   Plugin 'leafgarland/typescript-vim'     " typescript语法高亮
-  Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } } " 搜索
-  Plugin 'junegunn/fzf.vim'
   Plugin 'ludovicchabant/vim-gutentags'   " tag管理,异步更新tag
   Plugin 'vim-airline/vim-airline'        " 状态栏美化
   Plugin 'vim-airline/vim-airline-themes' " 状态栏美化
-  Plugin 'mg979/vim-visual-multi', {'branch': 'master'} " 多光标选中及编辑
+  Plugin 'mg979/vim-visual-multi'         " 多光标选中及编辑
   Plugin 'godlygeek/tabular'              " markdown 表格
   Plugin 'iamcco/markdown-preview.nvim'   " markdown 预览
+  Plugin 'junegunn/fzf'                   " 搜索
+  Plugin 'junegunn/fzf.vim'
 call vundle#end()           
 
 " vim-visual-multi
