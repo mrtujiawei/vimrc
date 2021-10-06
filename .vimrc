@@ -101,7 +101,7 @@ set synmaxcol=0                 " 不限制单行最大列
 set magic                       " 改变搜索的行为
 
 let mapleader=" "
-nmap <Leader><Space> :GFiles<Cr>
+nmap <Leader><Space> :Files<Cr>
 let mapleader="\\"
 nmap <C-K><C-B> :NERDTreeToggle<CR>
 map tn :tabnext<CR>
