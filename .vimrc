@@ -297,6 +297,10 @@ call vundle#begin(expand('~/.vim/bundle'))           " 插件列表开始
   Plugin 'iamcco/markdown-preview.nvim'   " markdown 预览
 call vundle#end()           
 
+" vim-visual-multi
+" 全选映射
+nmap <C-a> \\A
+
 " set to 1, nvim will open the preview window after entering the markdown buffer
 " default: 0
 let g:mkdp_auto_start = 0
