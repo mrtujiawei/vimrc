@@ -440,8 +440,9 @@ let g:gutentags_ctags_extra_args = [
 " public,test,prod 是因为dll,大概率不会碰到
 let g:gutentags_ctags_extra_args += ['--exclude=node_modules', '--exclude=public', '--exclude=prod', '--exclude=test']
 
+let g:airline_extensions = []
 " 显示窗口tab和buffer
-let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 0
 let g:airline#extensions#tabline#alt_sep = 1
 let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#left_alt_sep = ''
@@ -455,7 +456,7 @@ let g:airline#extensions#tabline#tabs_label = 'Tabs'
 let g:airline#extensions#tabline#overflow_marker = '…'
 let g:airline#extensions#tabline#formatter = 'default'
 
-" 全局插件，没有安装会自动安装
+" coc 全局插件，没有安装会自动安装
 let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-html', 'coc-css', 'coc-vetur']
 
 " nerdtree-git-plugin 配置
@@ -620,14 +621,14 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 " 其实这个挺好看的
 " set statusline=
-set statusline+=%1*\[%n]                                  "buffernr
-set statusline+=%2*\ %<%F\                                 "文件路径
-set statusline+=%3*\ %y\                                   "文件类型
-set statusline+=%4*\ %{''.(&fenc!=''?&fenc:&enc).''}       "编码1
-set statusline+=%{(&bomb?\",BOM\":\"\")}\                 "编码2
-set statusline+=%#TabLine#%{coc#status()}%{get(b:,'coc_current_function','')} " 代码提示服务
-set statusline+=%5*\ %=\ %6*\ row:%l/%L\ (%03p%%)\        "光标所在行号/总行数 (百分比)
-set statusline+=%7*\ col:%03c\                            "光标所在列
+" set statusline+=%1*\[%n]                                  "buffernr
+" set statusline+=%2*\ %<%F\                                 "文件路径
+" set statusline+=%3*\ %y\                                   "文件类型
+" set statusline+=%4*\ %{''.(&fenc!=''?&fenc:&enc).''}       "编码1
+" set statusline+=%{(&bomb?\",BOM\":\"\")}\                 "编码2
+" set statusline+=%#TabLine#%{coc#status()}%{get(b:,'coc_current_function','')} " 代码提示服务
+" set statusline+=%5*\ %=\ %6*\ row:%l/%L\ (%03p%%)\        "光标所在行号/总行数 (百分比)
+" set statusline+=%7*\ col:%03c\                            "光标所在列
 
 " 设置git状态
 function! GitStatus()
