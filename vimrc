@@ -290,8 +290,8 @@ call vundle#begin(expand('~/.vim/bundle'))
   Plugin 'airblade/vim-gitgutter'         " 状态栏 git 信息
   Plugin 'leafgarland/typescript-vim'     " typescript语法高亮
   Plugin 'ludovicchabant/vim-gutentags'   " tag管理,异步更新tag
-  Plugin 'vim-airline/vim-airline'        " 状态栏美化
-  Plugin 'vim-airline/vim-airline-themes' " 状态栏美化
+  " Plugin 'vim-airline/vim-airline'        " 状态栏美化
+  " Plugin 'vim-airline/vim-airline-themes' " 状态栏美化
   Plugin 'mg979/vim-visual-multi'         " 多光标选中及编辑
   Plugin 'godlygeek/tabular'              " markdown 表格
   Plugin 'iamcco/markdown-preview.nvim'   " markdown 预览
@@ -620,15 +620,15 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 " 其实这个挺好看的
-" set statusline=
-" set statusline+=%1*\[%n]                                  "buffernr
-" set statusline+=%2*\ %<%F\                                 "文件路径
-" set statusline+=%3*\ %y\                                   "文件类型
-" set statusline+=%4*\ %{''.(&fenc!=''?&fenc:&enc).''}       "编码1
-" set statusline+=%{(&bomb?\",BOM\":\"\")}\                 "编码2
-" set statusline+=%#TabLine#%{coc#status()}%{get(b:,'coc_current_function','')} " 代码提示服务
-" set statusline+=%5*\ %=\ %6*\ row:%l/%L\ (%03p%%)\        "光标所在行号/总行数 (百分比)
-" set statusline+=%7*\ col:%03c\                            "光标所在列
+set statusline=
+set statusline+=%1*\[%n]                                  "buffernr
+set statusline+=%2*\ %<%F\                                 "文件路径
+set statusline+=%3*\ %y\                                   "文件类型
+set statusline+=%4*\ %{''.(&fenc!=''?&fenc:&enc).''}       "编码1
+set statusline+=%{(&bomb?\",BOM\":\"\")}\                 "编码2
+set statusline+=%#TabLine#%{coc#status()}%{get(b:,'coc_current_function','')} " 代码提示服务
+set statusline+=%5*\ %=\ %6*\ row:%l/%L\ (%03p%%)\        "光标所在行号/总行数 (百分比)
+set statusline+=%7*\ col:%03c\                            "光标所在列
 
 " 设置git状态
 function! GitStatus()
