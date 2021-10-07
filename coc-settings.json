@@ -1,4 +1,6 @@
 {
   "vetur.ignoreProjectWarning": true,
-  "javascript.suggest.enabled": false
+  "javascript.suggest.enabled": false,
+  "javascript.validate.enable": false,
+  "typescript.validate.enable": false
 }
