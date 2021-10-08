@@ -288,7 +288,7 @@ call vundle#begin(expand('~/.vim/bundle'))
   Plugin 'maxmellon/vim-jsx-pretty'       " jsx语法高亮
   Plugin 'vimcn/vimcdoc'                  " 中文文档
   Plugin 'airblade/vim-gitgutter'         " 状态栏 git 信息
-  Plugin 'tpope/vim-fugitive'             " git操作简化
+  Plugin 'tpope/vim-fugitive'             " git操作包
   Plugin 'leafgarland/typescript-vim'     " typescript语法高亮
   Plugin 'ludovicchabant/vim-gutentags'   " tag管理,异步更新tag
   " Plugin 'vim-airline/vim-airline'        " 状态栏美化
