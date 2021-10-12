@@ -305,7 +305,8 @@ let g:vue_pre_processors = ['less', 'sass', 'scss', 'typescript']
 
 " vim-visual-multi
 " 全选映射
-nmap <C-a> \\A
+" 冲突了，先移掉
+" nmap <C-a> \\A
 
 " set to 1, nvim will open the preview window after entering the markdown buffer
 " default: 0
