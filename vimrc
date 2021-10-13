@@ -300,6 +300,8 @@ call vundle#begin(expand('~/.vim/bundle'))
   Plugin 'junegunn/fzf.vim'
 call vundle#end()           
 
+" 关闭标签高亮
+let g:vim_jsx_pretty_highlight_close_tag = 1
 " vim-vue 过滤无效的预处理器，加快速度
 let g:vue_pre_processors = ['less', 'sass', 'scss', 'typescript']
 
