@@ -71,6 +71,8 @@ set directory=~/.vim/.swp//
 set undodir=~/.vim/.undo//
 
 " ======= 编辑配置 =======
+set noimdisable                 " 离开 Insert 模式时自动切换至英文输入法
+" set ambiwidth=double            " 设置为双字宽显示，否则无法完整显示如:☆
 set autoindent                  " 自动缩进
 set autoread                    " 文件监视，修改后提示
 
@@ -102,10 +104,12 @@ set magic                       " 改变搜索的行为
 
 let mapleader=" "
 nmap <Leader><Space> :Files<Cr>
-let mapleader="\\"
 nmap <C-K><C-B> :NERDTreeToggle<CR>
 map tn :tabnext<CR>
 map tp :tabprevious<CR>
+map tN :tabnew<CR>
+map <Leader>t :tabedit %<CR>
+let mapleader="\\"
 
 " react 快速生成模板
 iabbr rcc import { memo,} from 'react';<CR><CR>
