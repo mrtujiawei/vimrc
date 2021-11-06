@@ -109,6 +109,7 @@ map tn :tabnext<CR>
 map tp :tabprevious<CR>
 map tN :tabnew<CR>
 map <Leader>t :tabedit %<CR>
+map <Leader>f :Format<CR>
 let mapleader="\\"
 
 " react 快速生成模板
