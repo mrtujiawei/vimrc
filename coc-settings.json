@@ -1,6 +1,7 @@
 {
   "vetur.ignoreProjectWarning": true,
-  "javascript.suggest.enabled": false,
-  "javascript.validate.enable": false,
-  "typescript.validate.enable": false
+  "coc.preferences.extensionUpdateCheck": "weekly",
+  "javascript.suggest.enabled": true,
+  "javascript.validate.enable": true,
+  "typescript.validate.enable": true
 }
