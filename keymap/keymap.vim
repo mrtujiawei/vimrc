@@ -1,6 +1,8 @@
-" 按键映射脚本,
+" 按键映射脚本
 " 没有什么脚本是需要写在这里的
 " 放着只是看看，方便以后添加内容
+"
+" 使用时需要使用 `set keymap=filename` 来加载当前配置
 "
 " Maintainer:	mrtujiawei <m15988803646@163.com>
 " Last Change:	2021 Nov 06
