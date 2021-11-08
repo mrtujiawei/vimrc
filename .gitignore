@@ -1,0 +1,10 @@
+# 临时文件
+.backup/
+.swp/
+.undo/
+
+# 历史文件，保存被修改的目录
+.netrwhist
+
+# 插件,要用的时候再装
+bundle/
