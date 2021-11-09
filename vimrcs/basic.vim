@@ -287,7 +287,7 @@ if has("autocmd")
   " autocmd vimenter * if (1 == empty(expand('%'))) | NERDTree | endif
 
   " 保存前移除所有行尾的空格
-  autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx,*.vue,*.sh :call utils#cleanExtraSpaces()
+  autocmd BufWritePre *.js,*.json,*.jsx,*.ts,*.tsx,*.vue,*.css,*.less,*.scss,*.sh :call utils#cleanExtraSpaces()
 endif
 
 
