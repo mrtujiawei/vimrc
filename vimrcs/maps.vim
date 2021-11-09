@@ -13,13 +13,6 @@ let g:load_mine_map = 1
 " 以前用 subline text 的时候就是这个快捷键
 nmap <silent> <C-K><C-B> :NERDTreeToggle<CR>
 
-" tab 切换
-nmap <silent> tn :tabnext<CR>
-nmap <silent> tp :tabprevious<CR>
-
-" 新建tab
-nmap <silent> tN :tabnew<CR>
-
 " 可视模式搜索
 vnoremap <silent> * :<C-u>call utils#visualSelection('', '')<CR>/<C-R>=@/<CR><CR>
 vnoremap <silent> # :<C-u>call utils#visualSelection('', '')<CR>?<C-R>=@/<CR><CR>
@@ -41,7 +34,14 @@ let mapleader=" "
 nmap <Leader><Space> :Files<CR>
 
 " 新建tab编辑当前文件
-nmap <silent> <Leader>t :tabedit %<CR>
+nmap <silent> <Leader>te :tabedit %<CR>
+
+" tab 切换
+nmap <silent> <Leader>tn :tabnext<CR>
+nmap <silent> <Leader>tp :tabprevious<CR>
+
+" 新建tab
+nmap <silent> <Leader>tN :tabnew<CR>
 
 " 关闭当前tab
 nmap <silent> <Leader>tc :tabclose<CR>
