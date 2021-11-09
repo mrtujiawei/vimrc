@@ -22,6 +22,17 @@
 
 查看所有配置项 `normal options`
 
+## 特殊关键字 ##
+
+```vimawesome
+" 不回显命令
+<slient> 
+
+" <expr> 把后面的表达式当代码执行，
+" 执行返回的结果才作为配置的依据
+map <expr> <c-space> func()
+```
+
 ## 代码跳转 ##
 
 ```vim
