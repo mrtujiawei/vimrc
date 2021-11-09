@@ -87,7 +87,6 @@ let g:vue_pre_processors = ['less', 'sass', 'scss', 'typescript']
 set updatetime=300
 
 " 高亮关键字及其对应的声明和使用的地方
-
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " 不传递消息给 ins-completion-menu
