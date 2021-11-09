@@ -191,3 +191,11 @@ function! utils#cleanExtraSpaces()
   call setpos('.', save_cursor)
   call setreg('/', old_query)
 endfun
+
+" markdown 预览
+function! utils#MarkdownPreview()
+  echo "开始预览"
+  if 'markdown' == &filetype
+    :MarkdownPreview
+  endif
+endfunction

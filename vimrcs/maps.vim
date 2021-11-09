@@ -76,3 +76,6 @@ map <silent> <Leader>n :noh<CR>
 " 移除所有 '^M'
 " windows => unix 会有可能出现
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
+
+" 预览markdown文件: markdown prevsious
+noremap <Leader>mp :call utils#MarkdownPreview()<CR>
