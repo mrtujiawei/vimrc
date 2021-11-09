@@ -18,6 +18,11 @@
 
 [Vim Awesome](https://vimawesome.com/)
 
+## 插件安装 ##
+
+如果嫌下载慢的话可以使用 `git clone ${url} ~/.vim/bundle/` 的方式手动放进目录中  
+因为我自己的初始化脚本中有 `git clone ` 下载失败的重试
+
 ## 配置项 ##
 
 查看所有配置项 `normal options`
