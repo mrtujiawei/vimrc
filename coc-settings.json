@@ -1,4 +1,5 @@
 {
+  "lightbulb.enableSign": true,
   "html-css-support.enabledLanguages": [
     "html",
     "vue",
@@ -10,5 +11,7 @@
   "coc.preferences.extensionUpdateCheck": "weekly",
   "javascript.suggest.enabled": true,
   "javascript.validate.enable": true,
-  "typescript.validate.enable": true
+  "javascript.autoClosingTags": true,
+  "typescript.validate.enable": true,
+  "typescript.autoClosingTags": true
 }

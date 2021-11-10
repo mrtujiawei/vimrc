@@ -98,11 +98,18 @@ set shortmess+=c
 " coc-vetur: vue 代码提示
 " coc-emmet: emmet是不是可以直接用这个了
 " coc-html-css-support: 类和id提示
+" @yaegassy/coc-nginx: nginx配置 代码提示
+" coc-yaml: @see {https://github.com/neoclide/coc-yaml}
+" coc-sh: shell脚本提示
+" coc-prettier: 代码格式化的，基本不用
 let g:coc_global_extensions = [
   \ 'coc-json', 'coc-tsserver', 'coc-html', 
   \ 'coc-css', 'coc-cssmodules', 
   \ 'coc-html-css-support',
   \ 'coc-vetur', 'coc-eslint',
+  \ '@yaegassy/coc-nginx',
+  \ 'coc-sh',
+  \ 'coc-prettier',
   \ ]
 
 " 始终显示标识
