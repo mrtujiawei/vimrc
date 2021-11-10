@@ -8,6 +8,7 @@
     "typescriptreact"
   ],
   "vetur.ignoreProjectWarning": true,
+  "prettier.singleQuote": true,
   "coc.preferences.extensionUpdateCheck": "weekly",
   "javascript.suggest.enabled": true,
   "javascript.validate.enable": true,
