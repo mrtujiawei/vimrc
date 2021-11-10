@@ -194,7 +194,6 @@ endfun
 
 " markdown 预览
 function! utils#MarkdownPreview()
-  echo "开始预览"
   if 'markdown' == &filetype
     :MarkdownPreview
   endif
