@@ -187,9 +187,9 @@ set backspace=2
 
 " 有类似游戏中的光标显示，但是感觉太骚了，不适合我
 " 高亮当前行,下面有配置，插入模式不高亮
-" set cursorline
+set cursorline
 " 高亮当前列,下面有配置，插入模式不高亮
-" set cursorcolumn
+set cursorcolumn
 
 " 直接使用系统剪切板 需要安装vim-gtk
 set clipboard=unnamedplus
@@ -259,6 +259,7 @@ filetype plugin indent on
 " 执行宏命令时不要重绘
 set lazyredraw
 
+
 " ==============================
 " ======== 自动命令配置 ========
 " ==============================
@@ -271,10 +272,10 @@ if has("autocmd")
   autocmd BufReadPost * call utils#toLastEditPosition()
 
   " 非插入模式高亮当前行列
-  " au InsertEnter * se nocul
-  " au InsertLeave * se cul
-  " au InsertEnter * se nocuc
-  " au InsertLeave * se cuc
+  autocmd InsertEnter * se nocursorcolumn
+  autocmd InsertLeave * se cursorcolumn
+  autocmd InsertEnter * se nocursorline
+  autocmd InsertLeave * se cursorline
 
   " 创建新文件时设置模板
   au BufNewFile * :call utils#setTemplate()
@@ -296,24 +297,26 @@ endif
 " ============================================
 
 " %{n}* 使用
-hi user1    cterm=none    ctermfg=black  ctermbg=cyan    gui=none guibg=#840c0c guifg=#ffffff
-hi user2    cterm=none    ctermfg=white  ctermbg=yellow  gui=none guibg=#ffff77 guifg=black
-hi user3    cterm=none    ctermfg=white  ctermbg=blue    gui=none guibg=#d59159 guifg=black
-hi user4    cterm=none    ctermfg=white  ctermbg=green   gui=none guibg=#8d6c47 guifg=black
-hi user5    cterm=none    ctermfg=black  ctermbg=cyan    gui=none guibg=#3a406e guifg=#000000
-hi user6    cterm=bold    ctermbg=white  ctermfg=black   gui=none guibg=#acff84 guifg=black
-hi user7    cterm=none    ctermbg=white  ctermfg=yellow  gui=none guibg=#77cf77 guifg=black
-hi user8    cterm=none    ctermbg=white  ctermfg=yellow  gui=none guibg=#66b06f guifg=black
-hi user9    cterm=none    ctermbg=white  ctermfg=yellow  gui=none guibg=#60af9f guifg=black
+hi user1        cterm=none    ctermfg=black   ctermbg=cyan    gui=none  guifg=#ffffff   guibg=#840c0c   
+hi user2        cterm=none    ctermfg=white   ctermbg=yellow  gui=none  guifg=black     guibg=#ffff77   
+hi user3        cterm=none    ctermfg=white   ctermbg=blue    gui=none  guifg=black     guibg=#d59159   
+hi user4        cterm=none    ctermfg=white   ctermbg=green   gui=none  guifg=black     guibg=#8d6c47   
+hi user5        cterm=none    ctermfg=black   ctermbg=cyan    gui=none  guifg=#000000   guibg=#3a406e   
+hi user6        cterm=bold    ctermfg=black   ctermbg=white   gui=none  guifg=black     guibg=#acff84   
+hi user7        cterm=none    ctermfg=yellow  ctermbg=white   gui=none  guifg=black     guibg=#77cf77   
+hi user8        cterm=none    ctermfg=yellow  ctermbg=white   gui=none  guifg=black     guibg=#66b06f   
+hi user9        cterm=none    ctermfg=yellow  ctermbg=white   gui=none  guifg=black     guibg=#60af9f   
 
 " %#RightArror# 这样来使用
 " set statusline+=%#RightArror#▶
-hi RightArror   cterm=none    ctermfg=yellow  ctermbg=cyan    gui=none guibg=#ffff77 guifg=#840c0c gui=bold
+hi RightArror   cterm=none    ctermfg=yellow  ctermbg=cyan    gui=none  guifg=#840c0c   guibg=#ffff77   gui=bold
 
-" 提示相关颜色
-hi Pmenu    ctermfg=black ctermbg=gray                            guibg=#333333
-hi PmenuSel ctermfg=7     ctermbg=4                      gui=none guibg=#444444 guifg=#ffffff
-
-hi TabLineSel   cterm=none    ctermfg=yellow  ctermbg=cyan    gui=none guibg=#ffff77 guifg=#840c0c gui=bold
-hi TabLine    cterm=none    ctermbg=white  ctermfg=yellow  gui=none guibg=#60af9f guifg=black
-hi TabLineFill    cterm=none    ctermbg=white  ctermfg=yellow  gui=none guibg=#77cf77 guifg=black
+" 系统高亮组
+hi Pmenu                      ctermfg=black   ctermbg=gray                              guibg=#333333
+hi PmenuSel                   ctermfg=7       ctermbg=4       gui=none  guifg=#ffffff   guibg=#444444   
+hi TabLineSel   cterm=none    ctermfg=yellow  ctermbg=cyan    gui=none  guifg=#840c0c   guibg=#ffff77   gui=bold
+hi TabLine      cterm=none    ctermfg=yellow  ctermbg=white   gui=none  guifg=black     guibg=#60af9f   
+hi TabLineFill  cterm=none    ctermfg=yellow  ctermbg=white   gui=none  guifg=black     guibg=#77cf77   
+hi CursorLine   cterm=none    ctermbg=black   ctermbg=cyan    gui=none  guifg=#ffffff   guibg=#333333   gui=bold
+hi CursorLine   cterm=none    ctermfg=white   ctermbg=cyan    gui=none  guifg=white     guibg=#202020   gui=bold
+hi CursorColumn cterm=none    ctermfg=white   ctermbg=cyan    gui=none  guifg=white     guibg=#202020   gui=bold
