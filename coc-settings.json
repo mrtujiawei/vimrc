@@ -1,4 +1,11 @@
 {
+  "html-css-support.enabledLanguages": [
+    "html",
+    "vue",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
   "vetur.ignoreProjectWarning": true,
   "coc.preferences.extensionUpdateCheck": "weekly",
   "javascript.suggest.enabled": true,
