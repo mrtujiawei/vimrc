@@ -94,7 +94,16 @@ set shortmess+=c
 
 " coc 全局插件
 " 没有安装会自动安装
-let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-html', 'coc-css', 'coc-vetur']
+" coc-cssmodules: react 中 css module 跳转
+" coc-vetur: vue 代码提示
+" coc-emmet: emmet是不是可以直接用这个了
+" coc-html-css-support: 类和id提示
+let g:coc_global_extensions = [
+  \ 'coc-json', 'coc-tsserver', 'coc-html', 
+  \ 'coc-css', 'coc-cssmodules', 
+  \ 'coc-html-css-support',
+  \ 'coc-vetur', 'coc-eslint',
+  \ ]
 
 " 始终显示标识
 if has("nvim-0.5.0") || has("patch-8.1.1564")
