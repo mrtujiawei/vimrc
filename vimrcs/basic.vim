@@ -137,7 +137,8 @@ set smartcase
 " ==========================
 
 " 自动切换到当前文件夹下
-set autochdir
+" fzf 其实更方便
+" set autochdir
 
 " 切换缓冲区时自动保存
 " set autowrite
