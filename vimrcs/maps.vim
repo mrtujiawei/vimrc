@@ -54,9 +54,6 @@ let g:lastTab = 1
 nmap <silent> <Leader>tt :exec "tabn ".g:lastTab<CR>
 autocmd TabLeave * let g:lastTab = tabpagenr()
 
-" 代码格式化,需要lsp支持
-map <silent> <Leader>f :Format<CR>
-
 " 取消高亮
 map <silent> <Leader>n :noh<CR>
 
