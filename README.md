@@ -38,6 +38,23 @@
 map <expr> <c-space> func()
 ```
 
+## 窗口调整 ##
+
+```vimawesome
+" :vsp
+<C-w>v
+
+" :sp
+<C-w>s
+
+" :close 
+<C-w>c
+
+" :only
+<C-w>o
+
+```
+
 ## 代码跳转 ##
 
 ```vim
@@ -56,6 +73,11 @@ normal gr
 " 返回之前位置
 ctrl+o
 
+" 返回之后位置
+ctrl+i
+
+" 返回之前编辑过的位置
+ctrl+^
 ```
 
 ## diff 快速更改 ##
