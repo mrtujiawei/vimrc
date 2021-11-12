@@ -29,13 +29,20 @@
 
 ## 特殊关键字 ##
 
-```vimawesome
+```vimscript
 " 不回显命令
 <slient> 
 
 " <expr> 把后面的表达式当代码执行，
 " 执行返回的结果才作为配置的依据
 map <expr> <c-space> func()
+```
+
+## vim 内查找 ##
+
+```vimscript
+" 查找所有.ts文件里面匹配 pattern的文件
+:vim /pattern/ ./**/*.ts
 ```
 
 ## 窗口调整 ##
