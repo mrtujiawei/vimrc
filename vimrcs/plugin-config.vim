@@ -173,6 +173,9 @@ nmap <leader>rn <Plug>(coc-rename)
 xmap <leader>f <Plug>(coc-format-selected)
 nmap <leader>f <Plug>(coc-format-selected)
 
+" 格式化整个文件
+map <leader>F :Format<cr>
+
 augroup mygroup
   autocmd!
 
