@@ -27,6 +27,13 @@
 
 查看所有配置项 `normal options`
 
+## 外部命令范围选择 ##
+
+```vimscript
+" 选择一个段落
+!}
+```
+
 ## 特殊关键字 ##
 
 ```vimscript
@@ -348,58 +355,6 @@ func PreviewWord()
   endif
 endfun
 ```
-### 自定义标签栏 ###
-
-```vim
-" 标签栏设置
-function! MyTabLine()
-  let s = ''
-  for i in range(tabpagenr('$'))
-    " select the highlighting
-    if i + 1 == tabpagenr()
-      let s .= '%#TabLineSel#'
-    else
-      let s .= '%#TabLine#'
-    endif
-
-    " set the tab page number (for mouse clicks)
-    let s .= '%' . (i + 1) . 'T'
-
-    " the label is made by MyTabLabel()
-    let s .= '%{MyTabLabel(' . (i + 1) . ')}'
-  endfor
-
-  " after the last tab fill with TabLineFill and reset tab page nr
-  let s .= '%#TabLineFill#%T'
-
-  " right-align the label to close the current tab page
-  if tabpagenr('$') > 1
-    let s .= '%=%#TabLine#%999XX'
-  endif
-
-  return s
-endfunction
-
-" 单个标签设置
-function! MyTabLabel(n)
-  let buflist = tabpagebuflist(a:n)
-  let winnr = tabpagewinnr(a:n)
-
-  " Add '+' if one of the buffers in the tab page is modified
-  let label = ''
-  for bufnr in buflist
-    if getbufvar(bufnr, "&modified")
-      let label = '+'
-      break
-    endif
-  endfor 
-
-  "添加tabpage序号,方便ngt切换
-  return '  ['.a:n.label.']'.pathshorten(bufname(buflist[winnr - 1])).' '
-endfunction
-
-set tabline=%!MyTabLine()
-```
 
 ## fzf ##
 
@@ -409,6 +364,43 @@ set tabline=%!MyTabLine()
 - `|` "或者"匹配
 - `!` 反向匹配
 
-## :Rg ##
+```vimscript
+" 根据文件内容搜索
+:Rg 
 
-匹配文件内容
+" 类似Rg
+:Ag
+
+" 多选模式 <tab>选择
+:Rg -m
+
+" Git文件 git ls-files [opts]
+:GFiles
+
+" 操作历史 : ex命令 / 搜索命令
+:History
+
+" 根据提交信息搜索
+:Commits
+
+" 当前文件的提交记录
+:BCommits
+
+" 所有执行过的命令
+:Commands
+
+" 所有映射
+:Maps
+
+" 修改文件类型
+:Filetypes
+
+" 所有书签
+:Marks
+
+" 所有窗口
+Window
+
+" 帮助
+:Helptags
+```
