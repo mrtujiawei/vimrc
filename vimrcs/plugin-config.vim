@@ -249,8 +249,9 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 " 对前一个项目做一次默认行为，没搞懂这个默认行为到底是什么
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 
-" 恢复最新的CocList,不太清楚是干什么的
-nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+" 恢复最新的CocList 比如 <space>a 打开了错误诊断，然后关掉了
+" 再 <space>p 可以重新打开 错误诊断
+" nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 " 窗口或弹出提示重新映射滚动快捷键
 " 实际好像并没有什么用
