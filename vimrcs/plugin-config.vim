@@ -569,7 +569,7 @@ let g:mundo_help = 0
 " let mundo_map_move_newer = 'k'
 
 " 还原后是否自动关闭
-let g:mundo_close_on_revert = 0;
+let g:mundo_close_on_revert = 0
 
 " 默认渲染差异，未0可以更快渲染
 " let g:mundo_preview_statusline
@@ -581,8 +581,10 @@ let g:mundo_auto_preview = 1
 " 更新延迟 大一点更不容易卡
 let g:mundo_playback_delay = 60
 
-
-
+" tu: toggle undo
+" tu: tree undo
+noremap <silent> <space>tu :MundoToggle<cr>
+ 
 
 
 
