@@ -52,6 +52,19 @@ map <expr> <c-space> func()
 :vim /pattern/ ./**/*.ts
 ```
 
+## 断点插入 ##
+
+插入模式下: `<C-g>u`  
+不会有任何提示，但是当你撤销时  
+只会撤销 `<C-g>u` 之后的内容
+
+
+## 撤销恢复 ##
+
+恢复上次撤销的内容: `<C-r>`
+按修改顺序恢复内容: `g+`  
+
+
 ## 窗口调整 ##
 
 ```vimawesome
@@ -175,6 +188,18 @@ iabbr <silent> if if ()<Left><C-R>=Eatchar('\s')<CR>
 | 8     | 选取和拖放寄存器      | `"*` and `"+`        |
 | 9     | 黑洞寄存器            | `"_`                 |
 | 10    | 搜索模式寄存器        | `"/`                 |
+
+
+## 多文件处理 ##
+
+```vimscript
+" 选择编辑所有以ts结尾的文件
+:args *.ts
+
+" 编辑
+:argdo %s/import/export/g
+
+```
 
 
 ## vimscript ##
