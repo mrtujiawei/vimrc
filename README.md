@@ -29,6 +29,16 @@
 `gH`
 `g<C-h>`
 
+## Ex模式 ##
+
+`h: ex-cmd-index` 查看 所有ex 命令  
+`<C-r>a` 读取a寄存器中的值
+`<C-r><C-w>` 当前光标下的单词
+`<C-r><C-A>` 当前光标下的词组
+`<C-r><C-l>` 光标所在行
+`<C-r><C-f>` 光标所在文件名
+
+
 ## 搜索 ##
 
 `\v` 不用处理特殊字符  
@@ -161,6 +171,20 @@ dp
 
 " 把另一个文件中的内容合并到当前文件中
 do 
+```
+
+## 使用 vim 解决 git 冲突 ##
+
+```shell
+git config merge.tool vimdiff
+git config merge.conflictstyle diff3
+git config mergetool.prompt false
+
+# 不生成备份文件
+git config --global mergetool.keepBackup false
+
+# 使用 git 来解决冲突
+git mergetool
 ```
 
 ## 键映射 ##
@@ -509,3 +533,17 @@ Window
 " 帮助
 :Helptags
 ```
+
+## Vim-Fugitive ##
+
+`:Git blame` 查找代码提交记录
+- q 关闭问责窗口。
+- A 调整作者列大小。
+- C 调整提交列大小。
+- D 调整日期/时间列大小。
+
+`:Gdiffsplit [commit]` 查看修改内容  
+`:Gwrite`   
+`:Gread`  
+`:Gclog`  
+`g?` 查看帮助  

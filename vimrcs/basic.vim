@@ -272,7 +272,7 @@ set lazyredraw
 
 if has("autocmd") 
   " 文件在外部改变时，提示重新载入
-  autocmd FocusGained,BufEnter * checktime
+  autocmd FocusGained,BufEnter *[a-zA-Z] silent checktime
 
   " 再次打开时回到上次编辑的位置
   autocmd BufReadPost * call utils#toLastEditPosition()
@@ -295,6 +295,10 @@ if has("autocmd")
 
   " 保存前移除所有行尾的空格
   autocmd BufWritePre *.js,*.json,*.jsx,*.ts,*.tsx,*.vue,*.css,*.less,*.scss,*.sh :call utils#cleanExtraSpaces()
+
+  " 保存折叠 只匹配结尾是英文单词的文件
+  autocmd BufWinLeave *[a-zA-Z] silent mkview
+  autocmd BufReadPost *[a-zA-z] silent loadview
 endif
 
 
