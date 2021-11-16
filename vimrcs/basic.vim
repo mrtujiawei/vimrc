@@ -131,6 +131,11 @@ set smartcase
 " 括号匹配高亮的十分之 match 秒
 " set match=2
 
+" 搜索到底后继续往下会回到开头
+" set wrapscan
+
+" 到底之后不回头
+" set nowrapscan
 
 " ==========================
 " ======== 编辑配置 ========

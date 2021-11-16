@@ -72,7 +72,13 @@ map <silent> <Leader>n :noh<CR>
 
 " 移除所有 '^M'
 " windows => unix 会有可能出现
-noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
+noremap <silent> <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
 " 预览markdown文件: markdown prevsious
 noremap <Leader>mp :call utils#MarkdownPreview()<CR>
+
+" 打标记
+noremap <silent> <leader>mk i#mark#<esc>5h
+
+" 快速编辑，找到下一个 #mark# 并删除，进入插入模式
+noremap <silent> <leader>i /#mark#/<cr>df#:noh<cr>a

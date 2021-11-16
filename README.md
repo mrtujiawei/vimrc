@@ -20,8 +20,33 @@
 
 ## 插件安装 ##
 
-如果嫌下载慢的话可以使用 `git clone ${url} ~/.vim/bundle/` 的方式手动放进目录中  
+如果嫌下载话可以使用 `git clone ${url} ~/.vim/bundle/` 的方式手动放进目录中  
 因为我自己的初始化脚本中有 `git clone ` 下载失败的重试
+
+## 选择模式 ##
+
+`gh`
+`gH`
+`g<C-h>`
+
+## 搜索 ##
+
+`\v` 不用处理特殊字符  
+`\zs` 开始匹配(`^`)  
+`\ze` 结束匹配(`$`)  
+
+## 替换 ##
+
+`c` 确认 `s/pattern/target/c`  
+`e` 不显示错误消息  
+`n` 不实际替换，给出可以替换的次数  
+`p` 显示最后一次替代的行  
+`#` 显示行号  
+
+不一定要用`/`来做分隔符
+
+`\{-}` 非贪婪
+
 
 ## 配置项 ##
 
@@ -51,6 +76,27 @@ map <expr> <c-space> func()
 " 查找所有.ts文件里面匹配 pattern的文件
 :vim /pattern/ ./**/*.ts
 ```
+
+## 多行递增 ##
+
+```html
+<div id="app-1"></div>
+<div id="app-1"></div>
+<div id="app-1"></div>
+<div id="app-1"></div>
+<div id="app-1"></div>
+```
+从第二行的-1开始选中,`g<C-a>` =>
+
+```html
+<div id="app-1"></div>
+<div id="app-2"></div>
+<div id="app-3"></div>
+<div id="app-4"></div>
+<div id="app-5"></div>
+```
+
+字母递增(set nrformats+=alpha)
 
 ## 断点插入 ##
 
