@@ -2,6 +2,7 @@
 .backup/
 .swp/
 .undo/
+view/
 
 # 历史文件，保存被修改的目录
 .netrwhist
