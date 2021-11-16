@@ -77,8 +77,5 @@ noremap <silent> <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 " 预览markdown文件: markdown prevsious
 noremap <Leader>mp :call utils#MarkdownPreview()<CR>
 
-" 打标记
-noremap <silent> <leader>mk i#mark#<esc>5h
-
-" 快速编辑，找到下一个 #mark# 并删除，进入插入模式
-noremap <silent> <leader>i /#mark#/<cr>df#:noh<cr>a
+" 快速编辑，找到下一个 // TODO 并删除，进入插入模式
+noremap <silent> <leader>i /\/\/ TODO<cr>:noh<cr>dd:noh<cr>O
