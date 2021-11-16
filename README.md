@@ -169,14 +169,17 @@ do
 
 ```vim
 
-" 普通，可视模式及操作符等待模式
+" 普通、可视、选择、以及操作符等待模式
 map		
 
-" 可视模式
+" 可视&选择模式
 vmap		
 
-" 普通模式
-nmap		
+" 选择模式
+smap
+
+" 可视模式
+xmap
 
 " 操作符等待模式
 omap		
@@ -184,11 +187,20 @@ omap
 " 插入和命令行模式
 map!		
 
+" 插入&命令行&lang-arg模式
+lmap
+
+" 普通模式
+nmap		
+
 " 插入模式
 imap		
 
 " 命令行模式
 cmap		
+
+" 终端任务
+tmap
 
 ```
 
@@ -203,6 +215,10 @@ iabbr <silent> if if ()<Left><C-R>=Eatchar('\s')<CR>
 ## 自定义命令行命令 ##
 
 `usr_40`
+
+`<args>`   
+`<f-args>` 向 vimscript 传递参数  
+`<q-args>` 将用户输入转换为字符串  
 
 
 ```vim
