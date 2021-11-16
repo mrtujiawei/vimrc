@@ -198,3 +198,13 @@ function! utils#MarkdownPreview()
     :MarkdownPreview
   endif
 endfunction
+
+" 光标下是否有字符
+" 返回字符的宽度，中文占三位 utf-8
+" 英文占1位
+function utils#hasWordUnderCursor() 
+  let col = '\%' . col('.') . 'c.'
+  echo col
+  let cword = matchstr(getline('.'), col)
+  return strlen(cword)
+endfunction
