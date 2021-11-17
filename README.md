@@ -287,6 +287,12 @@ iabbr <silent> if if ()<Left><C-R>=Eatchar('\s')<CR>
 
 ```
 
+## 保存会话 ##
+
+`mksession` 保存会话  
+`vim -S Session.vim` 加载会话
+`:source Session.vim` 同上  
+
 
 ## vimscript ##
 
@@ -352,7 +358,7 @@ TERM=xterm-color
 export TERM
 ```
 
-```vim
+```vimscript
 "	term		黑白终端的属性
 "	cterm		彩色终端的属性
 "	ctermfg		彩色终端的前景色
