@@ -297,6 +297,7 @@ if has("autocmd")
   autocmd BufWritePre *.js,*.json,*.jsx,*.ts,*.tsx,*.vue,*.css,*.less,*.scss,*.sh :call utils#cleanExtraSpaces()
 
   " 保存折叠 只匹配结尾是英文单词的文件
+  " 注意定时清除一下
   autocmd BufWinLeave *[a-zA-Z] silent mkview
   autocmd BufReadPost *[a-zA-z] silent loadview
 endif
