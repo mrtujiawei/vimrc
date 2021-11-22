@@ -329,5 +329,5 @@ hi TabLineSel   cterm=none    ctermfg=yellow  ctermbg=cyan    gui=none  guifg=#8
 hi TabLine      cterm=none    ctermfg=yellow  ctermbg=white   gui=none  guifg=black     guibg=#60af9f   
 hi TabLineFill  cterm=none    ctermfg=yellow  ctermbg=white   gui=none  guifg=black     guibg=#77cf77   
 hi CursorLine   cterm=none    ctermbg=black   ctermbg=cyan    gui=none  guifg=#ffffff   guibg=#333333   gui=bold
-hi CursorLine   cterm=none    ctermfg=white   ctermbg=cyan    gui=none  guifg=white     guibg=#202020   gui=bold
-hi CursorColumn cterm=none    ctermfg=white   ctermbg=cyan    gui=none  guifg=white     guibg=#202020   gui=bold
+hi CursorLine   cterm=none    ctermfg=white   ctermbg=cyan    gui=none  guifg=green     guibg=#202020   gui=bold
+hi CursorColumn cterm=none    ctermfg=white   ctermbg=cyan    gui=none  guifg=green     guibg=#202020   gui=bold
