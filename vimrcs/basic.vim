@@ -248,6 +248,8 @@ set wildignore+=*/.git/*,*/.svn/*,*/.DS_Store
 " 改变开始换行的方式
 set linebreak
 
+" mksession 保存的状态
+set sessionoptions+=globals
 
 " ==========================
 " ======== 脚本配置 ========

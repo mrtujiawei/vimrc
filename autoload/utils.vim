@@ -213,6 +213,13 @@ function! utils#mkSession(filename)
   let sessionDir = expand('$HOME/.vim/session/')
   call utils#checkDir(sessionDir)
 
+  " 判断一下目录是否打开
+  " 关闭目录，加载 session 会报错
+  if exists(':NERDTreeClose')
+    :NERDTreeClose
+  endif
+  
+
   exec "mksession ".sessionDir.a:filename
 endfunction
 
