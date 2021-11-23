@@ -29,3 +29,9 @@ command! -n=0 -complete=dir -bar FY :call utils#fanYi()
 
 " 强制保存当前文件 Force write
 command! -n=0 -complete=dir -bar Fw execute 'w !sudo tee % > /dev/null' <bar> edit!
+
+" 保存会话
+command! -n=1 -complete=customlist,utils#getSessions -bar MkSession :call utils#mkSession(<f-args>)
+
+" 加载会话列表
+command! -n=1 -complete=customlist,utils#getSessions -bar LoadSession :call utils#loadSession(<f-args>)

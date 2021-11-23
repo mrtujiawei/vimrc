@@ -202,9 +202,80 @@ endfunction
 " 光标下是否有字符
 " 返回字符的宽度，中文占三位 utf-8
 " 英文占1位
-function utils#hasWordUnderCursor() 
+function! utils#hasWordUnderCursor() 
   let col = '\%' . col('.') . 'c.'
-  echo col
   let cword = matchstr(getline('.'), col)
   return strlen(cword)
+endfunction
+
+" 保存 session
+function! utils#mkSession(filename)
+  let sessionDir = expand('$HOME/.vim/session/')
+  call utils#checkDir(sessionDir)
+
+  exec "mksession ".sessionDir.a:filename
+endfunction
+
+" 删除session
+function! utils#deleteSession(filename)
+  let sessionDir = expand('$HOME/.vim/session/')
+  call utils#checkDir(sessionDir)
+
+  call delete(sessionDir.a:filename)
+endfunction
+
+" 获取 session 文件名
+function! utils#getSessions(A, L, P)
+  let sessionDir = expand('$HOME/.vim/session/')
+  call utils#checkDir(sessionDir)
+
+  let sessions = split(glob(sessionDir.'*'), '\n')
+
+  let index = 0
+  for session in sessions 
+    let paths = split(session, '/')
+    let sessions[index] = paths[len(paths) - 1]
+    let index = index + 1
+  endfor
+
+  return sessions
+endfunction
+
+" 加载 session
+function! utils#loadSession(filename)
+  let sessionDir = expand('$HOME/.vim/session/')
+  call utils#checkDir(sessionDir)
+  if filereadable(sessionDir.a:filename)
+    exec 'source '.sessionDir.a:filename
+
+    call utils#deleteSession(a:filename)
+  else
+    echo '文件不存在'
+  endif
+endfunction
+
+" 我先做一个和 tpope/vim-fugitive 类似的工具，管理session
+" 类似 :G 打开一个临时文件, 按下回车直接就可以开始一个会话
+" 创建临时文件
+function! utils#mkTempfile()
+  let sessionDir = expand('$HOME/.vim/session/')
+  let sessions = split(glob(sessionDir.'*'), '\n')
+
+  let index = 0
+  for session in sessions 
+    let paths = split(session, '/')
+    let sessions[index] = paths[len(paths) - 1]
+    let index = index + 1
+  endfor
+
+  let filename = tempname()
+
+  exec ':sp '.filename
+
+  call append(0, sessions)
+
+  normal dd
+  normal gg
+  exec 'w'
+  set filetype=vim-session
 endfunction
