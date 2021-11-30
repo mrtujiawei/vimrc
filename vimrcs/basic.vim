@@ -287,7 +287,7 @@ if has("autocmd")
 
   " 创建新文件时设置模板
   au BufNewFile * :call utils#setTemplate()
-  au bufEnter * :call utils#setRunCommand()
+  au BufEnter * :call utils#setRunCommand()
 
   " 如果只有一个用户窗口就直接关闭vim
   autocmd bufenter * call utils#closeOnNoUserWindow()
