@@ -2,6 +2,16 @@
 "
 " Maintainer:   tujiawei <15988803646@163.com>
 " Last Change:  2021 Nov 8
+"
+" Sections:
+"   -> 兼容配置
+"   -> 特殊配置
+"   -> 页面配置
+"   -> 搜索配置
+"   -> 编辑配置
+"   -> 脚本配置
+"   -> 自动命令配置
+"   -> 颜色配置
 
 if exists('g:load_mine_basic')
   finish
@@ -26,8 +36,15 @@ runtime! ftplugin/man.vim
 " 不兼容vi
 set nocompatible
 
+
+" ==========================
+" ======== 特殊配置 ========
+" ==========================
+
 " 让Esc的生效更快捷
 set ttimeout
+
+" 等待时间
 set ttimeoutlen=100
 
 " 响铃
@@ -38,12 +55,6 @@ set ttimeoutlen=100
 
 " 可视铃声
 " set t_vb
-
-" 等待时间
-" set ttimeoutlen=
-
-" 显示折叠的列宽度
-" set foldcolumn=1
 
 " 文件类型检测
 " set fileformats=unix,dos,mac
@@ -206,6 +217,9 @@ set expandtab
 " 更智能
 set smarttab
 
+" 显示折叠的列宽度
+" set foldcolumn=1
+
 " 允许折叠
 set foldenable
 
@@ -236,11 +250,11 @@ set wildmenu
 " 第一次显示列表，之后依次选下一个
 set wildmode=longest:list,full
 
-" 不限制单行最大列
-set synmaxcol=0
-
 " 忽略文件
 set wildignore+=*/.git/*,*/.svn/*,*/.DS_Store
+
+" 不限制单行最大列
+set synmaxcol=0
 
 " 换行之前加8个空格
 " set showbreak=\ \ \ \ \ \ \ \ 
@@ -305,9 +319,9 @@ if has("autocmd")
 endif
 
 
-" ============================================
-" ======== 自定义的一些颜色和系统配置 ========
-" ============================================
+" ==========================
+" ======== 颜色配置 ========
+" ==========================
 
 " %{n}* 使用
 hi user1        cterm=none    ctermfg=black   ctermbg=cyan    gui=none  guifg=#ffffff   guibg=#840c0c   
