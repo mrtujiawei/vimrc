@@ -554,6 +554,12 @@ Window
 `:Gclog`  
 `g?` 查看帮助  
 
+## vim-visual-multi ##
+
+`<C-down>` `<C-up>` 开始多选
+`<C-n>` 选择光标下的单词 `q` 跳过当前单词(不选)
+
+
 ## glob ##
 
 扩展文件通配符
