@@ -141,6 +141,8 @@ endfunc
 function! utils#setRunCommand()
   if &filetype == 'sh'
     nmap <C-B> :w<CR>:!sh % > /tmp/vim.run.log<CR>:vsp /tmp/vim.run.log<CR>
+  elseif 'typescript' == &filetype 
+    nmap <C-B> :call utils#runTs()<CR>
   elseif 'javascript' == &filetype
     nmap <C-B> :w<CR>:!node % <CR>
   elseif 'html' == &filetype
@@ -290,20 +292,26 @@ endfunction
 " 删除 buffer 不关闭窗口
 command! Bclose call <SID>BufcloseCloseIt()
 function! <SID>BufcloseCloseIt()
-    let l:currentBufNum = bufnr("%")
-    let l:alternateBufNum = bufnr("#")
+  let l:currentBufNum = bufnr("%")
+  let l:alternateBufNum = bufnr("#")
 
-    if buflisted(l:alternateBufNum)
-        buffer #
-    else
-        bnext
-    endif
+  if buflisted(l:alternateBufNum)
+    buffer #
+  else
+    bnext
+  endif
 
-    if bufnr("%") == l:currentBufNum
-        new
-    endif
+  if bufnr("%") == l:currentBufNum
+    new
+  endif
 
-    if buflisted(l:currentBufNum)
-        execute("bdelete! ".l:currentBufNum)
-    endif
+  if buflisted(l:currentBufNum)
+    execute("bdelete! ".l:currentBufNum)
+  endif
 endfunction
+
+" 运行ts
+function! utils#runTs()
+  exec 'w ! node ~/.vim/scripts/runner.js '.expand('%')
+endfunction
+
