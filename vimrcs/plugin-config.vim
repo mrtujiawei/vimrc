@@ -88,7 +88,7 @@ let g:vue_pre_processors = ['less', 'sass', 'scss', 'typescript']
 set updatetime=300
 
 " 高亮关键字及其对应的声明和使用的地方
-autocmd CursorHold * silent call CocActionAsync('highlight')
+autocmd CursorHold * silent! call CocActionAsync('highlight')
 
 " 不传递消息给 ins-completion-menu
 set shortmess+=c
@@ -273,7 +273,10 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 
 " 设置git状态
 function! GitStatus()
-  let [a,m,r] = GitGutterGetHunkSummary()
+  let [a,m,r] = [0, 0, 0]
+  if exists('*GitGutterGetHunkSummary')
+    let [a,m,r] = GitGutterGetHunkSummary()
+  endif
   return printf('+%d ~%d -%d ', a, m, r)
 endfunction
 
