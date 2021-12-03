@@ -10,25 +10,25 @@ endif
 let g:load_mine_commands = 1
 
 " 运行测试代码
-command! -n=0 -complete=dir -bar Test :call utils#test()
+command! -n=0 -bar Test :call utils#test()
 
 " 打包测试环境的代码
-command! -n=0 -complete=dir -bar BuildTest :call utils#buildTest()
+command! -n=0 -bar BuildTest :call utils#buildTest()
 
 " 打包线上环境的代码
-command! -n=0 -complete=dir -bar Build :call utils#build()
+command! -n=0 -bar Build :call utils#build()
 
 " 右侧打开终端 terminal
-command! -n=0 -complete=dir -bar T :call utils#verticalTerminal()
+command! -n=0 -bar T :call utils#verticalTerminal()
 
 " 设置页面模板(注释)
-command! -n=0 -complete=dir -bar SetTemplate :call utils#setTemplate()
+command! -n=0 -bar SetTemplate :call utils#setTemplate()
 
 " 翻译光标下字符 fanyi
-command! -n=0 -complete=dir -bar FY :call utils#fanYi()
+command! -n=0 -bar FY :call utils#fanYi()
 
 " 强制保存当前文件 Force write
-command! -n=0 -complete=dir -bar Fw execute 'w !sudo tee % > /dev/null' <bar> edit!
+command! -n=0 -bar Fw execute 'w !sudo tee % > /dev/null' <bar> edit!
 
 " 保存会话
 command! -n=1 -complete=customlist,utils#getSessions -bar MkSession :call utils#mkSession(<f-args>)
