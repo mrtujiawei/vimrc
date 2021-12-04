@@ -574,3 +574,9 @@ Window
 ## glob ##
 
 扩展文件通配符
+
+## new plugin ##
+
+`https://github.com/amix/vimrc/tree/master/sources_non_forked`
+`https://github.com/amix/vimrc/tree/master/sources_forked`
+`https://github.com/amix/vimrc/blob/master/autoload/pathogen.vim`
