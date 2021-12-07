@@ -220,9 +220,8 @@ function! utils#mkSession(filename)
   if exists(':NERDTreeClose')
     :NERDTreeClose
   endif
-  
 
-  exec "mksession ".sessionDir.a:filename
+  exec "mksession! ".sessionDir.a:filename
 endfunction
 
 " 删除session
@@ -312,6 +311,7 @@ endfunction
 
 " 运行ts
 function! utils#runTs()
-  exec 'w ! node ~/.vim/scripts/runner.js '.expand('%')
+  exec ':w'
+  exec '! node ~/.vim/scripts/runner.js '.expand('%')
 endfunction
 
