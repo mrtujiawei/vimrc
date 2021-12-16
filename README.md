@@ -580,3 +580,13 @@ Window
 `https://github.com/amix/vimrc/tree/master/sources_non_forked`
 `https://github.com/amix/vimrc/tree/master/sources_forked`
 `https://github.com/amix/vimrc/blob/master/autoload/pathogen.vim`
+
+## 局部化 ##
+
+| 全局        | 局部                  | 作用域       | 帮助文档              |
+| -----       | -----                 | -----        | -----                 |
+| `:set`      | `:setlocal`           | 缓冲区或窗口 | `:h local-options`    |
+| `:map`      | `:map <buffer>`       | 缓冲区       | `:h :map-local`       |
+| `:autocmd`  | `:autocmd * <buffer>` | 缓冲区       | `:h autocmd-buflocal` |
+| `:cd`       | `:lcd`                | 窗口         | `:h :lcd`             |
+| `:<leader>` | `:<localleader>`      | 缓冲区       | `:h maploacalleader`  |
