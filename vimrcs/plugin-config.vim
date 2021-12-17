@@ -30,6 +30,14 @@ call vundle#begin(expand('~/.vim/bundle'))
   Plugin 'junegunn/fzf'                     " 搜索
   Plugin 'junegunn/fzf.vim'
   Plugin 'simnalamburt/vim-mundo'           " undo tree 每一步动作都可视化
+  Plugin 'nathanaelkane/vim-indent-guides'  " 缩进更明显
+  Plugin 'kshenoy/vim-signature'            " 书签显示
+  " 内容查找插件
+  " grep.vim      https://github.com/yegappan/grep
+  " ack.vim       https://github.com/mileszs/ack.vim
+  " ctrlsf.vim    https://github.com/dyng/ctrlsf.vim
+  " 快速注释插件
+  " preservim/nerdcommenter
 call vundle#end()
 
 
@@ -589,7 +597,27 @@ let g:mundo_playback_delay = 60
 " tu: tree undo
 noremap <silent> <space>tu :MundoToggle<cr>
  
+" =================================================
+" ======== nathanaelkane/vim-indent-guides ========
+" =================================================
 
+" 是否自动启动
+let g:indent_guides_enable_on_vim_startup = 1
+
+" 从第二层开始可视化显示缩进
+let g:indent_guides_start_level=2
+
+" 色块宽度
+let g:indent_guides_guide_size=1
+
+" 定义缩进的颜色
+" let g:indent_guides_auto_colors = 0
+
+" 快捷键 i 开/关缩进可视化
+" nmap <silent> <Leader>i <Plug>IndentGuidesToggle
+
+" hi IndentGuidesOdd  cterm=none    ctermfg=white   ctermbg=black
+" hi IndentGuidesEven cterm=none    ctermfg=white   ctermbg=darkgrey
 
 
 

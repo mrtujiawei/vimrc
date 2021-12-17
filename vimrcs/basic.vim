@@ -64,6 +64,8 @@ set ttimeoutlen=100
 " ======== 页面配置 ========
 " ==========================
 
+set guifont=YaHei\ Consolas\ Hybrid\ 14
+
 " 显示行号 & 相对行号
 set number
 set relativenumber
@@ -204,9 +206,9 @@ set backspace=2
 
 " 有类似游戏中的光标显示，但是感觉太骚了，不适合我
 " 高亮当前行,下面有配置，插入模式不高亮
-set cursorline
+set nocursorline
 " 高亮当前列,下面有配置，插入模式不高亮
-set cursorcolumn
+set nocursorcolumn
 
 " 直接使用系统剪切板 需要安装vim-gtk
 set clipboard=unnamedplus
@@ -294,10 +296,10 @@ if has("autocmd")
   autocmd BufReadPost * call utils#toLastEditPosition()
 
   " 非插入模式高亮当前行列
-  autocmd InsertEnter * se nocursorcolumn
-  autocmd InsertLeave * se cursorcolumn
-  autocmd InsertEnter * se nocursorline
-  autocmd InsertLeave * se cursorline
+  " autocmd InsertEnter * se nocursorcolumn
+  " autocmd InsertLeave * se cursorcolumn
+  " autocmd InsertEnter * se nocursorline
+  " autocmd InsertLeave * se cursorline
 
   " 创建新文件时设置模板
   autocmd BufNewFile * :call utils#setTemplate()
