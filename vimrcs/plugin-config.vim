@@ -38,6 +38,8 @@ call vundle#begin(expand('~/.vim/bundle'))
   " ctrlsf.vim    https://github.com/dyng/ctrlsf.vim
   " 快速注释插件
   " preservim/nerdcommenter
+  " 代码片段
+  " https://github.com/SirVer/ultisnips
 call vundle#end()
 
 
@@ -62,6 +64,12 @@ let g:NERDTreeGitStatusConcealBrackets = 0
 
 " 忽略文件夹，太慢
 let g:NERDTreeIgnore=['node_modules']
+
+" 删除文件时自动删除对应的buffer
+let g:NERDTreeAutoDeleteBuffer=1
+
+" 显示位置
+let g:NERDTreeWinPos='right'
 
 " 默认的显示图标
 " let g:NERDTreeGitStatusIndicatorMapCustom = {
