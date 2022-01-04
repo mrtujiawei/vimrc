@@ -40,6 +40,8 @@ call vundle#begin(expand('~/.vim/bundle'))
   " preservim/nerdcommenter
   " 代码片段
   " https://github.com/SirVer/ultisnips
+  " 悬浮终端，貌似 neovim 中才有用
+  " Plugin 'voldikss/vim-floaterm'
 call vundle#end()
 
 
@@ -120,6 +122,7 @@ set shortmess+=c
 " coc-sh: shell脚本提示
 " coc-prettier: 代码格式化的，基本不用
 " coc-lightbulb: 显示个小灯泡，玩玩
+" coc-git: 没啥用,需要neovio才能显示blame
 let g:coc_global_extensions = [
   \ 'coc-json', 'coc-tsserver', 'coc-html', 
   \ 'coc-css', 'coc-cssmodules', 
