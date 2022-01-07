@@ -32,6 +32,8 @@ call vundle#begin(expand('~/.vim/bundle'))
   Plugin 'simnalamburt/vim-mundo'           " undo tree 每一步动作都可视化
   Plugin 'nathanaelkane/vim-indent-guides'  " 缩进更明显
   Plugin 'kshenoy/vim-signature'            " 书签显示
+  Plugin 'itchyny/vim-cursorword'           " 单词下划线
+  Plugin 'lfv89/vim-interestingwords'       " 高亮
   " 内容查找插件
   " grep.vim      https://github.com/yegappan/grep
   " ack.vim       https://github.com/mileszs/ack.vim
