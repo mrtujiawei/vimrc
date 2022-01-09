@@ -34,6 +34,7 @@ call vundle#begin(expand('~/.vim/bundle'))
   Plugin 'kshenoy/vim-signature'            " 书签显示
   Plugin 'itchyny/vim-cursorword'           " 单词下划线
   Plugin 'lfv89/vim-interestingwords'       " 高亮
+  Plugin 'zivyangll/git-blame.vim'          " 显示blame 信息
   " 内容查找插件
   " grep.vim      https://github.com/yegappan/grep
   " ack.vim       https://github.com/mileszs/ack.vim
@@ -632,15 +633,9 @@ let g:indent_guides_guide_size=1
 " hi IndentGuidesOdd  cterm=none    ctermfg=white   ctermbg=black
 " hi IndentGuidesEven cterm=none    ctermfg=white   ctermbg=darkgrey
 
+" =========================================
+" ======== zivyangll/git-blame.vim ========
+" =========================================
 
-
-
-
-
-
-
-
-
-
-
-
+" 设置显示的快捷建
+nnoremap <leader>b :<C-u>call gitblame#echo()<CR>

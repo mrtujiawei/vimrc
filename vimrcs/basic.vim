@@ -265,7 +265,7 @@ set synmaxcol=0
 set linebreak
 
 " mksession 保存的状态
-set sessionoptions+=globals
+" set sessionoptions+=globals
 
 " ==========================
 " ======== 脚本配置 ========
