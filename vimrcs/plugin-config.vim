@@ -25,7 +25,6 @@ call vundle#begin(expand('~/.vim/bundle'))
   " Plugin 'vim-airline/vim-airline'        " 状态栏美化
   " Plugin 'vim-airline/vim-airline-themes' " 状态栏美化
   Plugin 'mg979/vim-visual-multi'           " 多光标选中及编辑
-  " Plugin 'godlygeek/tabular'              " markdown 表格 直接 :Format
   Plugin 'iamcco/markdown-preview.nvim'     " markdown 预览
   Plugin 'junegunn/fzf'                     " 搜索
   Plugin 'junegunn/fzf.vim'
@@ -43,8 +42,6 @@ call vundle#begin(expand('~/.vim/bundle'))
   " preservim/nerdcommenter
   " 代码片段
   " https://github.com/SirVer/ultisnips
-  " 悬浮终端，貌似 neovim 中才有用
-  " Plugin 'voldikss/vim-floaterm'
 call vundle#end()
 
 
