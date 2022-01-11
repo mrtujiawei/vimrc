@@ -32,3 +32,8 @@ Plugin 'ZSaberLv0/ZFVimIM_openapi' " 可选, 百度云输入法
 " 国内辣鸡网络, 可以尝试用这个镜像, 与 github 互通
 Plugin 'https://hub.fastgit.org/YourUserName/ZFVimIM_pinyin_base' " 你的词库
 
+" 已经改成 :Format 了，比这个好用多了
+Plugin 'godlygeek/tabular'              " markdown 表格 直接 :Format
+
+" 悬浮终端，貌似 neovim 中才有用
+Plugin 'voldikss/vim-floaterm'
