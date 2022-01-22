@@ -37,3 +37,6 @@ Plugin 'godlygeek/tabular'              " markdown 表格 直接 :Format
 
 " 悬浮终端，貌似 neovim 中才有用
 Plugin 'voldikss/vim-floaterm'
+
+" vim 执行sql
+" https://github.com/cosminadrianpopescu/vim-sql-workbench
