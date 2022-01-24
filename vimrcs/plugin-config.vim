@@ -123,6 +123,7 @@ set shortmess+=c
 " coc-prettier: 代码格式化的，基本不用
 " coc-lightbulb: 显示个小灯泡，玩玩
 " coc-git: 没啥用,需要neovio才能显示blame
+" coc-vimlsp: vim 语法支持
 let g:coc_global_extensions = [
   \ 'coc-json', 'coc-tsserver', 'coc-html', 
   \ 'coc-css', 'coc-cssmodules', 
@@ -132,6 +133,7 @@ let g:coc_global_extensions = [
   \ 'coc-sh',
   \ 'coc-prettier',
   \ 'coc-lightbulb',
+  \ 'coc-vimlsp',
   \ ]
 
 " 始终显示标识
