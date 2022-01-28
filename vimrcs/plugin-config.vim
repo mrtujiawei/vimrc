@@ -22,8 +22,8 @@ call vundle#begin(expand('~/.vim/bundle'))
   Plugin 'tpope/vim-fugitive'               " git操作包
   Plugin 'leafgarland/typescript-vim'       " typescript语法高亮
   Plugin 'ludovicchabant/vim-gutentags'     " tag管理,异步更新tag
-  " Plugin 'vim-airline/vim-airline'        " 状态栏美化
-  " Plugin 'vim-airline/vim-airline-themes' " 状态栏美化
+  Plugin 'vim-airline/vim-airline'        " 状态栏美化
+  Plugin 'vim-airline/vim-airline-themes' " 状态栏美化
   Plugin 'mg979/vim-visual-multi'           " 多光标选中及编辑
   Plugin 'iamcco/markdown-preview.nvim'     " markdown 预览
   Plugin 'junegunn/fzf'                     " 搜索
@@ -423,24 +423,36 @@ let g:gutentags_ctags_extra_args += ['--exclude=node_modules', '--exclude=public
 " ======== vim-airline ========
 " =============================
 
-" 只加载指定的插件，目前没有加载
-let g:airline_extensions = []
+" 检测是否修改
+let g:airline_detect_modified = 1
 
-" 显示窗口tab, 不显示buffer
-let g:airline#extensions#tabline#enabled = 0
-let g:airline#extensions#tabline#alt_sep = 1
+" 启用粘贴检测
+let g:airline_detect_paste = 1
+
+" 启用加密检测
+let g:airline_detect_crypt = 1
+
+" 不装字体显示会很奇怪
+" let g:airline_powerline_fonts = 1
+
+" 只加载指定的插件，目前没有忽略
+" let g:airline_extensions = []
+
+" 显示窗口tab
+let g:airline#extensions#tabline#enabled = 1
+
+" 不显示buffer
+let g:airline#extensions#tabline#alt_sep = 0
+let g:airline#extensions#tabline#show_buffers = 1
 
 " 标签栏的分隔符
 let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#left_alt_sep = ''
 
-" 标签栏总体样式
-" default | jsformatter | unique_tail |  unique_tail_improved
-let g:airline#extensions#tabline#formatter = 'default'
-
 " 同上
 let g:airline#extensions#tabline#right_sep = ''
-let g:airline#extensions#tabline#right_alt_sep = ''
+let g:airline#extensions#tabline#right_alt_sep = '|'
+
 
 " 不太清楚干什么的，也不知道哪里复制来的
 let g:airline#extensions#tabline#buffer_idx_mode = 1
@@ -449,6 +461,10 @@ let g:airline#extensions#tabline#tab_nr_type = 2
 let g:airline#extensions#tabline#buffers_label = ''
 let g:airline#extensions#tabline#tabs_label = 'Tabs'
 let g:airline#extensions#tabline#overflow_marker = '…'
+
+" 标签栏总体样式
+" default | jsformatter | unique_tail |  unique_tail_improved
+let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 
 " ==================================
