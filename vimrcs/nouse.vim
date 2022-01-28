@@ -40,3 +40,4 @@ Plugin 'voldikss/vim-floaterm'
 
 " vim 执行sql
 " https://github.com/cosminadrianpopescu/vim-sql-workbench
+

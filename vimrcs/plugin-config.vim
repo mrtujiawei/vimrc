@@ -42,8 +42,28 @@ call vundle#begin(expand('~/.vim/bundle'))
   " preservim/nerdcommenter
   " 代码片段
   " https://github.com/SirVer/ultisnips
+  Plugin 'tomasr/molokai'                   " 修改配色方案
+  " Plugin 'sickill/vim-monokai'            " 配色方案,没上面那个好看
 call vundle#end()
 
+" ================================
+" ======== tomasr/molokai ========
+" ================================
+
+" 匹配原始的 monokai 背景颜色
+let g:molokai_original = 1
+
+" 使 256 色版本尽可能接近默认（深色）GUI 版本
+let g:rehash256 = 1
+
+colorscheme molokai
+
+" =====================================
+" ======== sickill/vim-monokai ========
+" =====================================
+
+" 已注释，没上面那个好看
+" colorscheme monokai
 
 " ==========================
 " ======== nerdtree ========
@@ -218,6 +238,10 @@ nmap <leader>ac <Plug>(coc-codeaction)
 " 触发快速修复，不是每个错误都能修复的
 nmap <leader>qf <Plug>(coc-fix-current)
 
+" 显示变更信息
+" 貌似不太行，直接报错了
+" nmap <leader>xx <Plug>(coc-codelens-action)
+
 " 函数和类映射
 " 需要 lsp 'textDocument.documentSymbol' 支持
 " 目前不支持
@@ -277,12 +301,12 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " 窗口或弹出提示重新映射滚动快捷键
 " 实际好像并没有什么用
 " if has('nvim-0.4.0') || has('patch-8.2.0750')
-"   nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-"   nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-"   inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
-"   inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
-"   vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-"   vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+  nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+  nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+  inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+  inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+  vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+  vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
 " endif
 
 
