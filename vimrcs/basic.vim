@@ -11,7 +11,6 @@
 "   -> 编辑配置
 "   -> 脚本配置
 "   -> 自动命令配置
-"   -> 颜色配置
 
 if exists('g:load_mine_basic')
   finish
@@ -69,6 +68,10 @@ set guifont=YaHei\ Consolas\ Hybrid\ 14
 " 显示行号 & 相对行号
 set number
 set relativenumber
+
+" 显示标识列
+" 主要用来显示git信息
+set signcolumn
 
 " 默认不换行
 set textwidth=0
@@ -290,7 +293,7 @@ set lazyredraw
 
 if has("autocmd") 
   " 文件在外部改变时，提示重新载入
-  autocmd FocusGained,BufEnter *[a-zA-Z] silent! checktime
+  autocmd FocusGained,BufEnter *[a-zA-Z] silent! if (utils#currentFileReadable()) | checktime | endif
 
   " 再次打开时回到上次编辑的位置
   autocmd BufReadPost * call utils#toLastEditPosition()
@@ -316,36 +319,6 @@ if has("autocmd")
 
   " 保存折叠 只匹配结尾是英文单词的文件
   " 注意定时清除一下
-  autocmd BufWinLeave *[a-zA-Z] silent mkview
-  autocmd BufReadPost *[a-zA-z] silent! loadview
+  autocmd BufWinLeave *[a-zA-Z] silent if (utils#currentFileReadable()) | mkview | endif
+  autocmd BufReadPost *[a-zA-z] silent! if (utils#currentFileReadable()) | loadview | endif
 endif
-
-
-" ==========================
-" ======== 颜色配置 ========
-" ==========================
-
-" %{n}* 使用
-hi user1        cterm=none    ctermfg=black   ctermbg=cyan    gui=none  guifg=#ffffff   guibg=#840c0c   
-hi user2        cterm=none    ctermfg=white   ctermbg=yellow  gui=none  guifg=black     guibg=#ffff77   
-hi user3        cterm=none    ctermfg=white   ctermbg=blue    gui=none  guifg=black     guibg=#d59159   
-hi user4        cterm=none    ctermfg=white   ctermbg=green   gui=none  guifg=black     guibg=#8d6c47   
-hi user5        cterm=none    ctermfg=black   ctermbg=cyan    gui=none  guifg=#000000   guibg=#3a406e   
-hi user6        cterm=bold    ctermfg=black   ctermbg=white   gui=none  guifg=black     guibg=#acff84   
-hi user7        cterm=none    ctermfg=yellow  ctermbg=white   gui=none  guifg=black     guibg=#77cf77   
-hi user8        cterm=none    ctermfg=yellow  ctermbg=white   gui=none  guifg=black     guibg=#66b06f   
-hi user9        cterm=none    ctermfg=yellow  ctermbg=white   gui=none  guifg=black     guibg=#60af9f   
-
-" %#RightArror# 这样来使用
-" set statusline+=%#RightArror#▶
-hi RightArror   cterm=none    ctermfg=yellow  ctermbg=cyan    gui=none  guifg=#840c0c   guibg=#ffff77   gui=bold
-
-" 系统高亮组
-hi Pmenu                      ctermfg=black   ctermbg=gray                              guibg=#333333
-hi PmenuSel                   ctermfg=7       ctermbg=4       gui=none  guifg=#ffffff   guibg=#444444   
-hi TabLineSel   cterm=none    ctermfg=yellow  ctermbg=cyan    gui=none  guifg=#840c0c   guibg=#ffff77   gui=bold
-hi TabLine      cterm=none    ctermfg=yellow  ctermbg=white   gui=none  guifg=black     guibg=#60af9f   
-hi TabLineFill  cterm=none    ctermfg=yellow  ctermbg=white   gui=none  guifg=black     guibg=#77cf77   
-hi CursorLine   cterm=none    ctermbg=black   ctermbg=cyan    gui=none  guifg=#ffffff   guibg=#333333   gui=bold
-hi CursorLine   cterm=none    ctermfg=white   ctermbg=cyan    gui=none  guifg=green     guibg=#202020   gui=bold
-hi CursorColumn cterm=none    ctermfg=white   ctermbg=cyan    gui=none  guifg=green     guibg=#202020   gui=bold

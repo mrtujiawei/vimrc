@@ -152,7 +152,7 @@ function! utils#setRunCommand()
   elseif 'go' == &filetype
     nmap <C-B> :w<CR>:!go run %<CR>
   endif
-  imap <C-B> <ESC><C-B>
+  " imap <C-B> <ESC><C-B>
 endfunc
 
 " 没有用户窗口的时候退出vim
@@ -315,3 +315,8 @@ function! utils#runTs()
   exec '! node ~/.vim/scripts/runner.js '.expand('%')
 endfunction
 
+" 判断当前文件是否存在
+function! utils#currentFileReadable()
+  let l:filename = expand('%')
+  return filereadable(l:filename)
+endfunction
