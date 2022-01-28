@@ -85,13 +85,13 @@ let g:NERDTreeGitStatusUntrackedFilesMode = 'normal'
 let g:NERDTreeGitStatusConcealBrackets = 0
 
 " 忽略文件夹，太慢
-let g:NERDTreeIgnore=['node_modules']
+let g:NERDTreeIgnore = ['node_modules']
 
 " 删除文件时自动删除对应的buffer
-let g:NERDTreeAutoDeleteBuffer=1
+let g:NERDTreeAutoDeleteBuffer = 1
 
 " 显示位置
-let g:NERDTreeWinPos='right'
+let g:NERDTreeWinPos = 'right'
 
 " 默认的显示图标
 " let g:NERDTreeGitStatusIndicatorMapCustom = {
@@ -453,7 +453,6 @@ let g:airline#extensions#tabline#left_alt_sep = ''
 let g:airline#extensions#tabline#right_sep = ''
 let g:airline#extensions#tabline#right_alt_sep = '|'
 
-
 " 不太清楚干什么的，也不知道哪里复制来的
 let g:airline#extensions#tabline#buffer_idx_mode = 1
 let g:airline#extensions#tabline#show_tab_nr = 1
@@ -654,10 +653,10 @@ noremap <silent> <space>tu :MundoToggle<cr>
 let g:indent_guides_enable_on_vim_startup = 1
 
 " 从第二层开始可视化显示缩进
-let g:indent_guides_start_level=2
+let g:indent_guides_start_level = 2
 
 " 色块宽度
-let g:indent_guides_guide_size=1
+let g:indent_guides_guide_size = 1
 
 " 定义缩进的颜色
 " let g:indent_guides_auto_colors = 0

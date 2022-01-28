@@ -8,7 +8,7 @@
     "typescriptreact"
   ],
   "vetur.ignoreProjectWarning": true,
-  "coc.preferences.extensionUpdateCheck": "weekly",
+  "coc.preferences.extensionUpdateCheck": "never",
   "javascript.suggest.enabled": true,
   "javascript.validate.enable": true,
   "javascript.autoClosingTags": true,
