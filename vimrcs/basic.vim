@@ -71,7 +71,7 @@ set relativenumber
 
 " 显示标识列
 " 主要用来显示git信息
-set signcolumn
+set signcolumn=auto
 
 " 默认不换行
 set textwidth=0
