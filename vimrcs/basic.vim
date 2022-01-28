@@ -63,7 +63,7 @@ set ttimeoutlen=100
 " ======== 页面配置 ========
 " ==========================
 
-set guifont=YaHei\ Consolas\ Hybrid\ 14
+" set guifont=YaHei\ Consolas\ Hybrid\ 14
 
 " 显示行号 & 相对行号
 set number

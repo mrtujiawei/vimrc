@@ -93,6 +93,8 @@ let g:NERDTreeAutoDeleteBuffer = 1
 " 显示位置
 let g:NERDTreeWinPos = 'right'
 
+autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
+
 " 默认的显示图标
 " let g:NERDTreeGitStatusIndicatorMapCustom = {
 "    \ 'Modified'  :'✹',
@@ -432,6 +434,7 @@ let g:airline_detect_paste = 1
 " 启用加密检测
 let g:airline_detect_crypt = 1
 
+" 需要支持 GUI 才行， 目前我用的不支持
 " 不装字体显示会很奇怪
 " let g:airline_powerline_fonts = 1
 
