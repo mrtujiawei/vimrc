@@ -442,10 +442,10 @@ let g:airline_detect_crypt = 1
 let g:airline#extensions#tabline#enabled = 1
 
 " 不显示buffer
-let g:airline#extensions#tabline#alt_sep = 0
-let g:airline#extensions#tabline#show_buffers = 1
+let g:airline#extensions#tabline#show_buffers = 0
 
 " 标签栏的分隔符
+let g:airline#extensions#tabline#alt_sep = 0
 let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#left_alt_sep = ''
 
