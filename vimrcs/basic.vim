@@ -63,7 +63,9 @@ set ttimeoutlen=100
 " ======== 页面配置 ========
 " ==========================
 
+" gui 字体，用不上
 " set guifont=YaHei\ Consolas\ Hybrid\ 14
+" set guifont=*
 
 " 显示行号 & 相对行号
 set number
@@ -193,7 +195,7 @@ set undodir=~/.vim/.undo//
 set noimdisable
 
 " 设置为双字宽显示，否则无法完整显示如:☆
-" set ambiwidth=double
+set ambiwidth=double
 
 " 自动缩进
 set autoindent                  
