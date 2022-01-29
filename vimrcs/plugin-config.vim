@@ -54,9 +54,9 @@ call vundle#end()
 " 支持 <C-d> 关闭终端, 否则还要手动关一次
 let g:floaterm_autoclose     = 1
 let g:floaterm_keymap_new    = '<leader>T'
-let g:floaterm_keymap_prev   = '<leader>pt'
+let g:floaterm_keymap_prev   = '<leader>pp'
 let g:floaterm_keymap_next   = '<leader>pn'
-let g:floaterm_keymap_toggle = '<leader>pp'
+let g:floaterm_keymap_toggle = '<leader>pt'
 
 " ================================
 " ======== tomasr/molokai ========
