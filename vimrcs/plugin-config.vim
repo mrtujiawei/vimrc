@@ -34,6 +34,7 @@ call vundle#begin(expand('~/.vim/bundle'))
   Plugin 'itchyny/vim-cursorword'           " 单词下划线
   Plugin 'lfv89/vim-interestingwords'       " 高亮
   Plugin 'zivyangll/git-blame.vim'          " 显示blame 信息
+  Plugin 'voldikss/vim-floaterm'            " 悬浮终端
   " 内容查找插件
   " grep.vim      https://github.com/yegappan/grep
   " ack.vim       https://github.com/mileszs/ack.vim
@@ -45,6 +46,17 @@ call vundle#begin(expand('~/.vim/bundle'))
   Plugin 'tomasr/molokai'                   " 修改配色方案
   " Plugin 'sickill/vim-monokai'            " 配色方案,没上面那个好看
 call vundle#end()
+
+" =======================================
+" ======== voldikss/vim-floaterm ========
+" =======================================
+
+" 支持 <C-d> 关闭终端, 否则还要手动关一次
+let g:floaterm_autoclose     = 1
+let g:floaterm_keymap_new    = '<leader>T'
+let g:floaterm_keymap_prev   = '<leader>pt'
+let g:floaterm_keymap_next   = '<leader>pn'
+let g:floaterm_keymap_toggle = '<leader>pp'
 
 " ================================
 " ======== tomasr/molokai ========
