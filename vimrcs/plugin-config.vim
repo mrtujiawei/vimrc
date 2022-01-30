@@ -58,6 +58,7 @@ let g:floaterm_keymap_prev   = '<leader>pp'
 let g:floaterm_keymap_next   = '<leader>pn'
 let g:floaterm_keymap_toggle = '<leader>pt'
 
+
 " ================================
 " ======== tomasr/molokai ========
 " ================================
