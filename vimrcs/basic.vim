@@ -311,7 +311,7 @@ if has("autocmd")
   autocmd BufEnter * :call utils#setRunCommand()
 
   " 如果只有一个用户窗口就直接关闭vim
-  autocmd bufenter * call utils#closeOnNoUserWindow()
+  autocmd BufEnter * call utils#closeOnNoUserWindow()
 
   " 如果是空文件夹就打开目录树
   " autocmd vimenter * if (1 == empty(expand('%'))) | NERDTree | endif

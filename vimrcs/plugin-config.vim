@@ -106,7 +106,8 @@ let g:NERDTreeAutoDeleteBuffer = 1
 " 显示位置
 let g:NERDTreeWinPos = 'right'
 
-autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
+" 显示相同的目录树
+" autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
 
 " 默认的显示图标
 " let g:NERDTreeGitStatusIndicatorMapCustom = {
