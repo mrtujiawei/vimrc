@@ -79,3 +79,7 @@ noremap <Leader>mp :call utils#MarkdownPreview()<CR>
 
 " 快速编辑，找到下一个 // TODO 并删除，进入插入模式
 noremap <silent> <leader>i /\/\/ TODO<cr>:noh<cr>dd:noh<cr>O
+
+" 快速开始一个会话
+" 还没想好快捷键
+" noremap <silent> <F5> :!tmux -c /home/tujiawei/github/package/packages/bin/src/shell/tmux-sessionizer.sh<CR>

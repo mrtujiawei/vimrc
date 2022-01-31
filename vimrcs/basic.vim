@@ -302,7 +302,7 @@ if has("autocmd")
   autocmd FocusGained,BufEnter *[a-zA-Z] silent! if (utils#currentFileReadable()) | checktime | endif
 
   " 再次打开时回到上次编辑的位置
-  autocmd BufReadPost * call utils#toLastEditPosition()
+  autocmd BufReadPost * silent! call utils#toLastEditPosition()
 
   " 非插入模式高亮当前行列
   " autocmd InsertEnter * se nocursorcolumn
@@ -315,16 +315,16 @@ if has("autocmd")
   autocmd BufEnter * :call utils#setRunCommand()
 
   " 如果只有一个用户窗口就直接关闭vim
-  autocmd bufenter * call utils#closeOnNoUserWindow()
+  autocmd BufEnter * silent! call utils#closeOnNoUserWindow()
 
   " 如果是空文件夹就打开目录树
   " autocmd vimenter * if (1 == empty(expand('%'))) | NERDTree | endif
 
   " 保存前移除所有行尾的空格
-  autocmd BufWritePre *.js,*.json,*.jsx,*.ts,*.tsx,*.vue,*.css,*.less,*.scss,*.sh :call utils#cleanExtraSpaces()
+  autocmd BufWritePre *.js,*.json,*.jsx,*.ts,*.tsx,*.vue,*.css,*.less,*.scss,*.sh silent! :call utils#cleanExtraSpaces()
 
   " 保存折叠 只匹配结尾是英文单词的文件
   " 注意定时清除一下
-  autocmd BufWinLeave *[a-zA-Z] silent if (utils#currentFileReadable()) | mkview | endif
+  autocmd BufWinLeave *[a-zA-Z] silent! if (utils#currentFileReadable()) | mkview | endif
   autocmd BufReadPost *[a-zA-z] silent! if (utils#currentFileReadable()) | loadview | endif
 endif
