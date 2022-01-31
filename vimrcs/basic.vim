@@ -35,6 +35,10 @@ runtime! ftplugin/man.vim
 " 不兼容vi
 set nocompatible
 
+if &term=~'256color'
+  set t_ut= 
+endif
+
 
 " ==========================
 " ======== 特殊配置 ========
