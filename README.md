@@ -663,3 +663,4 @@ hi CursorLine   cterm=none    ctermfg=white   ctermbg=cyan    gui=none  guifg=gr
 hi CursorColumn cterm=none    ctermfg=white   ctermbg=cyan    gui=none  guifg=green     guibg=#202020   gui=bold
 
 ```
+
