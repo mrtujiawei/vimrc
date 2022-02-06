@@ -451,8 +451,8 @@ let g:airline_detect_crypt = 1
 " 需要支持 GUI 才行， 目前我用的不支持
 " 需要本地和远程都装才会正常显示
 " 不装字体显示会很奇怪
-" let g:airline_powerline_fonts = 1
-" let g:Powerline_symbols = 'fancy'
+let g:airline_powerline_fonts = 0
+let g:Powerline_symbols = 'fancy'
 
 " 只加载指定的插件，目前没有忽略
 " let g:airline_extensions = []
