@@ -458,14 +458,14 @@ let g:Powerline_symbols = 'fancy'
 let g:airline_highlighting_cache = 1
 
 " 只加载指定的插件
-" 'coc', 'searchcount', 'term',
+" 'coc', 'searchcount',
 " 'wordcount', 'whitespace', 'mundo',
 let g:airline_extensions = [
   \ 'branch', 'fugitiveline',
   \ 'gutentags', 'hunks',
   \ 'keymap', 'netrw',
   \ 'quickfix', 'tabline',
-  \ 'fzf',
+  \ 'fzf', 'term',
   \ ]
 
 " 显示窗口tab
