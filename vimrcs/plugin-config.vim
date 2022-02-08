@@ -454,8 +454,18 @@ let g:airline_detect_crypt = 1
 let g:airline_powerline_fonts = 0
 let g:Powerline_symbols = 'fancy'
 
-" 只加载指定的插件，目前没有忽略
-" let g:airline_extensions = []
+" 缓存高亮组
+let g:airline_highlighting_cache = 1
+
+" 只加载指定的插件
+" 'coc', 'fzf', 'searchcount', 'term',
+" 'wordcount', 'whitespace', 'mundo',
+let g:airline_extensions = [
+  \ 'branch', 'fugitiveline',
+  \ 'gutentags', 'hunks',
+  \ 'keymap', 'netrw',
+  \ 'quickfix', 'tabline',
+  \ ]
 
 " 显示窗口tab
 let g:airline#extensions#tabline#enabled = 1
