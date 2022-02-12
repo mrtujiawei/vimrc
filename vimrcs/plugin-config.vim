@@ -172,6 +172,9 @@ let g:coc_global_extensions = [
   \ 'coc-vimlsp',
   \ ]
 
+" 设置@为关键词
+autocmd FileType scss setl iskeyword+=@-@
+
 " 始终显示标识
 if has("nvim-0.5.0") || has("patch-8.1.1564")
   set signcolumn=number
