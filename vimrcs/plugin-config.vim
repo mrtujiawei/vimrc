@@ -35,16 +35,15 @@ call vundle#begin(expand('~/.vim/bundle'))
   Plugin 'lfv89/vim-interestingwords'       " 高亮
   Plugin 'zivyangll/git-blame.vim'          " 显示blame 信息
   Plugin 'voldikss/vim-floaterm'            " 悬浮终端
+  Plugin 'tomasr/molokai'                   " 修改配色方案
+  Plugin 'preservim/nerdcommenter'          " 快速注释插件
+  " Plugin 'sickill/vim-monokai'            " 配色方案,没上面那个好看
   " 内容查找插件
   " grep.vim      https://github.com/yegappan/grep
   " ack.vim       https://github.com/mileszs/ack.vim
   " ctrlsf.vim    https://github.com/dyng/ctrlsf.vim
-  " 快速注释插件
-  " preservim/nerdcommenter
   " 代码片段
   " https://github.com/SirVer/ultisnips
-  Plugin 'tomasr/molokai'                   " 修改配色方案
-  " Plugin 'sickill/vim-monokai'            " 配色方案,没上面那个好看
 call vundle#end()
 
 " =======================================
@@ -710,3 +709,39 @@ let g:indent_guides_guide_size = 1
 
 " 设置显示的快捷建
 nnoremap <leader>b :<C-u>call gitblame#echo()<CR>
+
+" =========================================
+" ======== preservim/nerdcommenter ========
+" =========================================
+
+" 取消默认映射
+let g:NERDCreateDefaultMappings = 0
+
+" 注释后加空格
+let g:NERDSpaceDelims = 1
+
+" 多行注释紧凑
+let g:NERDCompactSexyComs = 1
+
+" 代码注释尽量左对齐，不跟随代码缩进
+let g:NERDDefaultAlign = 'left'
+
+" 修改自定义的代码注释
+" let g:NERDAltDelims_java = 1
+
+" 自定义代码注释
+" let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+
+" 空行允许注释和取消
+let g:NERDCommentEmptyLines = 1
+
+" 取消注释时移除空格
+let g:NERDTrimTrailingWhitespace = 1
+
+" 开启检测是否已加注释
+let g:NERDToggleCheckAllLines = 1
+
+let g:NERDCommenterComment = '<leader>/'
+
+nnoremap <silent> <C-/> :call nerdcommenter#Comment('n', 'toggle')<CR>
+xnoremap <silent> <C-/> :call nerdcommenter#Comment('x', 'toggle')<CR>
