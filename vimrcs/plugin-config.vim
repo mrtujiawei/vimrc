@@ -58,6 +58,8 @@ let g:floaterm_keymap_prev   = '<leader>pp'
 let g:floaterm_keymap_next   = '<leader>pn'
 let g:floaterm_keymap_toggle = '<leader>pt'
 
+" 我的电脑上有点问题
+let g:floaterm_borderchars = '-|-|'
 
 " ================================
 " ======== tomasr/molokai ========
