@@ -59,7 +59,7 @@ let g:floaterm_keymap_next   = '<leader>pn'
 let g:floaterm_keymap_toggle = '<leader>pt'
 
 " 我的电脑上有点问题
-let g:floaterm_borderchars = '-|-|'
+let g:floaterm_borderchars = '-|-|    '
 
 " ================================
 " ======== tomasr/molokai ========
@@ -138,6 +138,8 @@ let g:vue_pre_processors = ['less', 'sass', 'scss', 'typescript']
 " ==========================
 " ======== coc.nvim ========
 " ==========================
+
+let g:coc_borderchars = ['-', '|', '-', '|', ' ', ' ', ' ', ' ']
 
 " 交换文件写入磁盘的时间
 " 300ms 内没有输入,更快的响应时间
