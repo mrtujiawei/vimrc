@@ -51,14 +51,14 @@ call vundle#end()
 " =======================================
 
 " 支持 <C-d> 关闭终端, 否则还要手动关一次
-let g:floaterm_autoclose     = 1
-let g:floaterm_keymap_new    = '<leader>T'
-let g:floaterm_keymap_prev   = '<leader>pp'
-let g:floaterm_keymap_next   = '<leader>pn'
-let g:floaterm_keymap_toggle = '<leader>pt'
+let g:floaterm_autoclose     = 2
+let g:floaterm_keymap_new    = '<F9>'
+let g:floaterm_keymap_prev   = '<F10>'
+let g:floaterm_keymap_next   = '<F11>'
+let g:floaterm_keymap_toggle = '<F12>'
 
 " 我的电脑上有点问题
-let g:floaterm_borderchars = '-|-|    '
+let g:floaterm_borderchars = '-|-|'
 
 " ================================
 " ======== tomasr/molokai ========
