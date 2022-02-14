@@ -66,13 +66,13 @@ function! utils#setTemplate()
     "  * @date: 2020-09-02 14:05:08
     "  */
 
-    call setline(1, "\/**")
-    call append(line("."), "\ * ")
-    call append(line(".") + 1, "\ * @filename: ".expand("%"))
-    call append(line(".") + 2, "\ * @author: Mr Prince")
-    call append(line(".") + 3, "\ * @date: ".strftime("%Y-%m-%d %T"))
-    call append(line(".") + 4, "\ */")
-    call append(line(".") + 5, "")
+    call append(0, "\/**")
+    call append(1, "\ * ")
+    call append(2, "\ * @filename: ".expand("%"))
+    call append(3, "\ * @author: Mr Prince")
+    call append(4, "\ * @date: ".strftime("%Y-%m-%d %T"))
+    call append(5, "\ */")
+    call append(6, "")
     normal 2gg$
 
   " vue 模板

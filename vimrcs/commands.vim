@@ -9,15 +9,6 @@ endif
 
 let g:load_mine_commands = 1
 
-" 运行测试代码
-command! -n=0 -bar Test :call utils#test()
-
-" 打包测试环境的代码
-command! -n=0 -bar BuildTest :call utils#buildTest()
-
-" 打包线上环境的代码
-command! -n=0 -bar Build :call utils#build()
-
 " 右侧打开终端 terminal
 command! -n=0 -bar T :call utils#verticalTerminal()
 
