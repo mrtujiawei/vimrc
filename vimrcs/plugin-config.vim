@@ -746,3 +746,9 @@ let g:NERDCommenterComment = '<leader>/'
 nnoremap <silent> <C-/> :call nerdcommenter#Comment('n', 'toggle')<CR>
 xnoremap <silent> <C-/> :call nerdcommenter#Comment('x', 'toggle')<CR>
 imap <silent> <C-/> <Esc><C-/>
+
+" ==============================
+" ======== junegunn/fzf ========
+" ==============================
+
+" let g:fzf_layout = { 'reverse': '' }
