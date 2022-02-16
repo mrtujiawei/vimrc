@@ -198,6 +198,9 @@ set backupdir=~/.vim/.backup//
 set directory=~/.vim/.swp//
 set undodir=~/.vim/.undo//
 
+" 页面相关的临时文件
+set viewdir=~/.vim/.view
+
 " 离开 Insert 模式时自动切换至英文输入法
 " 现在是通过ssh连的，根本没法起作用
 set noimdisable
