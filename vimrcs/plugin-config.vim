@@ -193,6 +193,7 @@ endfunction
 
 " 使用tab切换选项
 " pumvisible() 弹出菜单是否可见
+" 补全之间跳转: https://github.com/neoclide/coc-snippets
 inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
