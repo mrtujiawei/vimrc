@@ -754,7 +754,13 @@ imap <silent> <C-/> <Esc><C-/>
 
 " <C-n> <C-p> 切换历史命令
 let g:fzf_history_dir = '~/.vim/.fzf_history'
-let fzf_files_command = "find -regextype egrep -type f ! -regex \".*/(node_modules|.git|dist|prod|dev|.swp|.undo|.view|.backup|bundle)/.*\""
+let fzf_files_filter_dirs = [
+  \ 'node_modules','.git',
+  \ 'dist', 'prod', 'dev', 'bundle',
+  \ '.swp', '.undo', '.view', '.backup',
+\ ]
+let fzf_files_filter_dirs = join(fzf_files_filter_dirs, '|')
+let fzf_files_source = "find -regextype egrep -type f ! -regex \".*/(".fzf_files_filter_dirs.")/.*\""
 
 let fzf_files_options = [
 \ '--layout=reverse',
@@ -764,4 +770,4 @@ let fzf_files_options = [
 \ ]
 
 " 重写 :Files 的功能
-command! -bang -nargs=? -complete=dir Files call fzf#vim#files(<q-args>, fzf#vim#with_preview({ 'source': g:fzf_files_command,'options': fzf_files_options }), <bang>0)
+command! -bang -nargs=? -complete=dir Files call fzf#vim#files(<q-args>, fzf#vim#with_preview({'source': fzf_files_source, 'options': fzf_files_options, }), <bang>0)
