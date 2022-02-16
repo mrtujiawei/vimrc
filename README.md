@@ -664,3 +664,9 @@ hi CursorColumn cterm=none    ctermfg=white   ctermbg=cyan    gui=none  guifg=gr
 
 ```
 
+## 快捷键
+
+> 在自动补全的代码之间跳转
+
+`<C-j>`: 跳转到下一个位置
+`<C-k>`: 跳转到上一个位置
