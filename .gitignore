@@ -2,8 +2,9 @@
 .backup/
 .swp/
 .undo/
-view/
-session/
+.view/
+.session/
+.fzf_history/
 
 # 历史文件，保存被修改的目录
 .netrwhist

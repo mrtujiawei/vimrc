@@ -212,7 +212,7 @@ endfunction
 
 " 保存 session
 function! utils#mkSession(filename)
-  let sessionDir = expand('$HOME/.vim/session/')
+  let sessionDir = expand('$HOME/.vim/.session/')
   call utils#checkDir(sessionDir)
 
   " 判断一下目录是否打开
@@ -226,7 +226,7 @@ endfunction
 
 " 删除session
 function! utils#deleteSession(filename)
-  let sessionDir = expand('$HOME/.vim/session/')
+  let sessionDir = expand('$HOME/.vim/.session/')
   call utils#checkDir(sessionDir)
 
   call delete(sessionDir.a:filename)
@@ -234,7 +234,7 @@ endfunction
 
 " 获取 session 文件名
 function! utils#getSessions(A, L, P)
-  let sessionDir = expand('$HOME/.vim/session/')
+  let sessionDir = expand('$HOME/.vim/.session/')
   call utils#checkDir(sessionDir)
 
   let sessions = split(glob(sessionDir.'*'), '\n')
@@ -251,7 +251,7 @@ endfunction
 
 " 加载 session
 function! utils#loadSession(filename)
-  let sessionDir = expand('$HOME/.vim/session/')
+  let sessionDir = expand('$HOME/.vim/.session/')
   call utils#checkDir(sessionDir)
   if filereadable(sessionDir.a:filename)
     exec 'source '.sessionDir.a:filename
@@ -266,7 +266,7 @@ endfunction
 " 类似 :G 打开一个临时文件, 按下回车直接就可以开始一个会话
 " 创建临时文件
 function! utils#mkTempfile()
-  let sessionDir = expand('$HOME/.vim/session/')
+  let sessionDir = expand('$HOME/.vim/.session/')
   let sessions = split(glob(sessionDir.'*'), '\n')
 
   let index = 0
