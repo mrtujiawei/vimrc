@@ -758,6 +758,10 @@ let fzf_files_filter_dirs = [
   \ 'node_modules','.git',
   \ 'dist', 'prod', 'dev', 'bundle',
   \ '.swp', '.undo', '.view', '.backup',
+  \ '.pub-cache', '.mozilla', '.pnpm-store',
+  \ '.java', '.dartServer', '.config',
+  \ '.local', '.oh-my-zsh', '.pm2',
+  \ '.node-gyp', '.gradle',
 \ ]
 let fzf_files_filter_dirs = join(fzf_files_filter_dirs, '|')
 let fzf_files_source = "find -regextype egrep -type f ! -regex \".*/(".fzf_files_filter_dirs.")/.*\""
