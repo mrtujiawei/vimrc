@@ -22,8 +22,8 @@ call vundle#begin(expand('~/.vim/bundle'))
   Plugin 'tpope/vim-fugitive'               " git操作包
   Plugin 'leafgarland/typescript-vim'       " typescript语法高亮
   Plugin 'ludovicchabant/vim-gutentags'     " tag管理,异步更新tag
-  Plugin 'vim-airline/vim-airline'        " 状态栏美化
-  Plugin 'vim-airline/vim-airline-themes' " 状态栏美化
+  Plugin 'vim-airline/vim-airline'          " 状态栏美化
+  Plugin 'vim-airline/vim-airline-themes'   " 状态栏美化
   Plugin 'mg979/vim-visual-multi'           " 多光标选中及编辑
   Plugin 'iamcco/markdown-preview.nvim'     " markdown 预览
   Plugin 'junegunn/fzf'                     " 搜索
@@ -37,6 +37,7 @@ call vundle#begin(expand('~/.vim/bundle'))
   Plugin 'voldikss/vim-floaterm'            " 悬浮终端
   Plugin 'tomasr/molokai'                   " 修改配色方案
   Plugin 'preservim/nerdcommenter'          " 快速注释插件
+  Plugin 'heavenshell/vim-jsdoc'            " 快速生成jsdoc
   " Plugin 'sickill/vim-monokai'            " 配色方案,没上面那个好看
   " 内容查找插件
   " grep.vim      https://github.com/yegappan/grep
@@ -775,3 +776,13 @@ let fzf_files_options = [
 
 " 重写 :Files 的功能
 command! -bang -nargs=? -complete=dir Files call fzf#vim#files(<q-args>, fzf#vim#with_preview({'source': fzf_files_source, 'options': fzf_files_options, }), <bang>0)
+
+" =======================================
+" ======== heavenshell/vim-jsdoc ========
+" =======================================
+
+" 模板路径
+" let g:jsdoc_templates_path = ''
+
+" 生成格式类型
+let g:jsdoc_formatter = 'tsdoc'

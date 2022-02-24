@@ -81,6 +81,8 @@ set relativenumber
 
 " 显示标识列
 " 主要用来显示git信息
+" 放在这里貌似有点问题
+" 总是不会起作用，奇怪
 set signcolumn=auto
 
 " 默认不换行
