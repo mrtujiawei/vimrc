@@ -12,21 +12,11 @@
 apt update
 
 # 下载依赖，如果有了再安装一遍也没问题
-apt install -y git make clang libtool-bin
-
-# 支持剪切板，并且这是gui的依赖项
-apt install -y libxt-dev
-
-# 支持gui,需要支持一下字体
-apt install -y libgtk-3-dev
-
-# 支持 python
-apt install -y libpython3-dev
-
-# 如果没有界面，没必要用这个了
-# 为了剪切板
-# 选择中国上海
-apt-get install -y vim-gtk
+# libxt-dev: 支持剪切板，并且这是gui的依赖项
+# libgtk-3-dev: 支持gui,需要支持一下字体
+# libpython3-dev: 支持 python
+# vim-gtk: 为了剪切板,安装时选择中国，上海 如果没有界面，没必要用这个了
+apt install -y git make clang libtool-bin libxt-dev libgtk-3-dev libpython3-dev vim-gtk
 
 git clone https://github.com/vim/vim.git --depth 1 ~/vim
 cd ~/vim/src
