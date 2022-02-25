@@ -2,8 +2,6 @@
 #Filename: ~/.vim/scripts/install.sh
 #Author: Mr Prince
 #Date: 2022-02-25 10:45:19
-# 初始安装脚本
-git clone https://github.com/mrtujiawei/vimrc.git --depth 1 ~/.vim
 
 # 放在下面的原因是安装的时候会进入vim
 # 后面的脚本就执行不下去了
