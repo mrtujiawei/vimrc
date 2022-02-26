@@ -39,6 +39,7 @@ call vundle#begin(expand('~/.vim/bundle'))
   Plugin 'preservim/nerdcommenter'          " 快速注释插件
   Plugin 'heavenshell/vim-jsdoc'            " 快速生成jsdoc
   Plugin 'APZelos/blamer.nvim'              " 显示最后的提交信息
+  Plugin 'neoclide/jsonc.vim'               " 支持json注释
   " Plugin 'sickill/vim-monokai'            " 配色方案,没上面那个好看
   " 内容查找插件
   " grep.vim      https://github.com/yegappan/grep
