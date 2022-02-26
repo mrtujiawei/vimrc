@@ -38,6 +38,7 @@ call vundle#begin(expand('~/.vim/bundle'))
   Plugin 'tomasr/molokai'                   " 修改配色方案
   Plugin 'preservim/nerdcommenter'          " 快速注释插件
   Plugin 'heavenshell/vim-jsdoc'            " 快速生成jsdoc
+  Plugin 'APZelos/blamer.nvim'              " 显示最后的提交信息
   " Plugin 'sickill/vim-monokai'            " 配色方案,没上面那个好看
   " 内容查找插件
   " grep.vim      https://github.com/yegappan/grep
@@ -786,3 +787,40 @@ command! -bang -nargs=? -complete=dir Files call fzf#vim#files(<q-args>, fzf#vim
 
 " 生成格式类型
 let g:jsdoc_formatter = 'tsdoc'
+
+
+" =====================================
+" ======== APZelos/blamer.nvim ========
+" =====================================
+
+" 默认显示blame信息
+let g:blamer_enabled = 1
+
+" 延迟显示
+let g:blamer_delay = 3000 
+
+" 可视模式下不显示
+let g:blamer_show_in_visual_modes = 0
+
+" 插入模式下不显示
+let g:blamer_show_in_insert_modes = 0
+
+" 显示前缀
+let g:blamer_prefix = ' '
+
+" 显示格式
+" 支持的选项
+" <author>, <author-mail>, <author-time>, <committer>,
+" <committer-mail>, <committer-time>, <summary>,
+" <commit-short>, <commit-long>
+let g:blamer_template = '<committer>: <committer-time> <summary>'
+
+" 显示时间格式
+let g:blamer_date_format = '%Y-%m-%d %H:%M:%S'
+
+" 以相对时间显示
+let g:blamer_relative_time = 0
+
+" 修改颜色
+" highlight Blamer guifg=lightgrey
+
