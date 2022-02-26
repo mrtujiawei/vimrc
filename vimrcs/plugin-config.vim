@@ -797,7 +797,7 @@ let g:jsdoc_formatter = 'tsdoc'
 let g:blamer_enabled = 1
 
 " 延迟显示
-let g:blamer_delay = 3000 
+let g:blamer_delay = 1000 
 
 " 可视模式下不显示
 let g:blamer_show_in_visual_modes = 0
@@ -813,13 +813,14 @@ let g:blamer_prefix = ' '
 " <author>, <author-mail>, <author-time>, <committer>,
 " <committer-mail>, <committer-time>, <summary>,
 " <commit-short>, <commit-long>
-let g:blamer_template = '<committer>: <committer-time> <summary>'
+let g:blamer_template = '<committer>: <committer-time> -> <summary>'
 
 " 显示时间格式
 let g:blamer_date_format = '%Y-%m-%d %H:%M:%S'
+let g:blamer_date_format = '%Y-%m-%d'
 
 " 以相对时间显示
-let g:blamer_relative_time = 0
+let g:blamer_relative_time = 1
 
 " 修改颜色
 " highlight Blamer guifg=lightgrey
