@@ -114,21 +114,6 @@ let g:NERDTreeWinPos = 'right'
 " 显示相同的目录树
 " autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
 
-" 默认的显示图标
-" let g:NERDTreeGitStatusIndicatorMapCustom = {
-"    \ 'Modified'  :'✹',
-"    \ 'Staged'    :'✚',
-"    \ 'Untracked' :'✭',
-"    \ 'Renamed'   :'➜',
-"    \ 'Unmerged'  :'═',
-"    \ 'Deleted'   :'✖',
-"    \ 'Dirty'     :'✗',
-"    \ 'Ignored'   :'☒',
-"    \ 'Clean'     :'✔︎',
-"    \ 'Unknown'   :'?',
-"    \ }
-
-
 " =========================
 " ======== vim-vue ========
 " =========================
@@ -335,83 +320,6 @@ if has('nvim-0.4.0') || has('patch-8.2.0750')
   vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
   vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
 endif
-
-
-" ========================================
-" ======== airblade/vim-gitgutter ========
-" ========================================
-
-" 状态栏设置,依赖vim-gitgutter
-" 设置git状态
-" function! GitStatus()
-"   let [a,m,r] = [0, 0, 0]
-"   if exists('*GitGutterGetHunkSummary')
-"     let [a,m,r] = GitGutterGetHunkSummary()
-"   endif
-"   return printf('+%d ~%d -%d ', a, m, r)
-" endfunction
-" 
-" set statusline=
-" set statusline+=%1*\[%n]                                  "buffernr
-" set statusline+=%2*\ %<%F\                                 "文件路径
-" set statusline+=%3*\ %y\                                   "文件类型
-" set statusline+=%4*\ %{''.(&fenc!=''?&fenc:&enc).''}       "编码1
-" set statusline+=%{(&bomb?\",BOM\":\"\")}\                 "编码2
-" set statusline+=%#TabLine#%{coc#status()}%{get(b:,'coc_current_function','')} " 代码提示服务
-" set statusline+=%5*\ %=\ %6*\ row:%l/%L\ (%03p%%)\        "光标所在行号/总行数 (百分比)
-" set statusline+=%7*\ col:%03c\                            "光标所在列
-" set statusline+=%8*\ %{GitStatus()}
-" set statusline+=%9*\ %m%r%w\                            "修改? 只读? 保存?
-" 
-" " 单个标签设置
-" function! MyTabLabel(n)
-"   let buflist = tabpagebuflist(a:n)
-"   let winnr = tabpagewinnr(a:n)
-" 
-"   " Add '+' if one of the buffers in the tab page is modified
-"   let label = ''
-"   for bufnr in buflist
-"     if getbufvar(bufnr, "&modified")
-"       let label = '+'
-"       break
-"     endif
-"   endfor 
-" 
-"   "添加tabpage序号,方便ngt切换
-"   return '  ['.a:n.label.']'.pathshorten(bufname(buflist[winnr - 1])).' '
-" endfunction
-" 
-" 
-" " 标签栏设置
-" function! MyTabLine()
-"   let s = ''
-"   for i in range(tabpagenr('$'))
-"     " 高亮
-"     if i + 1 == tabpagenr()
-"       let s .= '%#TabLineSel#'
-"     else
-"       let s .= '%#TabLine#'
-"     endif
-" 
-"     " 添加序号
-"     let s .= '%' . (i + 1) . 'T'
-" 
-"     " 单个标签设置
-"     let s .= '%{MyTabLabel(' . (i + 1) . ')}'
-"   endfor
-" 
-"   " 最后一个标签后面填充
-"   let s .= '%#TabLineFill#%T'
-" 
-"   " 关闭标签右对齐
-"   if tabpagenr('$') > 1
-"     let s .= '%=%#TabLine#%999XX'
-"   endif
-" 
-"   return s
-" endfunction
-" 
-" set tabline=%!MyTabLine()
 
 
 " ===============================
