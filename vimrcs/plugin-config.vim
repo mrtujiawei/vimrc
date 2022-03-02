@@ -13,7 +13,7 @@ call plug#begin(expand('~/.vim/bundle'))
   Plug 'hail2u/vim-css3-syntax'                                               " css3
   Plug 'posva/vim-vue'                                                        " vue 代码高亮
   Plug 'jiangmiao/auto-pairs'                                                 " 括号匹配
-  Plug 'neoclide/coc.nvim', { do: 'yarn' }                                    " 代码补全
+  Plug 'neoclide/coc.nvim', { 'do': 'yarn' }                                    " 代码补全
   Plug 'maxmellon/vim-jsx-pretty'                                             " jsx语法高亮
   Plug 'vimcn/vimcdoc'                                                        " 中文文档
   Plug 'airblade/vim-gitgutter'                                               " 状态栏 git 信息
@@ -23,7 +23,7 @@ call plug#begin(expand('~/.vim/bundle'))
   Plug 'vim-airline/vim-airline'                                              " 状态栏美化
   Plug 'vim-airline/vim-airline-themes'                                       " 状态栏美化
   Plug 'mg979/vim-visual-multi'                                               " 多光标选中及编辑
-  Plug 'iamcco/markdown-preview.nvim', { do: ':call mkdp#util#install()' }    " markdown 预览
+  Plug 'iamcco/markdown-preview.nvim', { 'do': ':call mkdp#util#install()' }    " markdown 预览
   Plug 'junegunn/fzf'                                                         " 搜索
   Plug 'junegunn/fzf.vim'                                                     " fzf vim
   Plug 'simnalamburt/vim-mundo'                                               " undo tree 每一步动作都可视化
@@ -34,7 +34,7 @@ call plug#begin(expand('~/.vim/bundle'))
   Plug 'voldikss/vim-floaterm'                                                " 悬浮终端
   Plug 'tomasr/molokai'                                                       " 修改配色方案
   Plug 'preservim/nerdcommenter'                                              " 快速注释插件
-  Plug 'heavenshell/vim-jsdoc', { do: 'make install' }                        " 快速生成jsdoc
+  Plug 'heavenshell/vim-jsdoc', { 'do': 'make install' }                        " 快速生成jsdoc
   Plug 'APZelos/blamer.nvim'                                                  " 显示最后的提交信息
   Plug 'neoclide/jsonc.vim'                                                   " 支持json注释
   Plug 'tpope/vim-surround'                                                   " 包围匹配
