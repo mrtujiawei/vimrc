@@ -33,7 +33,6 @@ call vundle#begin(expand('~/.vim/bundle'))
   Plugin 'kshenoy/vim-signature'            " 书签显示
   Plugin 'itchyny/vim-cursorword'           " 单词下划线
   Plugin 'lfv89/vim-interestingwords'       " 高亮
-  Plugin 'zivyangll/git-blame.vim'          " 显示blame 信息
   Plugin 'voldikss/vim-floaterm'            " 悬浮终端
   Plugin 'tomasr/molokai'                   " 修改配色方案
   Plugin 'preservim/nerdcommenter'          " 快速注释插件
