@@ -13,19 +13,19 @@ let g:load_mine_map = 1
 vnoremap <silent> * :<C-u>call utils#visualSelection('', '')<CR>/<C-R>=@/<CR><CR>
 vnoremap <silent> # :<C-u>call utils#visualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 
-" react 快速生成模板
-iabbr rcc import { memo,} from 'react';<CR><CR>
-      \const Comp = () => {
-      \<CR>return (<CR>null);
-      \};<CR><CR>
-      \export default memo(Comp);<Esc>/Comp<C-R>
+" " react 快速生成模板
+" iabbr rcc import { memo,} from 'react';<CR><CR>
+"       \const Comp = () => {
+"       \<CR>return (<CR>null);
+"       \};<CR><CR>
+"       \export default memo(Comp);<Esc>/Comp<C-R>
 
 " 修改 <Leader> 为空格
 let mapleader=" "
 
 " 使用这个是习惯有关
 " 以前用 subline text 的时候就是这个快捷键
-nmap <silent> <leader>kb :NERDTreeToggle<CR>
+" nmap <silent> <leader>kb :NERDTreeToggle<CR>
 
 
 " 好像没必要恢复原样
