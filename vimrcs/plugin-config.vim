@@ -697,7 +697,7 @@ let g:jsdoc_formatter = 'tsdoc'
 let g:blamer_enabled = 1
 
 " 延迟显示
-let g:blamer_delay = 5000 
+let g:blamer_delay = 500 
 
 " 可视模式下不显示
 let g:blamer_show_in_visual_modes = 0
