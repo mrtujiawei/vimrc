@@ -3,50 +3,48 @@
 " Maintainer:   tujiawei <15988803646@163.com>
 " Last Change:  2021 Nov 8
 
-" 设置vundle 运行环境和路径
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin(expand('~/.vim/bundle'))
-  Plugin 'VundleVim/Vundle.vim'             " 必须
-  Plugin 'preservim/nerdtree'               " 文件树
-  Plugin 'Xuyuanp/nerdtree-git-plugin'      " git状态显示
-  Plugin 'mhinz/vim-signify'                " 差异显示(文件)
-  Plugin 'rhysd/conflict-marker.vim'        " git冲突解决
-  Plugin 'mattn/emmet-vim'                  " emmet插件
-  Plugin 'hail2u/vim-css3-syntax'           " css3
-  Plugin 'posva/vim-vue'                    " vue 代码高亮
-  Plugin 'jiangmiao/auto-pairs'             " 括号匹配
-  Plugin 'neoclide/coc.nvim'                " 代码补全
-  Plugin 'maxmellon/vim-jsx-pretty'         " jsx语法高亮
-  Plugin 'vimcn/vimcdoc'                    " 中文文档
-  Plugin 'airblade/vim-gitgutter'           " 状态栏 git 信息
-  Plugin 'tpope/vim-fugitive'               " git操作包
-  Plugin 'leafgarland/typescript-vim'       " typescript语法高亮
-  Plugin 'ludovicchabant/vim-gutentags'     " tag管理,异步更新tag
-  Plugin 'vim-airline/vim-airline'          " 状态栏美化
-  Plugin 'vim-airline/vim-airline-themes'   " 状态栏美化
-  Plugin 'mg979/vim-visual-multi'           " 多光标选中及编辑
-  Plugin 'iamcco/markdown-preview.nvim'     " markdown 预览
-  Plugin 'junegunn/fzf'                     " 搜索
-  Plugin 'junegunn/fzf.vim'
-  Plugin 'simnalamburt/vim-mundo'           " undo tree 每一步动作都可视化
-  Plugin 'nathanaelkane/vim-indent-guides'  " 缩进更明显
-  Plugin 'kshenoy/vim-signature'            " 书签显示
-  Plugin 'itchyny/vim-cursorword'           " 单词下划线
-  Plugin 'lfv89/vim-interestingwords'       " 高亮
-  Plugin 'voldikss/vim-floaterm'            " 悬浮终端
-  Plugin 'tomasr/molokai'                   " 修改配色方案
-  Plugin 'preservim/nerdcommenter'          " 快速注释插件
-  Plugin 'heavenshell/vim-jsdoc'            " 快速生成jsdoc
-  Plugin 'APZelos/blamer.nvim'              " 显示最后的提交信息
-  Plugin 'neoclide/jsonc.vim'               " 支持json注释
-  Plugin 'tpope/vim-surround'               " 包围匹配
+" 替换插件管理器
+call plug#begin(expand('~/.vim/bundle'))
+  Plug 'preservim/nerdtree'               " 文件树
+  Plug 'Xuyuanp/nerdtree-git-plugin'      " git状态显示
+  Plug 'mhinz/vim-signify'                " 差异显示(文件)
+  Plug 'rhysd/conflict-marker.vim'        " git冲突解决
+  Plug 'mattn/emmet-vim'                  " emmet插件
+  Plug 'hail2u/vim-css3-syntax'           " css3
+  Plug 'posva/vim-vue'                    " vue 代码高亮
+  Plug 'jiangmiao/auto-pairs'             " 括号匹配
+  Plug 'neoclide/coc.nvim'                " 代码补全
+  Plug 'maxmellon/vim-jsx-pretty'         " jsx语法高亮
+  Plug 'vimcn/vimcdoc'                    " 中文文档
+  Plug 'airblade/vim-gitgutter'           " 状态栏 git 信息
+  Plug 'tpope/vim-fugitive'               " git操作包
+  Plug 'leafgarland/typescript-vim'       " typescript语法高亮
+  Plug 'ludovicchabant/vim-gutentags'     " tag管理,异步更新tag
+  Plug 'vim-airline/vim-airline'          " 状态栏美化
+  Plug 'vim-airline/vim-airline-themes'   " 状态栏美化
+  Plug 'mg979/vim-visual-multi'           " 多光标选中及编辑
+  Plug 'iamcco/markdown-preview.nvim'     " markdown 预览
+  Plug 'junegunn/fzf'                     " 搜索
+  Plug 'junegunn/fzf.vim'
+  Plug 'simnalamburt/vim-mundo'           " undo tree 每一步动作都可视化
+  Plug 'nathanaelkane/vim-indent-guides'  " 缩进更明显
+  Plug 'kshenoy/vim-signature'            " 书签显示
+  Plug 'itchyny/vim-cursorword'           " 单词下划线
+  Plug 'lfv89/vim-interestingwords'       " 高亮
+  Plug 'voldikss/vim-floaterm'            " 悬浮终端
+  Plug 'tomasr/molokai'                   " 修改配色方案
+  Plug 'preservim/nerdcommenter'          " 快速注释插件
+  Plug 'heavenshell/vim-jsdoc'            " 快速生成jsdoc
+  Plug 'APZelos/blamer.nvim'              " 显示最后的提交信息
+  Plug 'neoclide/jsonc.vim'               " 支持json注释
+  Plug 'tpope/vim-surround'               " 包围匹配
   " 内容查找插件
   " grep.vim      https://github.com/yegappan/grep
   " ack.vim       https://github.com/mileszs/ack.vim
   " ctrlsf.vim    https://github.com/dyng/ctrlsf.vim
   " 代码片段
   " https://github.com/SirVer/ultisnips
-call vundle#end()
+call plug#end()
 
 " =======================================
 " ======== voldikss/vim-floaterm ========
