@@ -9,10 +9,6 @@ endif
 
 let g:load_mine_map = 1
 
-" 使用这个是习惯有关
-" 以前用 subline text 的时候就是这个快捷键
-nmap <silent> <C-K><C-B> :NERDTreeToggle<CR>
-
 " 可视模式搜索
 vnoremap <silent> * :<C-u>call utils#visualSelection('', '')<CR>/<C-R>=@/<CR><CR>
 vnoremap <silent> # :<C-u>call utils#visualSelection('', '')<CR>?<C-R>=@/<CR><CR>
@@ -26,6 +22,11 @@ iabbr rcc import { memo,} from 'react';<CR><CR>
 
 " 修改 <Leader> 为空格
 let mapleader=" "
+
+" 使用这个是习惯有关
+" 以前用 subline text 的时候就是这个快捷键
+nmap <silent> <leader>kb :NERDTreeToggle<CR>
+
 
 " 好像没必要恢复原样
 " let mapleader="\\"
