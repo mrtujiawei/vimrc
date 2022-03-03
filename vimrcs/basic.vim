@@ -299,7 +299,8 @@ endif
 filetype plugin indent on
 
 " 执行宏命令时不要重绘
-set lazyredraw
+" set lazyredraw
+set nolazyredraw
 
 
 " ==============================
