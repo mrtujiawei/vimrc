@@ -75,26 +75,6 @@ function! utils#setTemplate()
     call append(6, "")
     normal 2gg$
 
-  " vue 模板
-  elseif &filetype == 'vue'
-
-    " <template>
-    " 
-    " </template>
-    " 
-    " <script>
-    " 
-    " </script>
-
-    call setline(1, "\<template>")
-    call append(line("."), "")
-    call append(line(".") + 1, "</template>")
-    call append(line(".") + 2, "")
-    call append(line(".") + 3, "<script>")
-    call append(line(".") + 4, "")
-    call append(line(".") + 5, "</script>")
-    normal 2gg$
-
   " vim 脚本
   elseif 'vim' == &filetype
 

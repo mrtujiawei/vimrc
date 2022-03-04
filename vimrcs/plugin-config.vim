@@ -13,7 +13,7 @@ call plug#begin(expand('~/.vim/bundle'))
   Plug 'hail2u/vim-css3-syntax'                                               " css3
   Plug 'posva/vim-vue'                                                        " vue 代码高亮
   Plug 'jiangmiao/auto-pairs'                                                 " 括号匹配
-  Plug 'neoclide/coc.nvim', { 'do': 'yarn' }                                    " 代码补全
+  Plug 'neoclide/coc.nvim', { 'do': 'yarn' }                                  " 代码补全
   Plug 'maxmellon/vim-jsx-pretty'                                             " jsx语法高亮
   Plug 'vimcn/vimcdoc'                                                        " 中文文档
   Plug 'airblade/vim-gitgutter'                                               " 状态栏 git 信息
