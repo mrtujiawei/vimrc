@@ -112,47 +112,9 @@ function! utils#setTemplate()
   endif
 endfunc
 
-" 在右侧打开终端
-function! utils#verticalTerminal()
-  :vertical terminal
-endfunc
-
 " 翻译当前光标下的单词
 function! utils#fanYi()
   execute '!fanyi '.expand('<cword>')
-endfunc
-
-" 本地打包测试
-function! utils#buildTest() 
-  :!yarn build:test 
-endfunc
-
-" 本地打包线上
-function! utils#build()
-  :!yarn build 
-endfunc
-
-" 运行测试代码
-function! utils#test()
-  :!yarn test
-endfunc
-
-" 设置运行快捷键的命令
-function! utils#setRunCommand()
-  if &filetype == 'sh'
-    nmap <C-B> :w<CR>:!sh % > /tmp/vim.run.log<CR>:vsp /tmp/vim.run.log<CR>
-  elseif 'typescript' == &filetype 
-    nmap <C-B> :call utils#runTs()<CR>
-  elseif 'javascript' == &filetype
-    nmap <C-B> :w<CR>:!node % <CR>
-  elseif 'html' == &filetype
-    nmap <C-B> :w<CR>:!google-chrome-stable %<CR>
-  elseif 'java' == &filetype
-    nmap <C-B> :w<CR>:!javac % && java %:r<CR>
-  elseif 'go' == &filetype
-    nmap <C-B> :w<CR>:!go run %<CR>
-  endif
-  " imap <C-B> <ESC><C-B>
 endfunc
 
 " 没有用户窗口的时候退出vim

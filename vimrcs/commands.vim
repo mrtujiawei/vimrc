@@ -9,9 +9,6 @@ endif
 
 let g:load_mine_commands = 1
 
-" 右侧打开终端 terminal
-command! -n=0 -bar T :call utils#verticalTerminal()
-
 " 设置页面模板(注释)
 command! -n=0 -bar SetTemplate :call utils#setTemplate()
 
