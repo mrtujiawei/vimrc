@@ -7,7 +7,6 @@
 call plug#begin(expand('~/.vim/bundle'))
   Plug 'preservim/nerdtree'                                                   " 文件树
   Plug 'Xuyuanp/nerdtree-git-plugin'                                          " git状态显示
-  Plug 'mhinz/vim-signify'                                                    " 差异显示(文件)
   Plug 'rhysd/conflict-marker.vim'                                            " git冲突解决
   Plug 'mattn/emmet-vim'                                                      " emmet插件
   Plug 'hail2u/vim-css3-syntax'                                               " css3
