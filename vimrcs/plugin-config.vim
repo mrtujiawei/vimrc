@@ -678,11 +678,13 @@ let g:jsdoc_formatter = 'tsdoc'
 " ======== APZelos/blamer.nvim ========
 " =====================================
 
+nnoremap <leader>b :BlamerToggle<CR>
+
 " 默认显示blame信息
-let g:blamer_enabled = 1
+let g:blamer_enabled = 0
 
 " 延迟显示
-let g:blamer_delay = 3000
+let g:blamer_delay = 500
 
 " 可视模式下不显示
 let g:blamer_show_in_visual_modes = 0
