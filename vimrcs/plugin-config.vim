@@ -27,7 +27,6 @@ call plug#begin(expand('~/.vim/bundle'))
   Plug 'simnalamburt/vim-mundo'                                               " undo tree 每一步动作都可视化
   Plug 'nathanaelkane/vim-indent-guides'                                      " 缩进更明显
   Plug 'kshenoy/vim-signature'                                                " 书签显示
-  Plug 'itchyny/vim-cursorword'                                               " 单词下划线
   Plug 'lfv89/vim-interestingwords'                                           " 高亮
   Plug 'voldikss/vim-floaterm'                                                " 悬浮终端
   Plug 'tomasr/molokai'                                                       " 修改配色方案
