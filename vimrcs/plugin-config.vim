@@ -606,12 +606,6 @@ let g:indent_guides_guide_size = 1
 " hi IndentGuidesOdd  cterm=none    ctermfg=white   ctermbg=black
 " hi IndentGuidesEven cterm=none    ctermfg=white   ctermbg=darkgrey
 
-" =========================================
-" ======== zivyangll/git-blame.vim ========
-" =========================================
-
-" 设置显示的快捷建
-nnoremap <leader>b :<C-u>call gitblame#echo()<CR>
 
 " =========================================
 " ======== preservim/nerdcommenter ========
