@@ -11,7 +11,6 @@ call plug#begin(expand('~/.vim/bundle'))
   Plug 'rhysd/conflict-marker.vim'                                            " git冲突解决
   Plug 'mattn/emmet-vim'                                                      " emmet插件
   Plug 'hail2u/vim-css3-syntax'                                               " css3
-  Plug 'posva/vim-vue'                                                        " vue 代码高亮
   Plug 'jiangmiao/auto-pairs'                                                 " 括号匹配
   Plug 'neoclide/coc.nvim', { 'do': 'yarn' }                                  " 代码补全
   Plug 'maxmellon/vim-jsx-pretty'                                             " jsx语法高亮
@@ -103,14 +102,6 @@ let g:NERDTreeWinPos = 'right'
 
 " 显示相同的目录树
 " autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
-
-" =========================
-" ======== vim-vue ========
-" =========================
-
-" vim-vue 过滤无效的预处理器，加快速度
-" 目前我用的只有这些
-let g:vue_pre_processors = ['less', 'sass', 'scss', 'typescript']
 
 
 " ==========================
