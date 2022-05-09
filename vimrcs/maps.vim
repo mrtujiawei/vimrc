@@ -9,6 +9,12 @@ endif
 
 let g:load_mine_map = 1
 
+" 限制别人瞎搞我代码
+noremap <Up>    <Nop>
+noremap <Down>  <Nop>
+noremap <Left>  <Nop>
+noremap <Right> <Nop>
+
 " 可视模式搜索
 vnoremap <silent> * :<C-u>call utils#visualSelection('', '')<CR>/<C-R>=@/<CR><CR>
 vnoremap <silent> # :<C-u>call utils#visualSelection('', '')<CR>?<C-R>=@/<CR><CR>
