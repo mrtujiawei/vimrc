@@ -138,7 +138,6 @@ set shortmess+=c
 " coc-yaml: @see {https://github.com/neoclide/coc-yaml}
 " coc-sh: shell脚本提示
 " coc-prettier: 代码格式化的，基本不用
-" coc-lightbulb: 显示个小灯泡，玩玩
 " coc-git: 没啥用,需要neovio才能显示blame
 " coc-vimlsp: vim 语法支持
 let g:coc_global_extensions = [
@@ -149,7 +148,6 @@ let g:coc_global_extensions = [
   \ '@yaegassy/coc-nginx',
   \ 'coc-sh',
   \ 'coc-prettier',
-  \ 'coc-lightbulb',
   \ 'coc-vimlsp',
   \ ]
 
