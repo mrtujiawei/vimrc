@@ -336,5 +336,5 @@ if has("autocmd")
   " 保存折叠 只匹配结尾是英文单词的文件
   " 注意定时清除一下
   autocmd BufWinLeave *[a-zA-Z] silent! if (utils#currentFileReadable()) | mkview | endif
-  autocmd BufReadPost *[a-zA-z] silent! if (utils#currentFileReadable()) | loadview | endif
+  autocmd BufReadPost *[a-zA-z] silent! if (utils#currentFileReadable()) | try | loadview | catch | endtry | endif
 endif
