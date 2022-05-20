@@ -684,7 +684,7 @@ let g:jsdoc_formatter = 'tsdoc'
 " ======== APZelos/blamer.nvim ========
 " =====================================
 
-nnoremap <leader>b :BlamerToggle<CR>
+nnoremap <silent> <leader>b :BlamerToggle<CR>
 
 " 默认显示blame信息
 let g:blamer_enabled = 0
