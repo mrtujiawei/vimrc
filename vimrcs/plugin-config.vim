@@ -17,7 +17,6 @@ call plug#begin(expand('~/.vim/bundle'))
   Plug 'airblade/vim-gitgutter'                                               " 状态栏 git 信息
   Plug 'tpope/vim-fugitive'                                                   " git操作包
   Plug 'leafgarland/typescript-vim'                                           " typescript语法高亮
-  Plug 'ludovicchabant/vim-gutentags'                                         " tag管理,异步更新tag
   Plug 'vim-airline/vim-airline'                                              " 状态栏美化
   Plug 'vim-airline/vim-airline-themes'                                       " 状态栏美化
   Plug 'mg979/vim-visual-multi'                                               " 多光标选中及编辑
@@ -309,38 +308,6 @@ if has('nvim-0.4.0') || has('patch-8.2.0750')
 endif
 
 
-" ===============================
-" ======== vim-gutentags ========
-" ===============================
-
-" gutentags 配置
-" 搜索工程目录的标志
-" 碰到这些文件/目录名就停止向上一级目录递归
-let g:gutentags_project_root = ['.svn', '.git', 'node_modules', 'package.json']
-
-" 所生成的数据文件的名称
-let g:gutentags_ctags_tagfile = 'tags'
-
-let s:vim_tags = expand('~/.cache/tags')
-
-" 将自动生成的 tags 文件全部放入 ~/.cache/tags 目录中
-" 避免污染工程目录
-let g:gutentags_cache_dir = s:vim_tags
-
-" 检测 ~/.cache/tags 不存在就新建 
-call utils#checkDir(s:vim_tags)
-
-" ctags支持多个语言,如c
-" 但是不支持typescript,typescriptreact,vue
-" 配置 ctags 的参数 "
-let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q', '--javascript-kinds=+fcmpvgc']
-
-" 过滤文件及文件夹
-" node_modules 太大了，还是手动跳进去吧
-" public,test,prod 是因为dll,大概率不会碰到
-let g:gutentags_ctags_extra_args += ['--exclude=node_modules', '--exclude=public', '--exclude=prod', '--exclude=test']
-
-
 " =============================
 " ======== vim-airline ========
 " =============================
@@ -368,10 +335,10 @@ let g:airline_highlighting_cache = 1
 " 'wordcount', 'whitespace', 'mundo',
 let g:airline_extensions = [
   \ 'branch', 'fugitiveline',
-  \ 'gutentags', 'hunks',
+  \ 'hunks', 'term',
   \ 'keymap', 'netrw',
   \ 'quickfix', 'tabline',
-  \ 'fzf', 'term',
+  \ 'fzf',
   \ ]
 
 " 显示窗口tab
