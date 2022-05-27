@@ -339,4 +339,7 @@ if has("autocmd")
 
   " 加 try catch 是为了防止 loadview 报错影响coc
   autocmd BufReadPost *[a-zA-z] silent! if (utils#currentFileReadable()) | try | loadview | catch | endtry | endif
+
+  " 这东西全局设置不生效，只能出此下策
+  autocmd BufReadPost * silent! set signcolumn=auto
 endif
