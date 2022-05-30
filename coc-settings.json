@@ -10,7 +10,6 @@
   "coc.preferences.extensionUpdateCheck": "never",
   "javascript.suggest.enabled": true,
   "javascript.validate.enable": true,
-  "javascript.autoClosingTags": true,
   "typescript.validate.enable": true,
   "typescript.autoClosingTags": true,
   "prettier.semi": true,
