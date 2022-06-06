@@ -23,3 +23,6 @@ command! -n=1 -complete=customlist,utils#getSessions -bar MkSession :call utils#
 
 " 加载会话列表
 command! -n=1 -complete=customlist,utils#getSessions -bar LoadSession :call utils#loadSession(<f-args>)
+
+" 当前 buffer 的项目根目录切换到当前文件目录
+command! -n=0 Cd :lcd %:p:h
