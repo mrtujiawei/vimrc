@@ -41,7 +41,32 @@ let mapleader=" "
 nmap <Leader><Space> :Files<CR>
 
 " 新建tab编辑当前文件
-nmap <silent> <Leader>te :tabedit %<CR>
+" nmap <silent> <Leader>te :tabedit %<CR>
+
+nmap <silent> <Leader>te :call OpenNewTab()<CR>
+
+function OpenNewTab() abort
+  if 1 == tabpagewinnr(tabpagenr(), '$')
+    " tab中只有一个文件在编辑，那开什么新tab
+    return
+  endif
+
+  if '' == expand('%')
+    :tabedit
+  else
+    :tabedit %
+  endif
+
+  :tabprevious
+
+  if 1 == tabpagewinnr(tabpagenr(), '$')
+    " 当前tab中只有一个pane
+    :q
+  else
+    :q
+    :tabnext
+  endif
+endfunction
 
 " tab 切换
 nmap <silent> <Leader>tn :tabnext<CR>
