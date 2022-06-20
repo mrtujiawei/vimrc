@@ -89,6 +89,19 @@ colorscheme molokai
 " ======== nerdtree ========
 " =========================+
 
+" 自动切换目录
+let g:NERDTreeChDirMode = 2
+
+" 显示书签
+" let g:NERDTreeShowBookmarks = 1
+
+" 标签聚焦
+" 并没有找到这个配置
+let g:nerdtree_tabs_focus_on_files = 1
+
+" 宽度
+let g:NERDTreeWinSize = 40
+
 " 显示行号
 let g:NERDTreeShowLineNumbers = 1
 

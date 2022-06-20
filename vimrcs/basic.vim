@@ -64,7 +64,7 @@ set ttimeoutlen=100
 " set t_vb
 
 " 文件类型检测
-" set fileformats=unix,dos,mac
+set fileformats=unix,dos,mac
 
 
 " ==========================
@@ -181,6 +181,11 @@ set hidden
 
 " 文件编码 utf-8
 set encoding=utf-8
+set fileencoding=utf-8
+set fileencodings=utf-8
+
+" 页面加速?
+set ttyfast
 
 " 搜索文件名的后缀
 set suffixesadd=.js,.jsx,.json,.ts,.tsx.vue,.css,.less,.scss
