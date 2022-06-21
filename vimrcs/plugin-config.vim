@@ -40,7 +40,8 @@ call plug#begin(expand('~/.vim/bundle'))
   Plug 'APZelos/blamer.nvim'                " 显示最后的提交信息
   Plug 'neoclide/jsonc.vim'                 " 支持json注释
   Plug 'tpope/vim-surround'                 " 包围匹配
-  Plug 'bling/vim-bufferline'               " 状态栏显示 buffer
+  " 主要是用起来实在难受
+  " Plug 'bling/vim-bufferline'               " 状态栏显示 buffer
   " 内容查找插件
   " grep.vim      https://github.com/yegappan/grep
   " ack.vim       https://github.com/mileszs/ack.vim
@@ -129,9 +130,6 @@ let g:NERDTreeGitStatusConcealBrackets = 0
 
 " 忽略文件夹，太慢
 let g:NERDTreeIgnore = ['node_modules']
-
-" 删除文件时自动删除对应的buffer
-let g:NERDTreeAutoDeleteBuffer = 1
 
 " 显示位置
 let g:NERDTreeWinPos = 'right'
@@ -722,7 +720,7 @@ let g:blamer_relative_time = 1
 " ======================================
 
 " 文件名显示方式
-let g:bufferline_fname_mod = ':p:.'
+" let g:bufferline_fname_mod = ':p:.'
 
 " 跟随当前buffer移动
-let g:bufferline_rotate = 1
+" let g:bufferline_rotate = 1
