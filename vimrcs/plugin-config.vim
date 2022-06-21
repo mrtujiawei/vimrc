@@ -93,7 +93,7 @@ colorscheme molokai
 let g:NERDTreeChDirMode = 2
 
 " 打开文件后自动关闭 侧边栏
-let g:NERDTreeQuitOnOpen = 1
+" let g:NERDTreeQuitOnOpen = 1
 
 " 如果只有一个子节点，不要折叠
 let g:NERDTreeCascadeSingleChildDir = 0
