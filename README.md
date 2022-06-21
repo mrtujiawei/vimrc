@@ -765,3 +765,5 @@ endfunction
 
 set tabline=%!MyTabLine()
 ```
+
+要学会管理 buffer, buffer多了以后非常影响性能
