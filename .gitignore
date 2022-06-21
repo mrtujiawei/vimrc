@@ -11,7 +11,7 @@ spell
 .netrwhist
 
 # 插件,要用的时候再装
-bundle/
+.bundle/
 
 # 直接从git下
 autoload/plug.vim
