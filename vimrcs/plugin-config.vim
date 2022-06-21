@@ -15,7 +15,6 @@ call plug#begin(expand('~/.vim/bundle'))
     \ 'do': 'yarn'
     \ }                                     " 代码补全
   Plug 'maxmellon/vim-jsx-pretty'           " jsx语法高亮
-  Plug 'vimcn/vimcdoc'                      " 中文文档
   Plug 'airblade/vim-gitgutter'             " 状态栏 git 信息
   Plug 'tpope/vim-fugitive'                 " git操作包
   Plug 'leafgarland/typescript-vim'         " typescript语法高亮
