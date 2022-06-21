@@ -92,6 +92,15 @@ colorscheme molokai
 " 自动切换目录
 let g:NERDTreeChDirMode = 2
 
+" 打开文件后自动关闭 侧边栏
+let g:NERDTreeQuitOnOpen = 1
+
+" 如果只有一个子节点，不要折叠
+let g:NERDTreeCascadeSingleChildDir = 0
+
+" 自动删除无效的buffer
+let g:NERDTreeAutoDeleteBuffer = 1
+
 " 显示书签
 " let g:NERDTreeShowBookmarks = 1
 
