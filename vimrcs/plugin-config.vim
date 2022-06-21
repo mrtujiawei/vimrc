@@ -40,6 +40,7 @@ call plug#begin(expand('~/.vim/bundle'))
   Plug 'APZelos/blamer.nvim'                " 显示最后的提交信息
   Plug 'neoclide/jsonc.vim'                 " 支持json注释
   Plug 'tpope/vim-surround'                 " 包围匹配
+  Plug 'bling/vim-bufferline'               " 状态栏显示 buffer
   " 内容查找插件
   " grep.vim      https://github.com/yegappan/grep
   " ack.vim       https://github.com/mileszs/ack.vim
@@ -396,6 +397,9 @@ let g:airline#extensions#tabline#overflow_marker = '…'
 " default | jsformatter | unique_tail |  unique_tail_improved
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 
+" 显示 buffer id
+" let g:airline#extensions#tabline#buffer_nr_show = 1
+
 
 " ==================================
 " ======== vim-visual-multi ========
@@ -713,3 +717,12 @@ let g:blamer_relative_time = 1
 " 修改颜色
 " highlight Blamer guifg=lightgrey
 
+" ======================================
+" ======== bling/vim-bufferline ========
+" ======================================
+
+" 文件名显示方式
+let g:bufferline_fname_mod = ':p:.'
+
+" 跟随当前buffer移动
+let g:bufferline_rotate = 1
