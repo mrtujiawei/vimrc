@@ -4,7 +4,7 @@
 " Last Change:  2021 Nov 8
 
 " 替换插件管理器
-call plug#begin(expand('~/.vim/bundle'))
+call plug#begin(expand('~/.vim/.bundle'))
   Plug 'preservim/nerdtree'                 " 文件树
   Plug 'Xuyuanp/nerdtree-git-plugin'        " git状态显示
   Plug 'rhysd/conflict-marker.vim'          " git冲突解决
