@@ -39,8 +39,6 @@ call plug#begin(expand('~/.vim/bundle'))
   Plug 'APZelos/blamer.nvim'                " 显示最后的提交信息
   Plug 'neoclide/jsonc.vim'                 " 支持json注释
   Plug 'tpope/vim-surround'                 " 包围匹配
-  " 主要是用起来实在难受
-  " Plug 'bling/vim-bufferline'               " 状态栏显示 buffer
   " 内容查找插件
   " grep.vim      https://github.com/yegappan/grep
   " ack.vim       https://github.com/mileszs/ack.vim
