@@ -111,7 +111,7 @@ let g:NERDTreeAutoDeleteBuffer = 1
 let g:nerdtree_tabs_focus_on_files = 1
 
 " 宽度
-let g:NERDTreeWinSize = 40
+" let g:NERDTreeWinSize = 40
 
 " 显示行号
 let g:NERDTreeShowLineNumbers = 1
