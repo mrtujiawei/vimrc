@@ -365,8 +365,8 @@ let g:airline_extensions = [
   \ 'fzf',
   \ ]
 
-" 显示窗口tab
-let g:airline#extensions#tabline#enabled = 1
+" 不显示窗口tab, 实在太卡了
+let g:airline#extensions#tabline#enabled = 0
 
 " 不显示buffer
 let g:airline#extensions#tabline#show_buffers = 0
