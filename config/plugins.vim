@@ -101,9 +101,6 @@ call plug#begin(expand('~/.vim/.bundle'))
   " 计算导出的大小
   Plug 'yardnsm/vim-import-cost', { 'do': 'yarn install --production' }
 
-  " 查找TODO
-  Plug 'mrtujiawei/searchtasks.vim'
-
   " 支持不存在的目录写入文件
   Plug 'pbrisbin/vim-mkdir'
 
@@ -115,6 +112,9 @@ call plug#begin(expand('~/.vim/.bundle'))
 
   " ruby 语法
   Plug 'vim-ruby/vim-ruby',
+
+  " 查找TODO
+  Plug 'mrtujiawei/searchtasks.vim'
 
   " 头部注释
   Plug 'mrtujiawei/comment.vim'
