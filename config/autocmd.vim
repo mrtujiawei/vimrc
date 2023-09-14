@@ -41,3 +41,5 @@ autocmd! BufReadPost *[a-zA-z] silent! if (utils#current_file_readable()) | try 
 
 " 这东西全局设置不生效，只能出此下策
 autocmd! BufReadPost * silent! set signcolumn=auto
+
+autocmd! BufWritePost ; silent! call utils#write_file_semi()

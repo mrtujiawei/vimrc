@@ -163,3 +163,31 @@ func! utils#edit_width_new_tab() abort
   tabnext
   call setpos('.', l:pos)
 endfun
+
+" 经常会出现另存为 ; 这个文件的情况
+" 所以在写入之前判读文件名是不是 ;
+" 如果是的话，保存buffer对应的名字
+"
+" 没办法阻止写入，选择写入后删除
+func! utils#write_file_semi()
+  let l:filename = expand('<afile>')
+  let l:unexpect_filename = ';'
+
+  if l:filename == l:unexpect_filename
+    let l:filename = expand('%')
+  endif
+
+  " 防止死循环
+  if l:filename != l:unexpect_filename
+    " 同步保存不生效
+    " 改为异步保存
+    call timer_start(1, function('utils#save_current_buffer'))
+    exec '!rm -rf ";"'
+  endif
+endfunc
+
+" 保存 buffer 到文件
+func! utils#save_current_buffer(...)
+  write
+endfunc
+
