@@ -128,7 +128,7 @@ func MyFormat()
   if l:ft == 'lua'
     normal gg=G``
   else
-    normal :Format<cr>
+    exec ':Format'
   endif
 endfunc
 
