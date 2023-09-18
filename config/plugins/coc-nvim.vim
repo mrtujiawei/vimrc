@@ -121,7 +121,16 @@ xmap <silent> <leader>f <Plug>(coc-format-selected)
 nmap <silent> <leader>f <Plug>(coc-format-selected)
 
 " 格式化整个文件
-map <silent> <leader>F :Format<cr>
+map <silent> <leader>F :call MyFormat()<Enter>
+
+func MyFormat()
+  let l:ft = &ft
+  if l:ft == 'lua'
+    normal gg=G``
+  else
+    :Format<cr>
+  endif
+endfunc
 
 augroup mygroup
   autocmd!
