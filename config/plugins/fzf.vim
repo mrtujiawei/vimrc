@@ -7,7 +7,13 @@
 
 " <C-n> <C-p> 切换历史命令
 
+let g:fzf_vim = {}
+let g:fzf_vim.preview_window = ['right,60%,<50(down,50%)', has('mac') ? 'ctrl-_' : 'ctrl-/']
+let g:fzf_vim.commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
+
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.8 } }
 let g:fzf_history_dir = '~/.vim/.fzf_history'
+
 let fzf_files_filter_dirs = [
   \ 'node_modules','.git',
   \ 'dist', 'prod', 'dev', '.bundle',
