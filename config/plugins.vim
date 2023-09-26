@@ -6,6 +6,9 @@
 " 改为用 ssh 而不是 https
 let g:plug_url_format = 'git@github.com:%s.git'
 
+" TODO
+" 自动下载插件
+
 " 替换插件管理器
 call plug#begin(expand('~/.vim/.bundle'))
   " 文件树
