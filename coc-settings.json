@@ -23,5 +23,34 @@
   "tailwindCSS.includeLanguages": {
     "liquid": "html"
   },
-  "tailwindCSS.headwind.removeDuplicates": false
+  "tailwindCSS.headwind.removeDuplicates": false,
+  "hover.floatConfig": {
+    "border": true,
+    "rounded": true,
+    "focusable": true
+  },
+  "suggest.floatConfig": {
+    "border": true,
+    "rounded": true
+  },
+  "diagnostic.floatConfig": {
+    "border": true,
+    "rounded": false
+  },
+  "signature.floatConfig": {
+    "border": true,
+    "rounded": true
+  },
+  "git.floatConfig": {
+    "border": true,
+    "rounded": true
+  },
+  "outline.autoPreview": true,
+  "list.signOffset": 1,
+  "list.alignColumns": true,
+  "list.floatPreview": true,
+  "tsserver.trace.server": "messages",
+  "git.showCommitInFloating": true,
+  "git.addGBlameToVirtualText": true,
+  "git.addGBlameToBufferVar": true,
 }
