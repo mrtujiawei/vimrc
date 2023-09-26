@@ -6,8 +6,11 @@
 " 改为用 ssh 而不是 https
 let g:plug_url_format = 'git@github.com:%s.git'
 
-" TODO
 " 自动下载插件
+if !filereadable(expand('~/.vim/autoload/plug.vim'))
+  echo 'Installing vim-plug ...'
+  call system('curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim')
+endif
 
 " 替换插件管理器
 call plug#begin(expand('~/.vim/.bundle'))
