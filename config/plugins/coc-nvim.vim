@@ -5,7 +5,7 @@
 " Maintainer: mrtujiawei <m15988803646@163.com>
 " Last Change: 2023-08-28
 
-let g:coc_borderchars = ['-', '|', '-', '|', ' ', ' ', ' ', ' ']
+" let g:coc_borderchars = ['-', '|', '-', '|', ' ', ' ', ' ', ' ']
 
 " 高亮关键字及其对应的声明和使用的地方
 autocmd CursorHold * silent! call CocActionAsync('highlight')

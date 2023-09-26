@@ -14,4 +14,4 @@ let g:floaterm_keymap_toggle = '<F12>'
 
 " 我的电脑上有点问题
 " 现在换成 mac 了，完美
-let g:floaterm_borderchars = '-|-|'
+" let g:floaterm_borderchars = '-|-|'

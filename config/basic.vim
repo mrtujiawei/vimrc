@@ -237,7 +237,8 @@ endif
 set noimdisable
 
 " 设置为双字宽显示，否则无法完整显示如:☆
-set ambiwidth=double
+" 实际情况还是不要加这个比较合适
+" set ambiwidth=double
 
 " 自动缩进
 set autoindent                  
