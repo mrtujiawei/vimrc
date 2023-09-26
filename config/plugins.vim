@@ -92,9 +92,6 @@ call plug#begin(expand('~/.vim/.bundle'))
   " 快速生成jsdoc
   Plug 'heavenshell/vim-jsdoc', { 'do': 'make install', 'for': ['javascript', 'javascript.jsx','typescript'] }
 
-  " 显示最后的提交信息
-  Plug 'APZelos/blamer.nvim'
-
   " 支持json注释
   Plug 'neoclide/jsonc.vim'
 
