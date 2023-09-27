@@ -12,8 +12,4 @@ let g:floaterm_keymap_prev   = '<F10>'
 let g:floaterm_keymap_next   = '<F11>'
 let g:floaterm_keymap_toggle = '<F12>'
 
-" 我的电脑上有点问题
-" 现在换成 mac 了，完美
-" let g:floaterm_borderchars = '-|-|'
-
-hi FloatermBorder ctermfg=fg ctermbg=none
+hi FloatermBorder guibg=none guifg=Grey
