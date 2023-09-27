@@ -25,6 +25,11 @@ bash ohmyzsh/tools/install.sh
 # alias vim="nvim"
 # alias vi="nvim"
 
+# fzf 样式错乱修复 0 或 1
+# export RUNEWIDTH_EASTASIAN=0
+
+
+
 # 添加子命令补全 bash 有效
 # _git_merge_to_comp() {
 #     local -a git_branches
