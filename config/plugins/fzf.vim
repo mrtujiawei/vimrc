@@ -8,6 +8,8 @@
 " <C-n> <C-p> 切换历史命令
 
 let g:fzf_vim = {}
+
+" 预览窗口滚动 <S-up> <S-down>
 let g:fzf_vim.preview_window = ['right,40%,<50(down,50%)', has('mac') ? 'ctrl-_' : 'ctrl-/']
 let g:fzf_vim.commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
 
