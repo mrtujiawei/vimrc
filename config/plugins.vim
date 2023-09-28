@@ -174,4 +174,7 @@ call plug#begin(expand('~/.vim/.bundle'))
   "
   " vim 内部调试
   " https://github.com/puremourning/vimspector
+  "
+  " 单词加下划线
+  " https://github.com/itchyny/vim-cursorword
 call plug#end()
