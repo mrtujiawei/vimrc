@@ -168,4 +168,7 @@ call plug#begin(expand('~/.vim/.bundle'))
   "
   " 画图
   " https://github.com/jbyuki/venn.nvim
+  "
+  " 命令行菜单渲染优化
+  " https://github.com/gelguy/wilder.nvim
 call plug#end()
