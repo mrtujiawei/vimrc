@@ -171,4 +171,7 @@ call plug#begin(expand('~/.vim/.bundle'))
   "
   " 命令行菜单渲染优化
   " https://github.com/gelguy/wilder.nvim
+  "
+  " vim 内部调试
+  " https://github.com/puremourning/vimspector
 call plug#end()

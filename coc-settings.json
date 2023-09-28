@@ -57,5 +57,8 @@
   "git.showCommitInFloating": true,
   "git.addGBlameToVirtualText": true,
   "git.addGBlameToBufferVar": true,
-  "git.enableGutters": true
+  "git.enableGutters": true,
+  "suggest.triggerAfterInsertEnter": true,
+  "suggest.detailField": "preview",
+  "javascript.referencesCodeLens.enabled": true
 }
