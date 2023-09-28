@@ -252,6 +252,9 @@ set autoread
 " backspace可以删除到上一行
 set backspace=2 
 
+" 边界处左右光标可以移动到上下行
+" set whichwrap=b,s,<,>,h
+
 " 有类似游戏中的光标显示，但是感觉太骚了，不适合我
 " 高亮当前行,下面有配置，插入模式不高亮
 set cursorline
@@ -298,7 +301,11 @@ set tabstop=2
 set wildmenu
 
 " 第一次显示列表，之后依次选下一个
-set wildmode=longest:list,full
+" set wildmode=longest:list,full
+
+" 类似代码提示的形式显示
+" 最多显示 10 条
+set pumheight=10
 
 " 忽略文件
 set wildignore+=*.git/*,*.svn/*,*.DS_Store/*,*node_modules/*,*dist/*,*build/*

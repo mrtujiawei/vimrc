@@ -45,6 +45,10 @@
     "border": true,
     "rounded": true
   },
+  "suggest.pumFloatConfig": {
+    "border": true,
+    "rounded": true
+  },
   "outline.autoPreview": true,
   "list.signOffset": 1,
   "list.alignColumns": true,
@@ -53,4 +57,5 @@
   "git.showCommitInFloating": true,
   "git.addGBlameToVirtualText": true,
   "git.addGBlameToBufferVar": true,
+  "git.enableGutters": true
 }
