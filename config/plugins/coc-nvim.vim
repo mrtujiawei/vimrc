@@ -159,14 +159,14 @@ nmap <leader>qf <Plug>(coc-fix-current)
 " 函数和类映射
 " 需要 lsp 'textDocument.documentSymbol' 支持
 " 目前不支持
-" xmap if <Plug>(coc-funcobj-i)
-" omap if <Plug>(coc-funcobj-i)
-" xmap af <Plug>(coc-funcobj-a)
-" omap af <Plug>(coc-funcobj-a)
-" xmap ic <Plug>(coc-classobj-i)
-" omap ic <Plug>(coc-classobj-i)
-" xmap ac <Plug>(coc-classobj-a)
-" omap ac <Plug>(coc-classobj-a)
+xmap if <Plug>(coc-funcobj-i)
+omap if <Plug>(coc-funcobj-i)
+xmap af <Plug>(coc-funcobj-a)
+omap af <Plug>(coc-funcobj-a)
+xmap ic <Plug>(coc-classobj-i)
+omap ic <Plug>(coc-classobj-i)
+xmap ac <Plug>(coc-classobj-a)
+omap ac <Plug>(coc-classobj-a)
 
 " 用 <C-s> 选择分为
 " 需要 lsp 'textDocument/selectionRange' 支持

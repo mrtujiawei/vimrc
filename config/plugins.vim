@@ -165,4 +165,7 @@ call plug#begin(expand('~/.vim/.bundle'))
   " ctrlsf.vim    https://github.com/dyng/ctrlsf.vim
   " 代码片段
   " https://github.com/SirVer/ultisnips
+  "
+  " 画图
+  " https://github.com/jbyuki/venn.nvim
 call plug#end()
