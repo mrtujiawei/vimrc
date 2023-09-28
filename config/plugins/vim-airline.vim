@@ -26,13 +26,16 @@ let g:airline_highlighting_cache = 1
 " 只加载指定的插件
 " 'coc', 'searchcount',
 " 'wordcount', 'whitespace', 'mundo',
-let g:airline_extensions = [
-  \ 'branch', 'fugitiveline',
-  \ 'hunks', 'term',
-  \ 'keymap', 'netrw',
-  \ 'quickfix', 'tabline',
-  \ 'fzf',
-  \ ]
+"
+" 能提升性能，但不打开vim 直接 git commit 会报错
+" 现在电脑性能过得去，没必要省这么点开销
+" let g:airline_extensions = [
+"   \ 'branch', 'fugitiveline',
+"   \ 'hunks', 'term',
+"   \ 'keymap', 'netrw',
+"   \ 'quickfix', 'tabline',
+"   \ 'fzf',
+"   \ ]
 
 " 不显示窗口tab, 实在太卡了
 let g:airline#extensions#tabline#enabled = 0
