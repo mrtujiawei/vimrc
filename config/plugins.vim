@@ -107,9 +107,6 @@ call plug#begin(expand('~/.vim/.bundle'))
   " 支持不存在的目录写入文件
   Plug 'pbrisbin/vim-mkdir'
 
-  " 编辑大文件时禁用一些插件
-  Plug 'vim-scripts/LargeFile'
-
   " liquid 语法高亮
   Plug 'tpope/vim-liquid'
 
