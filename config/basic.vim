@@ -45,7 +45,7 @@ set nocompatible
 
 " 一些终端上会出现白色背景
 if &term=~'256color'
-  set t_ut= 
+  set t_ut=
 endif
 
 " tmux 中颜色高亮
@@ -216,7 +216,7 @@ if has('nvim')
   call utils#checkDir(expand('~/.vim/.neo-backup'))
   call utils#checkDir(expand('~/.vim/.neo-swp'))
   call utils#checkDir(expand('~/.vim/.neo-undo'))
-  set backupdir=~/.vim/.neo-backup//  
+  set backupdir=~/.vim/.neo-backup//
   set directory=~/.vim/.neo-swp//
   set undodir=~/.vim/.neo-undo//
 
@@ -230,7 +230,7 @@ else
   call utils#checkDir(expand('~/.vim/.backup'))
   call utils#checkDir(expand('~/.vim/.swp'))
   call utils#checkDir(expand('~/.vim/.undo'))
-  set backupdir=~/.vim/.backup//  
+  set backupdir=~/.vim/.backup//
   set directory=~/.vim/.swp//
   set undodir=~/.vim/.undo//
 
@@ -249,7 +249,7 @@ set noimdisable
 " set ambiwidth=double
 
 " 自动缩进
-set autoindent                  
+set autoindent
 
 " 文件监视，修改后提示
 " 类似重新加载
@@ -258,7 +258,7 @@ set autoread
 " 可以删除行首空白字符，换行符，插入模式开始处之前的字符
 " set backspace=indent,eol,start
 " backspace可以删除到上一行
-set backspace=2 
+set backspace=2
 
 " 边界处左右光标可以移动到上下行
 " set whichwrap=b,s,<,>,h
@@ -322,7 +322,7 @@ set wildignore+=*.git/*,*.svn/*,*.DS_Store/*,*node_modules/*,*dist/*,*build/*
 set synmaxcol=0
 
 " 换行之前加8个空格
-" set showbreak=\ \ \ \ \ \ \ \ 
+" set showbreak=\ \ \ \ \ \ \ \
 
 " 改变开始换行的方式
 set linebreak
