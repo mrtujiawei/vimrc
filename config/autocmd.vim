@@ -43,3 +43,6 @@ autocmd! BufReadPost *[a-zA-z] silent! if (utils#current_file_readable()) | try 
 autocmd! BufReadPost * silent! set signcolumn=auto
 
 autocmd! BufWritePost ; silent! call utils#write_file_semi()
+
+" silent!
+autocmd BufEnter * call utils#large_file_check(expand('<afile>'))

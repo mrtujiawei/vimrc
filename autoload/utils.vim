@@ -191,3 +191,14 @@ func! utils#save_current_buffer(...)
   write
 endfunc
 
+" 大文件检查
+func! utils#large_file_check(file_name)
+  let l:file_size = getfsize(a:file_name)
+  let l:max_file_size = 200 * 1024
+
+  if l:file_size <= l:max_file_size 
+    return
+  endif
+
+  set filetype=largefile
+endfunc
