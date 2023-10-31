@@ -88,3 +88,7 @@ noremap <silent> <leader>i /\/\/ TODO<cr>:noh<cr>dd:noh<cr>O
 " 运行当前文件
 noremap <F5> :call utils#run()<Enter>
 inoremap <F5> <Esc>:call utils#run()<Enter>
+
+" 选中的情况下控制缩进
+vnoremap <nowait><silent> <Tab> >gv
+vnoremap <nowait><silent> <S-Tab> <gv
