@@ -97,6 +97,8 @@ set relativenumber
 " 总是不会起作用，奇怪
 set signcolumn=auto
 
+set diffopt+=internal,algorithm:patience
+
 " 默认不换行
 set textwidth=0
 
@@ -117,6 +119,9 @@ set t_Co=256
 
 " 终端显示更好看一点
 set termguicolors
+
+" 修改终端中显示的命令
+set title
 
 " 深色背景
 set background=dark
@@ -168,6 +173,18 @@ set incsearch
 " 显示匹配的字符
 set showmatch
 
+" <> 也可以匹配
+set matchpairs+=<:>
+
+" 超过50行不显示更多差异
+set diffopt+=linematch:50
+
+set inccommand=split
+
+" set completeopt
+
+set jumpoptions=stack
+
 " 没有大小写区别时忽略大小写，否则不忽略
 set smartcase
 
@@ -197,7 +214,8 @@ set hidden
 " 文件编码 utf-8
 set encoding=utf-8
 set fileencoding=utf-8
-set fileencodings=utf-8
+" set fileencodings=utf-8
+set fileencodings=utf-8,gbk,chinese,cp936,gb18030,utf-16le,utf-16,big5,euc-jp,euc-kr,latin-1
 
 " 页面加速?
 set ttyfast
@@ -310,6 +328,8 @@ set wildmenu
 
 " 第一次显示列表，之后依次选下一个
 " set wildmode=longest:list,full
+
+" set list listchars=tab:\|\ ,trail:·,eol:¬,leadmultispace:---+,nbsp:⍽,extends:>,precedes:<
 
 " 类似代码提示的形式显示
 " 最多显示 10 条

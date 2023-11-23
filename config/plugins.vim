@@ -113,6 +113,9 @@ call plug#begin(expand('~/.vim/.bundle'))
   " ruby 语法
   Plug 'vim-ruby/vim-ruby',
 
+  " <C-a> <C-x> 扩展
+  Plug 'zef/vim-cycle'
+
   " 查找TODO
   Plug 'mrtujiawei/searchtasks.vim'
 
@@ -124,7 +127,16 @@ call plug#begin(expand('~/.vim/.bundle'))
 
   " buffer 管理
   Plug 'mrtujiawei/buffer.vim'
-  
+
+  " 其他模块的行内编辑 挺好用的
+  Plug 'AndrewRadev/inline_edit.vim'
+
+  " 日历显示
+  Plug 'mattn/calendar-vim'
+
+  " 更好的 quickfix
+  " Plug 'kevinhwang91/nvim-bqf'
+
   " copilot 包月太贵，我选择不用
   " Plug 'github/copilot.vim',
 

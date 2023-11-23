@@ -590,3 +590,16 @@ https://github.com/lyokha/vim-xkbswitch
 ### 高亮相关
 
 https://github.com/nvim-treesitter/nvim-treesitter
+
+```vimscript
+" 复制浮动窗口中的文本
+function! CopyFloatText() abort
+  let id = win_getid()
+  let winid = coc#float#get_float_win()
+  if winid
+    call win_gotoid(winid)
+    execute 'normal! ggvGy'
+    call win_gotoid(id)
+  endif
+endfunction
+```
