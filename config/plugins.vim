@@ -134,6 +134,9 @@ call plug#begin(expand('~/.vim/.bundle'))
   " 日历显示
   Plug 'mattn/calendar-vim'
 
+  " graphql
+  Plug 'jparise/vim-graphql'
+
   " 更好的 quickfix
   " Plug 'kevinhwang91/nvim-bqf'
 
