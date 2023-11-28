@@ -32,9 +32,8 @@ set shortmess+=c
 " coc-docker
 " coc-python: python
 "
-" 已经移除
-" coc-vetur: vue 代码提示
-" @yaegassy/coc-volar
+" coc-vetur: vue2 代码提示 老版本
+" @yaegassy/coc-volar: vue3 代码提示 新版本
 " coc-tailwindcss: tailwindcss 
 let g:coc_global_extensions = [
   \ 'coc-git',
@@ -45,7 +44,7 @@ let g:coc_global_extensions = [
   \ 'coc-html-css-support',
   \ 'coc-eslint',
   \ '@yaegassy/coc-nginx',
-  \ 'coc-vetur',
+  \ '@yaegassy/coc-volar',
   \ 'coc-sh',
   \ 'coc-prettier',
   \ 'coc-vimlsp',

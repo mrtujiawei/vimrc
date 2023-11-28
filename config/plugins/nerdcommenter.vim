@@ -21,7 +21,7 @@ let g:NERDDefaultAlign = 'left'
 " let g:NERDAltDelims_java = 1
 
 " 自定义代码注释
-" let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+let g:NERDCustomDelimiters = { 'vue': { 'left': '/**','right': '*/' } }
 
 " 空行允许注释和取消
 let g:NERDCommentEmptyLines = 1
