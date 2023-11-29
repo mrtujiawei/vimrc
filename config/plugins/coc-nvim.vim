@@ -34,6 +34,7 @@ set shortmess+=c
 "
 " coc-vetur: vue2 代码提示 老版本
 " @yaegassy/coc-volar: vue3 代码提示 新版本
+" @yaegassy/coc-typescript-vue-plugin: .vue import 支持， 不报错
 " coc-tailwindcss: tailwindcss 
 let g:coc_global_extensions = [
   \ 'coc-git',
@@ -45,6 +46,7 @@ let g:coc_global_extensions = [
   \ 'coc-eslint',
   \ '@yaegassy/coc-nginx',
   \ '@yaegassy/coc-volar',
+  \ '@yaegassy/coc-typescript-vue-plugin',
   \ 'coc-sh',
   \ 'coc-prettier',
   \ 'coc-vimlsp',
