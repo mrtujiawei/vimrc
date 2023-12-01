@@ -24,7 +24,8 @@ let fzf_files_filter_dirs = [
   \ '.java', '.dartServer', '.config',
   \ '.local', '.oh-my-zsh', '.pm2',
   \ '.node-gyp', '.gradle',
-  \ '.neo-swp', '.neo-undo', '.neo-view', '.neo-backup'
+  \ '.neo-swp', '.neo-undo', '.neo-view', '.neo-backup',
+  \ 'target',
 \ ]
 let fzf_files_filter_dirs = join(fzf_files_filter_dirs, '|')
 let fzf_files_source = "find -regextype egrep -type f ! -regex \".*/(".fzf_files_filter_dirs.")/.*\""
