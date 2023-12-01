@@ -141,6 +141,8 @@ function! utils#run()
     let l:command = 'ts-node'
   elseif l:filetype == 'python'
     let l:command = 'python3'
+  elseif l:filetype == 'rust'
+    let l:command = 'cargo run'
   endif
 
   if l:command != ''
