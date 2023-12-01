@@ -336,7 +336,7 @@ set wildmenu
 set pumheight=10
 
 " 忽略文件
-set wildignore+=*.git/*,*.svn/*,*.DS_Store/*,*node_modules/*,*dist/*,*build/*
+set wildignore+=*.git/*,*.svn/*,*.DS_Store/*,*node_modules/*,*dist/*,*build/*,*/target/*
 
 " 不限制单行最大列
 set synmaxcol=0
