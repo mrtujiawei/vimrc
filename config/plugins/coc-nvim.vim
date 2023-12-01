@@ -36,6 +36,7 @@ set shortmess+=c
 " @yaegassy/coc-volar: vue3 代码提示 新版本
 " @yaegassy/coc-typescript-vue-plugin: .vue import 支持， 不报错
 " coc-tailwindcss: tailwindcss 
+" coc-rls: rust
 let g:coc_global_extensions = [
   \ 'coc-git',
   \ 'coc-json',
@@ -54,6 +55,7 @@ let g:coc_global_extensions = [
   \ 'coc-docker',
   \ 'coc-python',
   \ '@yaegassy/coc-tailwindcss3',
+  \ 'coc-rls',
   \ ]
 
 nnoremap <silent> <leader>y  :<C-u>CocList -A --normal yank<cr>

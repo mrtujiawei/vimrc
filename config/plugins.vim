@@ -137,6 +137,9 @@ call plug#begin(expand('~/.vim/.bundle'))
   " graphql
   Plug 'jparise/vim-graphql'
 
+  " rust
+  Plug 'rust-lang/rust.vim'
+
   " 更好的 quickfix
   " Plug 'kevinhwang91/nvim-bqf'
 
