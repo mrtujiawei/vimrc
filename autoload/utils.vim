@@ -161,7 +161,11 @@ func! utils#edit_width_new_tab() abort
   let l:pos = getpos('.')
   exec 'tabedit ' . expand('%')
   tabprevious
-  enew
+  " 保留原来的窗口结构
+  " enew
+
+  " 关闭原来的 pane
+  close
   tabnext
   call setpos('.', l:pos)
 endfun
