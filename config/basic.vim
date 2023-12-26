@@ -97,7 +97,11 @@ set relativenumber
 " 总是不会起作用，奇怪
 set signcolumn=auto
 
-set diffopt+=internal,algorithm:patience
+try
+  set diffopt+=internal,algorithm:patience
+catch /.*/
+
+endtry
 
 " 默认不换行
 set textwidth=0
@@ -176,14 +180,22 @@ set showmatch
 " <> 也可以匹配
 set matchpairs+=<:>
 
-" 超过50行不显示更多差异
-set diffopt+=linematch:50
+try
+  " 超过50行不显示更多差异
+  set diffopt+=linematch:50
+catch /.*/
+  
+endtry
 
-set inccommand=split
+try
+  set inccommand=split
 
-" set completeopt
+  " set completeopt
+  set jumpoptions=stack
 
-set jumpoptions=stack
+catch /.*/
+  
+endtry
 
 " 没有大小写区别时忽略大小写，否则不忽略
 set smartcase
