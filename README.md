@@ -568,6 +568,10 @@ echohl WarningMsg | echo 'Hello World' | echohl None
 
 ## 快捷键
 
+> 显示字符编码
+
+`ga`
+
 > 在自动补全的代码之间跳转
 
 `<C-j>`: 跳转到下一个位置
