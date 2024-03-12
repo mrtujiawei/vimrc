@@ -56,7 +56,9 @@ let g:coc_global_extensions = [
   \ 'coc-docker',
   \ 'coc-python',
   \ '@yaegassy/coc-tailwindcss3',
-  \ 'coc-rust-analyzer'
+  \ 'coc-rust-analyzer',
+  \ 'coc-clangd',
+  \ 'coc-cmake',
   \ ]
 
 nnoremap <silent> <leader>y  :<C-u>CocList -A --normal yank<cr>
