@@ -140,6 +140,10 @@ call plug#begin(expand('~/.vim/.bundle'))
   " rust
   Plug 'rust-lang/rust.vim'
 
+  " bad apple 需要 deno
+  " Plug 'vim-denops/denops.vim'
+  " Plug 'ryoppippi/bad-apple.vim'
+
   " 更好的 quickfix
   " Plug 'kevinhwang91/nvim-bqf'
 
