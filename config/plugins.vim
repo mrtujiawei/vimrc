@@ -139,6 +139,10 @@ call plug#begin(expand('~/.vim/.bundle'))
 
   " rust
   Plug 'rust-lang/rust.vim'
+  
+  " 错误显示 没生效 需要配置 lsp 太麻烦 放弃
+  " Plug 'folke/trouble.nvim'
+  " Plug 'nvim-tree/nvim-web-devicons'
 
   " bad apple 需要 deno
   " Plug 'vim-denops/denops.vim'
