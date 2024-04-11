@@ -24,6 +24,10 @@ bash ohmyzsh/tools/install.sh
 # export TERM="xterm-256color"
 # alias vim="nvim"
 # alias vi="nvim"
+#
+# 快速切换路径
+# setopt auto_cd
+# cdpath=($HOME/work $HOME/.vim $HOME/.vim $HOME/github)
 
 # fzf 样式错乱修复 0 或 1
 # export RUNEWIDTH_EASTASIAN=0
