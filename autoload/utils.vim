@@ -143,6 +143,8 @@ function! utils#run()
     let l:command = 'python3'
   elseif l:filetype == 'rust'
     let l:command = 'cargo run'
+  elseif l:filetype == 'java'
+    let l:command = 't run-java'
   endif
 
   if l:command != ''
