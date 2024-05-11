@@ -59,6 +59,8 @@ let g:coc_global_extensions = [
   \ 'coc-rust-analyzer',
   \ 'coc-clangd',
   \ 'coc-cmake',
+  \ 'coc-java',
+  \ 'coc-xml'
   \ ]
 
 nnoremap <silent> <leader>y  :<C-u>CocList -A --normal yank<cr>

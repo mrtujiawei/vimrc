@@ -60,5 +60,7 @@
   "git.enableGutters": true,
   "suggest.triggerAfterInsertEnter": true,
   "suggest.detailField": "preview",
-  "javascript.referencesCodeLens.enabled": true
+  "javascript.referencesCodeLens.enabled": true,
+  "xml.java.home": "/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home",
+  "java.configuration.updateBuildConfiguration": "automatic"
 }
