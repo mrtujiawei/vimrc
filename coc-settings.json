@@ -62,5 +62,9 @@
   "suggest.detailField": "preview",
   "javascript.referencesCodeLens.enabled": true,
   "xml.java.home": "/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home",
-  "java.configuration.updateBuildConfiguration": "automatic"
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "Lua.workspace.library": [
+    "/usr/local/share/nvim/runtime/lua",
+    "/Users/tujiawei/.vim/.bundle/coc.nvim/lua"
+  ]
 }

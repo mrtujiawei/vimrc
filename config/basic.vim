@@ -305,6 +305,9 @@ set clipboard=unnamedplus
 " tab转space
 set expandtab
 
+" 合并多行时插入空格的行为
+" set joinspaces
+
 " 更智能
 set smarttab
 
@@ -328,6 +331,9 @@ set mouse=
 
 " tab宽度
 set shiftwidth=2
+
+" > < 调整缩进时 调整到 shiftwidth 的整数倍
+" set shiftround
 
 " 连续的space当成tab来看，可以同时删
 set softtabstop=2
@@ -358,6 +364,10 @@ set synmaxcol=0
 
 " 改变开始换行的方式
 set linebreak
+
+" 太长换行时锁进
+" set breakindent
+" set showbreak=\ \ \ \
 
 " mksession 保存的状态
 " set sessionoptions+=globals

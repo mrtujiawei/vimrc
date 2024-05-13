@@ -89,6 +89,5 @@ noremap <silent> <leader>i /\/\/ TODO<cr>:noh<cr>dd:noh<cr>O
 noremap <F5> :call utils#run()<Enter>
 inoremap <F5> <Esc>:call utils#run()<Enter>
 
-" 选中的情况下控制缩进
-vnoremap <nowait><silent> <Tab> >gv
-vnoremap <nowait><silent> <S-Tab> <gv
+" 跳转行数比较大时 做标记
+" noremap <expr> j v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj'

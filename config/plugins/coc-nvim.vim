@@ -60,8 +60,12 @@ let g:coc_global_extensions = [
   \ 'coc-clangd',
   \ 'coc-cmake',
   \ 'coc-java',
-  \ 'coc-xml'
+  \ 'coc-xml',
+  \ 'coc-lua',
+  \ 'coc-sumneko-lua'
   \ ]
+
+" coc-sumneko-lua 修复 undefine-global 警告
 
 nnoremap <silent> <leader>y  :<C-u>CocList -A --normal yank<cr>
 

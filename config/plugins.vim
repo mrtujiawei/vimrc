@@ -139,6 +139,9 @@ call plug#begin(expand('~/.vim/.bundle'))
 
   " rust
   Plug 'rust-lang/rust.vim'
+
+  " 可视区域移动
+  Plug 'echasnovski/mini.move'
   
   " 错误显示 没生效 需要配置 lsp 太麻烦 放弃
   " Plug 'folke/trouble.nvim'

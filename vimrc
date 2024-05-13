@@ -13,7 +13,7 @@ let g:load_vimrc = 1
 " source 目录
 func! s:SourceDir(dir)
   let s:root_path = expand('$HOME/.vim/' . a:dir . '/')
-  let s:file_paths = glob(s:root_path . '*.vim', 0, 1)
+  let s:file_paths = glob(s:root_path . '*.vim', 0, 1) + glob(s:root_path . '*.lua', 0, 1)
 
   for s:file_path in s:file_paths
     exec 'source ' . s:file_path
