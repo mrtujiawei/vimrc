@@ -142,6 +142,15 @@ call plug#begin(expand('~/.vim/.bundle'))
 
   " 可视区域移动
   Plug 'echasnovski/mini.move'
+
+  " 专注模式
+  Plug 'folke/zen-mode.nvim'
+
+  " 撤销突出显示
+  Plug 'tzachar/highlight-undo.nvim'
+
+  " 同步修改标签
+  Plug 'AndrewRadev/tagalong.vim'
   
   " 错误显示 没生效 需要配置 lsp 太麻烦 放弃
   " Plug 'folke/trouble.nvim'
@@ -203,4 +212,22 @@ call plug#begin(expand('~/.vim/.bundle'))
   "
   " 单词加下划线
   " https://github.com/itchyny/vim-cursorword
+  "
+  " todo 等注释高亮插件
+  " folke/todo-comments.nvim
+  "
+  " 窗口交换
+  " riddlew/swap-split.nvim
+  "
+  " debugger
+  " mfussenegger/nvim-dap
+  "
+  " ui优化
+  " stevearc/dressing.nvim
+  "
+  " 运行测试
+  " vim-test/vim-test
+  "
+  " 请求发送插件 依赖 tree-sitter
+  " rest-nvim/rest.nvim
 call plug#end()

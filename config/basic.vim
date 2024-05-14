@@ -370,7 +370,8 @@ set linebreak
 " set showbreak=\ \ \ \
 
 " mksession 保存的状态
-" set sessionoptions+=globals
+" 都保存，省的缺东西
+set sessionoptions+=globals,blank,buffers,folds,help,localoptions,options,skiprtp,resize,tabpages,terminal,winpos,winsize
 
 " view 状态只需要折叠和光标位置
 " 一些选项和目录不需要记录
