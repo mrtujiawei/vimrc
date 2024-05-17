@@ -43,4 +43,5 @@ if has('mac')
   " 终端不支持，需要再加一次映射
   nnoremap <silent> <C-_> :call nerdcommenter#Comment('n', 'toggle')<CR>
   xnoremap <silent> <C-_> :call nerdcommenter#Comment('x', 'toggle')<CR>
+  imap <silent> <C-_> <Esc><C-_>
 endif

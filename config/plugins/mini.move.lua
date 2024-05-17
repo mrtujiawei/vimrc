@@ -13,7 +13,8 @@ require('mini.move').setup({
     up = '<C-k>',
 
     line_left = '<S-Tab>',
-    line_right = '<Tab>',
+    -- 终端会把 <C-i> 映射成 <Tab>
+    -- line_right = '<Tab>',
     line_down = '<C-j>',
     line_up = '<C-k>',
   },
