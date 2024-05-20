@@ -151,6 +151,9 @@ call plug#begin(expand('~/.vim/.bundle'))
 
   " 同步修改标签
   Plug 'AndrewRadev/tagalong.vim'
+
+  " 编辑文件列表或目录
+  Plug 'stevearc/oil.nvim'
   
   " 错误显示 没生效 需要配置 lsp 太麻烦 放弃
   " Plug 'folke/trouble.nvim'
