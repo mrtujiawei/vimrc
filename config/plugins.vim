@@ -155,6 +155,9 @@ call plug#begin(expand('~/.vim/.bundle'))
   " 编辑文件列表或目录
   Plug 'stevearc/oil.nvim'
 
+  " notify 没必要
+  " Plug 'rcarriga/nvim-notify'
+  "
   " git 冲突显示优化
   " Plug 'sindrets/diffview.nvim'
   
