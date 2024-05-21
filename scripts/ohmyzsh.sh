@@ -105,4 +105,15 @@ bash ohmyzsh/tools/install.sh
 #
 # # maven
 # export PATH=$PATH:$HOME/.maven/bin
+#
+#
+# 合并工具改为 neovim
+# ~/.gitconfig
+# [merge]
+#   tool = nvimdiff
+# [mergetool]
+#   prompt = false
+#   keepBackup = false
+# [mergetool "nvimdiff"]
+#   layout = "LOCAL,BASE,REMOTE / MERGED"
 
