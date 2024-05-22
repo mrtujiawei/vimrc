@@ -13,7 +13,6 @@ git config --global mergetool.prompt false
 git config --global user.email jiaweitu@marcothepolo.com
 git config --global user.name tujiawei
 git config --global push.autoSetupRemote true
-git config --global push.followTags true
 git config --global pull.rebase true
 git config --global commit.verbose true
 git config --global help.autocorrect prompt
@@ -32,4 +31,5 @@ git config --global diff.colorMoved default
 # git config --global delta.navigate true
 # 冲突的表现形式
 # git config --global merge.conflictstyle zdiff3
-
+# push 时 把所有 tag 推送到 github
+# git config --global push.followTags true
