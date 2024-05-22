@@ -210,3 +210,14 @@ func! utils#large_file_check(file_name)
 
   set filetype=largefile
 endfunc
+
+" 判断文件是不是空的
+func! utils#is_file_empty()
+  " 只检查前 10 行
+  for l:line in getline(1, 10)
+    if !empty(trim(l:line))
+      return v:false
+    endif
+  endfor
+  return v:true
+endfunc
