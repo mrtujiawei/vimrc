@@ -21,7 +21,7 @@ autocmd InsertEnter * set nocursorline
 autocmd InsertLeave * set cursorline
 
 " 创建新文件时设置模板
-autocmd BufNewFile * CommentCreate | w
+autocmd BufNewFile * CommentCreate
 
 " 如果只有一个用户窗口就直接关闭vim
 autocmd BufEnter * silent! call utils#close_on_no_user_window()
