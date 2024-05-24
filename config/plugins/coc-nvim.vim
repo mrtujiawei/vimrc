@@ -48,7 +48,6 @@ let g:coc_global_extensions = [
   \ 'coc-eslint',
   \ '@yaegassy/coc-nginx',
   \ '@yaegassy/coc-volar',
-  \ '@yaegassy/coc-typescript-vue-plugin',
   \ 'coc-sh',
   \ 'coc-prettier',
   \ 'coc-vimlsp',
