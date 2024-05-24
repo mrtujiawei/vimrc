@@ -184,7 +184,7 @@ try
   " 超过50行不显示更多差异
   set diffopt+=linematch:50
 catch /.*/
-  
+
 endtry
 
 try
@@ -194,7 +194,7 @@ try
   set jumpoptions=stack
 
 catch /.*/
-  
+
 endtry
 
 " 没有大小写区别时忽略大小写，否则不忽略

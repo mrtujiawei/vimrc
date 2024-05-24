@@ -160,7 +160,7 @@ call plug#begin(expand('~/.vim/.bundle'))
   "
   " git 冲突显示优化
   " Plug 'sindrets/diffview.nvim'
-  
+
   " 错误显示 没生效 需要配置 lsp 太麻烦 放弃
   " Plug 'folke/trouble.nvim'
   " Plug 'nvim-tree/nvim-web-devicons'

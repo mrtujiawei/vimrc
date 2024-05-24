@@ -25,7 +25,7 @@ endfunction
 function! utils#toLastEditPosition()
   if 1 < line("'\"") && line("'\"") <= line("$")
     exec "normal! g'\""
-  endif 
+  endif
 endfunction
 
 " 翻译当前光标下的单词
@@ -82,7 +82,7 @@ endfunction
 " 光标下是否有字符
 " 返回字符的宽度，中文占三位 utf-8
 " 英文占1位
-function! utils#hasWordUnderCursor() 
+function! utils#hasWordUnderCursor()
   let col = '\%' . col('.') . 'c.'
   let cword = matchstr(getline('.'), col)
   return strlen(cword)
@@ -96,7 +96,7 @@ function! utils#mkTempfile()
   let sessions = split(glob(sessionDir.'*'), '\n')
 
   let index = 0
-  for session in sessions 
+  for session in sessions
     let paths = split(session, '/')
     let sessions[index] = paths[len(paths) - 1]
     let index = index + 1
@@ -204,7 +204,7 @@ func! utils#large_file_check(file_name)
   let l:file_size = getfsize(a:file_name)
   let l:max_file_size = 2 * 1024 * 1024
 
-  if l:file_size <= l:max_file_size 
+  if l:file_size <= l:max_file_size
     return
   endif
 

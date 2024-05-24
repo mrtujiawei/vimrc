@@ -38,7 +38,7 @@ let fzf_files_options = [
 \ ]
 
 " mac 会报错
-if !has('mac') 
+if !has('mac')
   " 重写 :Files 的功能
   command! -bang -nargs=? -complete=dir Files call fzf#vim#files(<q-args>, fzf#vim#with_preview({'source': fzf_files_source, 'options': fzf_files_options, }), <bang>0)
 endif
