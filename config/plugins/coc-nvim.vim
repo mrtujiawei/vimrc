@@ -34,7 +34,6 @@ set shortmess+=c
 "
 " coc-vetur: vue2 代码提示 老版本
 " @yaegassy/coc-volar: vue3 代码提示 新版本
-" @yaegassy/coc-typescript-vue-plugin: .vue import 支持， 不报错
 " coc-tailwindcss: tailwindcss
 " coc-rls: rust 已经不支持了
 " coc-rust-analyzer: rust 最新的插件, 需要手动安装依赖 `brew install rust-analyzer`
