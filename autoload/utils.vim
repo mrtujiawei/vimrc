@@ -215,3 +215,12 @@ endfunc
 func! utils#is_file_empty()
   return line('$') < 2
 endfunc
+
+" 获取配置文件数组
+func! utils#get_config_files(dir)
+  let l:root_path = expand('$HOME/.vim/' . a:dir . '/')
+  let l:file_paths = glob(l:root_path . '*.vim', 0, 1) + glob(l:root_path . '*.lua', 0, 1)
+
+  return l:file_paths
+endfunc
+
