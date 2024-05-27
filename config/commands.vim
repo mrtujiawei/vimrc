@@ -18,13 +18,4 @@ command! -n=0 -bar Fw execute 'w !sudo tee % > /dev/null' <bar> edit!
 " 当前 buffer 的项目根目录切换到当前文件目录
 command! -n=0 Cd :lcd %:p:h
 
-command! -n=? -complete=dir -bar NewTab :call NewTab(<f-args>)
-
-function! NewTab(...)
-  if a:0 == 0
-    exec 'tabedit | NERDTree'
-  else
-    let l:path = expand(a:1)
-    exec 'tabedit | NERDTree '.l:path
-  endif
-endfunction
+command! -n=? -complete=dir -bar NewTab :call utils#new_tab(<f-args>)

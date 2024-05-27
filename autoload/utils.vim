@@ -172,6 +172,16 @@ func! utils#edit_width_new_tab() abort
   call setpos('.', l:pos)
 endfun
 
+" 新开tab
+func! utils#new_tab(...)
+  if a:0 == 0
+    exec 'tabedit | NERDTree'
+  else
+    let l:path = expand(a:1)
+    exec 'tabedit | NERDTree '.l:path
+  endif
+endfun
+
 " 经常会出现另存为 ; 这个文件的情况
 " 所以在写入之前判读文件名是不是 ;
 " 如果是的话，保存buffer对应的名字
