@@ -234,3 +234,16 @@ func! utils#get_config_files(dir)
   return l:file_paths
 endfunc
 
+" tailwind 使用过程中，经常会 class 很长
+" 用这个来分割一下
+func! utils#split_by_space()
+  let l:prev = getreg()
+
+  normal di'
+  let l:str = "'". join(split(getreg(), ' '), "', '") . "'"
+  normal hxv
+  call setreg('+', l:str)
+  normal p
+
+  call setreg('+', l:prev)
+endfunc

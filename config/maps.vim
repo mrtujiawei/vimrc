@@ -91,3 +91,5 @@ inoremap <F5> <Esc>:call utils#run()<Enter>
 
 " 跳转行数比较大时 做标记
 " noremap <expr> j v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj'
+
+map <silent><leader>' :call utils#split_by_space()<enter>
