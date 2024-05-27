@@ -311,7 +311,7 @@ iabbr <silent> if if ()<Left><C-R>=Eatchar('\s')<CR>
 
 ## 保存会话
 
-`mksession` 保存会话  
+`mksession` 保存会话
 `vim -S Session.vim` 加载会话
 `:source Session.vim` 同上
 
