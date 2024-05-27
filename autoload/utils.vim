@@ -247,3 +247,17 @@ func! utils#split_by_space()
 
   call setreg('+', l:prev)
 endfunc
+
+" 获取选中的范围
+" 实际只能获取左上角和右下角
+" 没法获取所有边界
+func! s:get_position() range
+  " vnoremap <leader>q :call Test()<enter>
+  echo getpos("'<") + getpos("'>")
+  echo mode()
+  let l:top_left = getpos("'<")[1:2]
+  let l:bottom_right = getpos("'>")[1:2]
+
+  let l:lines = getline(l:top_left[0], l:bottom_right[0])
+  echo l:lines
+endfunc

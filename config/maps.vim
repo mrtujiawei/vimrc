@@ -3,12 +3,6 @@
 " Maintainer:   tujiawei <15988803646@163.com>
 " Last Change:  2021 Nov 08
 
-if exists('g:load_mine_map')
-  finish
-endif
-
-let g:load_mine_map = 1
-
 " 限制别人瞎搞我代码
 noremap   <Up>    <Nop>
 noremap   <Down>  <Nop>
