@@ -76,6 +76,8 @@ endfun
 function! utils#MarkdownPreview()
   if 'markdown' == &filetype
     :MarkdownPreview
+  else
+    echo 'not support preview for ' . &ft
   endif
 endfunction
 
