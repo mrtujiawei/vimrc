@@ -37,6 +37,7 @@ set shortmess+=c
 " coc-tailwindcss: tailwindcss
 " coc-rls: rust 已经不支持了
 " coc-rust-analyzer: rust 最新的插件, 需要手动安装依赖 `brew install rust-analyzer`
+" coc-htmldjango: django 模板补全用
 let g:coc_global_extensions = [
   \ 'coc-git',
   \ 'coc-json',
@@ -53,6 +54,7 @@ let g:coc_global_extensions = [
   \ 'coc-yank',
   \ 'coc-docker',
   \ 'coc-python',
+  \ 'coc-htmldjango',
   \ '@yaegassy/coc-tailwindcss3',
   \ 'coc-rust-analyzer',
   \ 'coc-clangd',
