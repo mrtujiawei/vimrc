@@ -66,5 +66,6 @@
   "Lua.workspace.library": [
     "/usr/local/share/nvim/runtime/lua",
     "/Users/tujiawei/.vim/.bundle/coc.nvim/lua"
-  ]
+  ],
+  "htmldjango.djlint.indent": 2
 }
