@@ -43,7 +43,7 @@ let g:NERDTreeGitStatusUntrackedFilesMode = 'normal'
 let g:NERDTreeGitStatusConcealBrackets = 0
 
 " 忽略文件夹，太慢
-let g:NERDTreeIgnore = ['node_modules', '\.dSYM$']
+let g:NERDTreeIgnore = ['node_modules', '\.dSYM$', '\.class$']
 
 " 显示位置
 let g:NERDTreeWinPos = 'right'
