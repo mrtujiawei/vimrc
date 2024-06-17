@@ -62,7 +62,8 @@ let g:coc_global_extensions = [
   \ 'coc-java',
   \ 'coc-xml',
   \ 'coc-lua',
-  \ 'coc-sumneko-lua'
+  \ 'coc-sumneko-lua',
+  \ 'coc-svg'
   \ ]
 
 " coc-sumneko-lua 修复 undefine-global 警告
