@@ -26,6 +26,9 @@ let mapleader=" "
 " fzf 搜索
 nmap <Leader><Space> :Files<CR>
 
+" buffer 列表
+nmap <leader>b :Buffers<Enter>
+
 " 新建tab编辑当前文件
 " nmap <silent> <Leader>te :tabedit %<CR>
 
