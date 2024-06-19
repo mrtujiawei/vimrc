@@ -394,3 +394,6 @@ set nofixendofline
 
 " buffer 隐藏时直接删掉 buffer
 " set bufhidden = 'delete'
+
+" tab 切换时的行为
+" set switchbuf = useopen,usetab,newtab,split
