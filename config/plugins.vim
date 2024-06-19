@@ -156,7 +156,7 @@ call plug#begin(expand('~/.vim/.bundle'))
   Plug 'stevearc/oil.nvim'
 
   " 显示可用的动作
-  Plug 'tris203/precognition.nvim'
+  " Plug 'tris203/precognition.nvim'
   
   " notify 没必要
   " Plug 'rcarriga/nvim-notify'

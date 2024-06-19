@@ -1,7 +1,7 @@
 -- tris203/precognition.nvim
 
-require('precognition').setup({
-  opts = {
-
-  }
-});
+-- require('precognition').setup({
+--   opts = {
+--
+--   }
+-- });

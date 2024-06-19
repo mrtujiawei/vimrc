@@ -263,3 +263,16 @@ func! s:get_position() range
   let l:lines = getline(l:top_left[0], l:bottom_right[0])
   echo l:lines
 endfunc
+
+" 关闭上一个隐藏的 buffer
+func! utils#close_hidden_buffers(...) 
+  for buf in range(1, bufnr('$'))
+    let l:info = getbufinfo(l:buf)
+    if len(l:info) == 0
+      continue
+    endif
+    if l:info[0].hidden
+      exec 'bd ' . l:info[0].bufnr
+    endif
+  endfor
+endfunc
