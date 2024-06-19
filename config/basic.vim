@@ -391,3 +391,6 @@ set nolazyredraw
 
 " 不修改文件末空行的问题
 set nofixendofline
+
+" buffer 隐藏时直接删掉 buffer
+" set bufhidden = 'delete'
