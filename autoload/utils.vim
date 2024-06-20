@@ -272,7 +272,7 @@ func! utils#close_hidden_buffers(...)
       continue
     endif
     if l:info[0].hidden
-      exec 'bd ' . l:info[0].bufnr
+      exec 'silent! bd ' . l:info[0].bufnr
     endif
   endfor
 endfunc
