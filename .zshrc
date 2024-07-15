@@ -106,7 +106,8 @@ export NVM_DIR="$HOME/.nvm"
 
 # export NODE_OPTIONS=--max-old-space-size=8192
 
-export TERM="xterm-256color"
+# mac iterm 下不需要
+# export TERM="xterm-256color"
 alias vim='nvim'
 alias vi='nvim'
 
