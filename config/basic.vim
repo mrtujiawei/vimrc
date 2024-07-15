@@ -371,6 +371,7 @@ set sessionoptions+=globals,blank,buffers,folds,help,localoptions,options,skiprt
 " 一些选项和目录不需要记录
 set viewoptions-=options
 set viewoptions-=curdir
+set viewoptions-=folds
 
 " ==========================
 " ======== 脚本配置 ========

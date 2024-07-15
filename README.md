@@ -1,38 +1,6 @@
 # vimrc
 
-我的 vim 配置文件
-
-打算搞一个单独的配置文件和文档
-
 `z<CR>` 当前行滚动到顶部
-
-## install
-
-### vim install
-
-> 安装最新的vim
-
-```shell
-./scripts/vim-install.sh
-```
-
-### config vimrc
-
-> 配置vim
-
-```shell
-./scripts/install.sh
-```
-
-## vimrcs
-
-我的 vim 配置
-
-## vim 安装
-
-`help usr_90`
-
-[vim 安装脚本](https://raw.githubusercontent.com/Mr-Promise/shell/main/src/install-vim.sh)
 
 ## 插件查找
 
