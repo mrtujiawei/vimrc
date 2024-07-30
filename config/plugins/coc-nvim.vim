@@ -38,6 +38,7 @@ set shortmess+=c
 " coc-rls: rust 已经不支持了
 " coc-rust-analyzer: rust 最新的插件, 需要手动安装依赖 `brew install rust-analyzer`
 " coc-htmldjango: django 模板补全用
+" coc-styled-components styled-components 插件
 let g:coc_global_extensions = [
   \ 'coc-git',
   \ 'coc-json',
