@@ -155,6 +155,9 @@ call plug#begin(expand('~/.vim/.bundle'))
   " 编辑文件列表或目录
   Plug 'stevearc/oil.nvim'
 
+  " 显示按键
+  Plug 'NStefan002/screenkey.nvim'
+
   " 文件预览
   " rmagatti/goto-preview
   
