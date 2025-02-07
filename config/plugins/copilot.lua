@@ -10,3 +10,13 @@ vim.keymap.set('i', '<C-\\>', 'copilot#Accept("\\<CR>")', {
   expr = true,
   replace_keycodes = false
 })
+
+vim.keymap.set('i', '<S-UP>', '<Plug>(copilot-previous)', {
+  -- expr = true,
+  replace_keycodes = false
+})
+
+vim.keymap.set('i', '<S-DOWN>', '<Plug>(copilot-next)', {
+  -- expr = true,
+  replace_keycodes = false
+})
