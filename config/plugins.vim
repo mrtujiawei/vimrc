@@ -181,8 +181,8 @@ call plug#begin(expand('~/.vim/.bundle'))
   " 更好的 quickfix
   " Plug 'kevinhwang91/nvim-bqf'
 
-  " copilot 包月太贵，我选择不用
-  " Plug 'github/copilot.vim',
+  " copilot
+  Plug 'github/copilot.vim',
 
   " 代码大纲 ctags 来做的， 不支持 typescript
   " Plug 'preservim/tagbar',
