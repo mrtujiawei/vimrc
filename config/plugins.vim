@@ -231,8 +231,12 @@ call plug#begin(expand('~/.vim/.bundle'))
   " 单词加下划线
   " https://github.com/itchyny/vim-cursorword
   "
-  " todo 等注释高亮插件
-  " folke/todo-comments.nvim
+
+  " todo 插件的依赖
+  Plug 'nvim-lua/plenary.nvim'
+  
+  " todo 列表
+  Plug 'folke/todo-comments.nvim'
   "
   " 窗口交换
   " riddlew/swap-split.nvim
