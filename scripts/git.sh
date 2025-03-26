@@ -13,7 +13,7 @@ git config --global mergetool.prompt false
 git config --global user.email jiaweitu@marcothepolo.com
 git config --global user.name tujiawei
 git config --global push.autoSetupRemote true
-git config --global pull.rebase true
+git config --global pull.rebase false
 git config --global commit.verbose true
 git config --global help.autocorrect prompt
 git config --global diff.colorMoved default
