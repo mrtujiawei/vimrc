@@ -37,6 +37,15 @@ let fzf_files_options = [
 \ 'batcat --color=always --style=numbers --line-range=:50 {}',
 \ ]
 
+if has('mac')
+  let fzf_files_options = [
+  \ '--layout=reverse',
+  \ '--info=inline',
+  \ '--preview',
+  \ 'bat --color=always --style=numbers --line-range=:50 {}',
+  \ ]
+endif
+
 " mac 会报错
 if !has('mac')
   " 重写 :Files 的功能
