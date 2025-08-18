@@ -46,3 +46,5 @@ autocmd BufReadPost * silent! set signcolumn=auto
 autocmd BufWritePost ; silent! call utils#write_file_semi()
 
 autocmd BufEnter * silent! call utils#large_file_check(expand('<afile>'))
+
+autocmd VimEnter * silent! call utils#check_log()

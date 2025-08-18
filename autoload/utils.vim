@@ -276,3 +276,15 @@ func! utils#close_hidden_buffers(...)
     endif
   endfor
 endfunc
+
+" 
+func! utils#check_log()
+  let l:log = expand('$NVIM_LOG_FILE')
+  let l:size = getfsize(l:log)
+  " log 文件最大不能超 10 G
+  let l:max_log_file_size = 1024 * 1024 * 1024 * 10
+
+  if l:size > l:max_log_file_size
+    call delete(l:log)
+  endif
+endfunc
