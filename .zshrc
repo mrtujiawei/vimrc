@@ -189,3 +189,10 @@ export PATH=$PATH:$HOME/.maven/bin
 # }
 #
 # compdef _git_merge_to_comp git_merge_to
+
+# bun completions
+[ -s "/Users/tujiawei/.bun/_bun" ] && source "/Users/tujiawei/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
