@@ -196,3 +196,4 @@ export PATH=$PATH:$HOME/.maven/bin
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+export HOMEBREW_NO_AUTO_UPDATE=true
