@@ -252,4 +252,7 @@ call plug#begin(expand('~/.vim/.bundle'))
   "
   " 请求发送插件 依赖 tree-sitter
   " rest-nvim/rest.nvim
+  "
+  " 俄罗斯方块
+  Plug 'alec-gibson/nvim-tetris'
 call plug#end()
